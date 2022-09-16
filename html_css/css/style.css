@@ -1,75 +1,105 @@
-  @import url("reset.css");
+@import url("reset.css");
 
 /* Fonts */
 @font-face {
-    font-family: "Montserrat";
-    src: url("../fonts/Montserrat-Regular.ttf") format("truetype"),
-        url("../fonts/Montserrat-Regular.woff") format("woff");
-    font-weight: 400;
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype"),
+    url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
 }
-
 @font-face {
-    font-family: "Montserrat";
-    src: url("../Montserrat-Medium.ttf") format("truetype"),
-        url("../fonts/Montserrat-Medium.woff") format("woff");
-    font-weight: 500;
+  font-family: "Montserrat";
+  src: url("../Montserrat-Medium.ttf") format("truetype"),
+    url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
 }
-
 @font-face {
-    font-family: "Montserrat";
-    src: url("../fonts/Montserrat-SemiBold.ttf") format("truetype"),
-        url("../fonts/Montserrat-SemiBold.woff") format("woff");
-    font-weight: 600;
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.ttf") format("truetype"),
+    url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
 }
-
 @font-face {
-    font-family: "Montserrat";
-    src: url("../fonts/Montserrat-Bold.ttf") format("truetype"),
-        url("../fonts/Montserrat-Bold.woff") format("woff");
-    font-weight: 700;
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype"),
+    url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
 }
 
 :root {
-    --primary-text-color: #5C5C5C;
-    --header-text-color: #000000;
-    --button-bg-blue-color: #1B63F0;
-    --hover-link-color: var(--button-bg-blue-color);
+  --primary-text-color: #5c5c5c;
+  --header-text-color: #000000;
+  --button-bg-blue-color: #1b63f0;
+  --button-bg-hover-blue-color: #3173f8;
+  --button-bg-green-color: #97f5cd;
+  --button-bg-hover-green-color: #79e3b5;
+  --hover-link-color: var(--button-bg-blue-color);
+  --bg-color: #e1dcdc;
 }
 
 body {
-    font-family: "Montserrat";
-    color: var(--primary-text-color);
+  font-family: "Montserrat";
+  color: var(--primary-text-color);
+  background-color: var(--bg-color);
 }
 
 .navbar {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    font-size: 12px;
-    line-height: 1.33;
+  font-size: 12px;
+  line-height: 1.33;
 }
-.navbar__list {
-    display:flex;
-}
-.navbar__list-item {
-    list-style: none;
-    margin-right: 20px;
+
+.navbar__list-item,
+.logos__list-item {
+  list-style: none;
 }
 .navbar__list-link {
-    text-decoration: none;
-    font-weight: 600;
-    color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ffffff;
 }
 .navbar__list-link:hover {
-    color: var(--hover-link-color);
+  color: var(--hover-link-color);
 }
-.navbar__button {
-    padding: 12px 24px;
-    width: 96px;
-    height: 40px;
-    text-decoration: none;
-    background: var(--button-bg-blue-color);
-    border-radius: 22px;
-    font-weight: 700;
-    color: #FFFFFF;
+
+.btn {
+  padding: 12px 24px;
+  height: 40px;
+  text-decoration: none;
+  border-radius: 22px;
+  font-size: 12px;
+  line-height: 1.33;
+  font-weight: 700;
+  color: #ffffff;
+}
+.btn-blue {
+  background-color: var(--button-bg-blue-color);
+}
+.btn-blue:hover {
+  background-color: var(--button-bg-hover-blue-color);
+}
+.btn-green {
+  color: #000000;
+  background-color: var(--button-bg-green-color);
+}
+.btn-green:hover {
+  background-color: var(--button-bg-hover-green-color);
+}
+.btn-1 {
+  width: 96px;
+}
+.btn-2 {
+  width: 116px;
+}
+.btn-3 {
+  width: 119px;
+}
+.main {
+  font-size: 14px;
+  line-height: 1.57;
+}
+.section-education__header {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.22;
+  color: var(--header-text-color);
 }
