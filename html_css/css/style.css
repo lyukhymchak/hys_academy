@@ -21,6 +21,7 @@
         url("../fonts/Montserrat-SemiBold.woff") format("woff");
     font-weight: 600;
 }
+
 @font-face {
     font-family: "Montserrat";
     src: url("../fonts/Montserrat-Bold.ttf") format("truetype"),
@@ -28,6 +29,47 @@
     font-weight: 700;
 }
 
+:root {
+    --primary-text-color: #5C5C5C;
+    --header-text-color: #000000;
+    --button-bg-blue-color: #1B63F0;
+    --hover-link-color: var(--button-bg-blue-color);
+}
+
 body {
     font-family: "Montserrat";
+    color: var(--primary-text-color);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 12px;
+    line-height: 1.33;
+}
+.navbar__list {
+    display:flex;
+}
+.navbar__list-item {
+    list-style: none;
+    margin-right: 20px;
+}
+.navbar__list-link {
+    text-decoration: none;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+.navbar__list-link:hover {
+    color: var(--hover-link-color);
+}
+.navbar__button {
+    padding: 12px 24px;
+    width: 96px;
+    height: 40px;
+    text-decoration: none;
+    background: var(--button-bg-blue-color);
+    border-radius: 22px;
+    font-weight: 700;
+    color: #FFFFFF;
 }
