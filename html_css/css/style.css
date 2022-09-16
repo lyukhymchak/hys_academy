@@ -48,8 +48,13 @@ body {
   line-height: 1.33;
 }
 
-.navbar__list-item,
-.logos__list-item {
+.navbar__list,
+.logos__list,
+.choose__list,
+.section-courses__list,
+.section-take-tour__list,
+.section-preference__list,
+.section-customer__slider {
   list-style: none;
 }
 .navbar__list-link {
@@ -93,6 +98,12 @@ body {
 .btn-3 {
   width: 119px;
 }
+.btn-4 {
+  width: 108px;
+}
+.btn-5 {
+  width: 108px;
+}
 .main {
   font-size: 14px;
   line-height: 1.57;
@@ -102,4 +113,107 @@ body {
   font-size: 36px;
   line-height: 1.22;
   color: var(--header-text-color);
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.38;
+  color: var(--header-text-color);
+}
+
+.choose__list-item-title,
+.section-choose-us-2__title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+}
+.section-courses__description {
+  text-align: center;
+}
+.section-courses__header,
+.section-take-tour__header {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+}
+.section-courses__link,
+.section-take-tour__link {
+  text-decoration: none;
+  color: var(--button-bg-blue-color);
+}
+.section-courses__list {
+  color: #ffffff;
+}
+
+.section-courses__title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.section-courses__new-price {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+}
+
+.section-courses__old-price {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  line-height: 1.33;
+  text-decoration-line: line-through;
+}
+.section-take-tour__list-item::before {
+  content: "•";
+  width: 8px;
+  height: 8px;
+  color: #fde7e6;
+}
+
+.section-choose-us-2__title-featured {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.21;
+  letter-spacing: 0.4em;
+
+  color: #f6f2e9;
+}
+
+.section-choose-us-2__text {
+  color: #838383;
+}
+.section-choose-us-2__days {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #91a3ed;
+}
+.section-choose-us-2__hours {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #f0c41b;
+}
+.section-choose-us-2__min {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #fe5f60;
+}
+
+.section-preference__list-item {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.section-customer__title {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #000000;
 }

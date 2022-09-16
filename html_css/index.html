@@ -74,46 +74,47 @@
 
       <!-- section 1 - Why choose us? -->
       <section class="section-why-choose-us">
-        <h2>Shy shoose us? <span class="header2-line"></span></h2>
-
-        <ul>
-          <li>
+        <h2 class="section-title">
+          Shy shoose us? <span class="header2-line"></span>
+        </h2>
+        <ul class="choose__list">
+          <li class="choose__list-item">
             <svg width="54" height="53">
               <use href="images/sprite.svg#icon-certificate"></use>
             </svg>
-            <h3>Certificate</h3>
+            <h3 class="choose__list-item-title">Certificate</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod.A bank is a financial institution accepts deposits from
               public and creates credit.
             </p>
           </li>
-          <li>
+          <li class="choose__list-item">
             <svg width="40" height="53">
               <use href="images/sprite.svg#icon-life-programs"></use>
             </svg>
-            <h3>Life programs</h3>
+            <h3 class="choose__list-item-title">Life programs</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
               institution accepts deposits from public
             </p>
           </li>
-          <li>
+          <li class="choose__list-item">
             <svg width="43" height="53">
               <use href="images/sprite.svg#icon-affordability"></use>
             </svg>
-            <h3>Affordability</h3>
+            <h3 class="choose__list-item-title">Affordability</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed. A
               bank is a financial institution accepts deposits from public and
               creates credit.
             </p>
           </li>
-          <li>
+          <li class="choose__list-item">
             <svg width="43" height="53">
               <use href="images/sprite.svg#icon-social"></use>
             </svg>
-            <h3>Social</h3>
+            <h3 class="choose__list-item-title">Social</h3>
             <p>
               A bank is a financial institution accepts deposits from public and
               creates credit.
@@ -124,47 +125,59 @@
 
       <!-- section 2 - 2000+ Online courses -->
       <section class="section-courses">
-        <p><a href="#">MOST POPULAR COURSES</a></p>
-        <h2>2000+ Online courses</h2>
+        <div class="section-courses__description">
+          <h4 class="section-courses__header">
+            <a class="section-courses__link" href="#">MOST POPULAR COURSES</a>
+          </h4>
+          <h2 class="section-title">2000+ Online courses</h2>
+        </div>
         <img src="images/arrow-circle-left.png" width="40" alt="arrow left" />
-        <ul>
-          <li>
+        <ul class="section-courses__list">
+          <li class="section-courses__list-item">
             <img
               src="images/mentor-design.png"
               width="48"
               alt="mentor of design"
             />
-            <h3>DESIGN</h3>
-            <p>Learn Photoshop title</p>
+            <h4 class="section-courses__header">DESIGN</h4>
+            <h3 class="section-courses__title">Learn Photoshop title</h3>
             <hr />
             <div>
-              <span>$260</span> <span>$360</span> <span>⭐⭐⭐⭐(4)</span>
+              <span class="section-courses__new-price">$260</span>
+              <span class="section-courses__old-price">$360</span>
+              <span>⭐⭐⭐⭐(4)</span>
             </div>
           </li>
-          <li>
+          <li class="section-courses__list-item">
             <img
               src="images/mentor-marketing.png"
               width="48"
               alt="mentor of design"
             />
-            <h3>Marketing</h3>
-            <p>Learn Photoshop title trun...</p>
+            <h4 class="section-courses__header">Marketing</h4>
+            <h3 class="section-courses__title">
+              Learn Photoshop title trun...
+            </h3>
             <hr />
             <div>
-              <span>$260</span> <span>$360</span> <span>⭐⭐⭐⭐(4)</span>
+              <span class="section-courses__new-price">$260</span>
+              <span class="section-courses__old-price">$360</span>
+              <span>⭐⭐⭐⭐(4)</span>
             </div>
           </li>
-          <li>
+          <li class="section-courses__list-item">
             <img
               src="images/mentor-web-design.png"
               width="48"
               alt="mentor of web-design"
             />
-            <h3>Web design</h3>
-            <p>Learn Photoshop</p>
+            <h4 class="section-courses__header">Web design</h4>
+            <h3 class="section-courses__title">Learn Photoshop</h3>
             <hr />
             <div>
-              <span>$260</span> <span>$360</span> <span>⭐⭐⭐⭐(4)</span>
+              <span class="section-courses__new-price">$260</span>
+              <span class="section-courses__old-price">$360</span>
+              <span>⭐⭐⭐⭐(4)</span>
             </div>
           </li>
         </ul>
@@ -183,8 +196,14 @@
           <img src="images/circular-play-button.png" alt="" />
         </div>
         <div>
-          <p><a href="#">UNIVERSOTY DESCRIPTION</a></p>
-          <h2>Take a tour <span class="header2-line"></span></h2>
+          <h4 class="section-take-tour__header">
+            <a class="section-take-tour__link" href="#"
+              >UNIVERSOTY DESCRIPTION</a
+            >
+          </h4>
+          <h2 class="section-title">
+            Take a tour <span class="header2-line"></span>
+          </h2>
           <p>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque
@@ -193,12 +212,12 @@
             Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
             veritatis et quasi architecto beatae vitae dicta sunt explicabo.
           </p>
-          <ul>
-            <li>
+          <ul class="section-take-tour__list">
+            <li class="section-take-tour__list-item">
               Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
               consectetur
             </li>
-            <li>
+            <li class="section-take-tour__list-item">
               Ut enim ad minima veniam, quis nostrum exercitationem ullam
               corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
               consequatur?
@@ -209,17 +228,21 @@
           <!-- <img src="images/square.svg" width="40" alt="square" /> -->
           <div class="square-white-gloss"></div>
         </div>
-        <button type="button">Read more</button>
+        <a class="btn btn-blue btn-4" href="#">Read more</a>
       </section>
 
       <!-- section 4 - Why choose us -->
       <section class="section-choose-us-2">
         <div>
-          <h2>Shy shoose us? <span class="header2-line"></span></h2>
+          <h2 class="section-title">
+            Shy shoose us? <span class="header2-line"></span>
+          </h2>
           <ul>
             <li>
-              <h3>International Conference on Bussiness</h3>
-              <p>
+              <h3 class="section-choose-us-2__title">
+                International Conference on Bussiness
+              </h3>
+              <p class="section-choose-us-2__text">
                 <svg width="20" height="20">
                   <use href="images/sprite.svg#icon-calendar"></use>
                 </svg>
@@ -235,8 +258,10 @@
               </p>
             </li>
             <li>
-              <h3>International Conference on Bussiness</h3>
-              <p>
+              <h3 class="section-choose-us-2__title">
+                International Conference on Bussiness
+              </h3>
+              <p class="section-choose-us-2__text">
                 <svg width="20" height="20">
                   <use href="images/sprite.svg#icon-calendar"></use>
                 </svg>
@@ -252,8 +277,10 @@
               </p>
             </li>
             <li>
-              <h3>International Conference on Bussiness</h3>
-              <p>
+              <h3 class="section-choose-us-2__title">
+                International Conference on Bussiness
+              </h3>
+              <p class="section-choose-us-2__text">
                 <svg width="20" height="20">
                   <use href="images/sprite.svg#icon-calendar"></use>
                 </svg>
@@ -269,8 +296,10 @@
               </p>
             </li>
             <li>
-              <h3>International Conference on Bussiness</h3>
-              <p>
+              <h3 class="section-choose-us-2__title">
+                International Conference on Bussiness
+              </h3>
+              <p class="section-choose-us-2__text">
                 <svg width="20" height="20">
                   <use href="images/sprite.svg#icon-calendar"></use>
                 </svg>
@@ -288,15 +317,20 @@
           </ul>
         </div>
         <div>
-          <p>FEATURED</p>
+          <p class="section-choose-us-2__title-featured">FEATURED</p>
           <p>
-            <span>$213</span> <span>Days</span> <span>23 </span>
-            <span>Hours</span> <span>59 </span> <span>Min</span>
+            <span class="section-choose-us-2__days">$213</span>
+            <span>Days</span>
+            <span class="section-choose-us-2__hours">23 </span>
+            <span>Hours</span>
+            <span class="section-choose-us-2__min">59 </span> <span>Min</span>
           </p>
 
           <div>
-            <h3>International Conference on Bussiness</h3>
-            <p>
+            <h3 class="section-choose-us-2__title">
+              International Conference on Bussiness
+            </h3>
+            <p class="section-choose-us-2__text">
               <svg width="20" height="20">
                 <use href="images/sprite.svg#icon-calendar"></use>
               </svg>
@@ -311,23 +345,25 @@
               United States
             </p>
           </div>
-          <a href="#">Become a Sponsor</a>
+          <a class="btn btn-blue btn-5" href="#">Become a Sponsor</a>
         </div>
       </section>
 
       <!-- section 5 - Which one do you prefer? -->
       <section class="section-preference">
-        <h2>Which one do you prefer? <span class="header2-line"></span></h2>
+        <h2 class="section-title">
+          Which one do you prefer? <span class="header2-line"></span>
+        </h2>
         <p>
           Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
           veritatis et quasi architecto beatae vitae dicta sunt explicabo.
         </p>
         <img src="images/arrow-circle-left.png" width="40" alt="arrow left" />
-        <ul>
-          <li>Graphic Design</li>
-          <li>Web Design</li>
-          <li>Marketing</li>
-          <li>Education</li>
+        <ul class="section-preference__list">
+          <li class="section-preference__list-item">Graphic Design</li>
+          <li class="section-preference__list-item">Web Design</li>
+          <li class="section-preference__list-item">Marketing</li>
+          <li class="section-preference__list-item">Education</li>
         </ul>
         <img src="images/arrow-circle-right.png" width="40" alt="arrow right" />
       </section>
@@ -338,7 +374,9 @@
           <img src="images/img-our-great-customers.jpg" alt="" />
         </div>
         <div>
-          <h2>Our great customers <span class="header2-line"></span></h2>
+          <h2 class="section-title">
+            Our great customers <span class="header2-line"></span>
+          </h2>
 
           <br />
           <svg width="40" height="30">
@@ -352,13 +390,13 @@
             Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
             veritatis et quasi architecto beatae vitae dicta sunt explicabo.
           </p>
-          <p><strong>Stephanie Magion</strong></p>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+          <p class="section-customer__title">Stephanie Magion</p>
+          <ul class="section-customer__slider">
+            <li class="section-customer__slider-item"></li>
+            <li class="section-customer__slider-item"></li>
+            <li class="section-customer__slider-item"></li>
+            <li class="section-customer__slider-item"></li>
+            <li class="section-customer__slider-item"></li>
           </ul>
         </div>
       </section>
@@ -367,7 +405,7 @@
       <section class="section-start">
         <div>
           <p>IT’S FAST, FREE AND VERY EASY!</p>
-          <h2>Ready to get started?</h2>
+          <h2 class="section-title">Ready to get started?</h2>
           <p>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque
@@ -420,7 +458,9 @@
 
       <!-- section 8 - Latest Blog -->
       <section class="section-blog">
-        <h2>Latest Blog <span class="header2-line"></span></h2>
+        <h2 class="section-title">
+          Latest Blog <span class="header2-line"></span>
+        </h2>
         <ul>
           <li>
             <p>DESIGN</p>
