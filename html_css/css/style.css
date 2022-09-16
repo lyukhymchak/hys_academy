@@ -35,10 +35,14 @@
   --button-bg-hover-green-color: #79e3b5;
   --hover-link-color: var(--button-bg-blue-color);
   --bg-color: #e1dcdc;
+  --button-bg-light-green-color: #64be97;
+  --button-bg-hover-light-green-color: #7bc3a3;
 }
 
 body {
   font-family: "Montserrat";
+  font-size: 14px;
+  line-height: 1.57;
   color: var(--primary-text-color);
   background-color: var(--bg-color);
 }
@@ -54,7 +58,12 @@ body {
 .section-courses__list,
 .section-take-tour__list,
 .section-preference__list,
-.section-customer__slider {
+.section-customer__slider,
+.section-start__list,
+.section-blog__list,
+.section-blog__number-slider,
+.footer__list,
+.footer__nav {
   list-style: none;
 }
 .navbar__list-link {
@@ -89,6 +98,18 @@ body {
 .btn-green:hover {
   background-color: var(--button-bg-hover-green-color);
 }
+.btn-transparent {
+  border: 1px solid #ffffff;
+}
+.btn-transparent:hover {
+  border: 2px solid #ffffff;
+}
+.btn-light-green {
+  background-color: var(--button-bg-light-green-color);
+}
+.btn-light-green:hover {
+  background-color: var(--button-bg-hover-light-green-color);
+}
 .btn-1 {
   width: 96px;
 }
@@ -104,10 +125,7 @@ body {
 .btn-5 {
   width: 108px;
 }
-.main {
-  font-size: 14px;
-  line-height: 1.57;
-}
+
 .section-education__header {
   font-weight: 700;
   font-size: 36px;
@@ -123,7 +141,8 @@ body {
 }
 
 .choose__list-item-title,
-.section-choose-us-2__title {
+.section-choose-us-2__title,
+.section-blog__title {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
@@ -162,7 +181,6 @@ body {
 .section-courses__old-price {
   font-weight: 400;
   font-size: 12px;
-  line-height: 16px;
   line-height: 1.33;
   text-decoration-line: line-through;
 }
@@ -211,9 +229,75 @@ body {
   color: #ffffff;
 }
 
-.section-customer__title {
+.section-customer__title,
+.section-blog__text {
   font-weight: 700;
   font-size: 12px;
   line-height: 1.33;
   color: #000000;
+}
+.section-title-green {
+  color: var(--button-bg-light-green-color);
+}
+.section-start {
+  color: #ffffff;
+}
+
+.section-start__title {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.38;
+  color: #ffffff;
+}
+
+.section-blog__header {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  color: #5d74e4;
+}
+.button {
+  width: 120px;
+  height: 44px;
+  background: var(--button-bg-light-green-color);
+  box-shadow: 0px 4px 16px rgba(75, 202, 103, 0.58);
+  border-radius: 22px;
+  border: none;
+}
+.button:hover {
+  background: var(--button-bg-hover-light-green-color);
+}
+.form__input {
+  width: 420px;
+  height: 44px;
+  background: #f3f6fc;
+  border-radius: 22px;
+  border: none;
+}
+
+::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--primary-text-color);
+  padding: 0px 12px;
+}
+.footer__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.footer__additonal-info {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--primary-text-color);
+}
+.footer__nav-item-link {
+  text-decoration: none;
+  color: var(--primary-text-color);
 }

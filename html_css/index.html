@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Academy landing page</title>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
-    /> -->
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -405,7 +405,9 @@
       <section class="section-start">
         <div>
           <p>IT’S FAST, FREE AND VERY EASY!</p>
-          <h2 class="section-title">Ready to get started?</h2>
+          <h2 class="section-title section-title-green">
+            Ready to get started?
+          </h2>
           <p>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque
@@ -414,24 +416,24 @@
             Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
             veritatis et quasi architecto beatae vitae dicta sunt explicabo.
           </p>
-          <a href="#form">Apply Now</a>
-          <a href="#">Request Service</a>
+          <a class="btn btn-light-green" href="#form">Apply Now</a>
+          <a class="btn btn-transparent" href="#">Request Service</a>
         </div>
         <div>
-          <h3>
+          <h3 class="section-start__title">
             <svg width="24" height="24">
               <use href="images/sprite.svg#icon-quick-link"></use>
             </svg>
             Quick Link
           </h3>
-          <ul>
-            <li>
+          <ul class="section-start__list">
+            <li class="section-start__list-item">
               <svg width="24" height="24">
                 <use href="images/sprite.svg#icon-tuition-and-fees"></use>
               </svg>
               Tution and Fees
             </li>
-            <li>
+            <li class="section-start__list-item">
               <svg width="24" height="24">
                 <use
                   href="images/sprite.svg#icon-review-and-rating"
@@ -440,13 +442,13 @@
               </svg>
               Review & Rating
             </li>
-            <li>
+            <li class="section-start__list-item">
               <svg width="24" height="24">
                 <use href="images/sprite.svg#icon-university-facilities"></use>
               </svg>
               Universoty Facilities
             </li>
-            <li>
+            <li class="section-start__list-item">
               <svg width="24" height="24">
                 <use href="images/sprite.svg#icon-community-qa"></use>
               </svg>
@@ -461,9 +463,9 @@
         <h2 class="section-title">
           Latest Blog <span class="header2-line"></span>
         </h2>
-        <ul>
-          <li>
-            <p>DESIGN</p>
+        <ul class="section-blog__list">
+          <li class="section-blog__list-item">
+            <h4 class="section-blog__header">DESIGN</h4>
             <img
               src="images/latest-blog-image-1.jpg"
               width="328"
@@ -475,11 +477,13 @@
               width="48"
               alt="mentor of design"
             />
-            <h3>International Conference on Bussiness</h3>
-            <p><strong>Read Now</strong></p>
+            <h3 class="section-blog__title">
+              International Conference on Bussiness
+            </h3>
+            <p class="section-blog__text">Read Now</p>
           </li>
-          <li>
-            <p>DESIGN</p>
+          <li class="section-blog__list-item">
+            <h4 class="section-blog__header">DESIGN</h4>
             <img
               src="images/latest-blog-image-2.jpg"
               width="328"
@@ -491,78 +495,84 @@
               width="48"
               alt="mentor of design"
             />
-            <h3>International Conference on Bussiness</h3>
-            <p><strong>Read Now</strong></p>
+            <h3 class="section-blog__title">
+              International Conference on Bussiness
+            </h3>
+            <p class="section-blog__text">Read Now</p>
           </li>
         </ul>
         <div>
-          <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
+          <ul class="section-blog__number-slider">
+            <li class="section-blog__number-slider-item">1</li>
+            <li class="section-blog__number-slider-item">2</li>
+            <li class="section-blog__number-slider-item">3</li>
+            <li class="section-blog__number-slider-item">4</li>
+            <li class="section-blog__number-slider-item">5</li>
           </ul>
         </div>
       </section>
 
       <!-- form -->
       <form class="form" id="form">
-        <input type="text" placeholder="Name Surname" />
-        <input type="text" placeholder="Phone" />
-        <input type="text" placeholder="Enter your email..." />
-        <button type="submit">Send</button>
+        <input class="form__input" type="text" placeholder="Name Surname" />
+        <input class="form__input" type="text" placeholder="Phone" />
+        <input
+          class="form__input"
+          type="text"
+          placeholder="Enter your email..."
+        />
+        <button class="button" type="submit">Send</button>
       </form>
     </main>
     <!-- footer section -->
-    <footer>
+    <footer class="footer">
       <div>
         <svg width="54" height="24">
           <use href="images/sprite.svg#icon-logo-union"></use>
         </svg>
         <div>
-          <h3>Company</h3>
-          <ul>
-            <li>About Company</li>
-            <li>Feature Course</li>
-            <li>Careers</li>
+          <h3 class="footer__title">Company</h3>
+          <ul class="footer__list">
+            <li class="footer__list-item">About Company</li>
+            <li class="footer__list-item">Feature Course</li>
+            <li class="footer__list-item">Careers</li>
           </ul>
         </div>
         <div>
-          <h3>Help Links</h3>
-          <ul>
-            <li>Student Support</li>
-            <li>Course Policy</li>
-            <li>Register Key</li>
+          <h3 class="footer__title">Help Links</h3>
+          <ul class="footer__list">
+            <li class="footer__list-item">Student Support</li>
+            <li class="footer__list-item">Course Policy</li>
+            <li class="footer__list-item">Register Key</li>
           </ul>
         </div>
         <div>
-          <h3>Course</h3>
-          <ul>
-            <li>Wordpres</li>
-            <li>Photography</li>
-            <li>Learning English</li>
+          <h3 class="footer__title">Course</h3>
+          <ul class="footer__list">
+            <li class="footer__list-item">Wordpres</li>
+            <li class="footer__list-item">Photography</li>
+            <li class="footer__list-item">Learning English</li>
           </ul>
         </div>
         <div>
-          <h3>Social Media</h3>
-          <ul>
-            <li>
+          <h3 class="footer__title">Social Media</h3>
+          <ul class="footer__list">
+            <li class="footer__list-item">
               <a href="https://www.facebook.com/"
                 ><img src="images/facebook.svg" width="24" alt="facebook"
               /></a>
             </li>
-            <li>
+            <li class="footer__list-item">
               <a href="https://www.instagram.com/"
                 ><img src="images/instagram.svg" width="24" alt="instagram"
               /></a>
             </li>
-            <li>
+            <li class="footer__list-item">
               <a href="https://twitter.com/"
                 ><img src="images/twitter.svg" width="24" alt="twitter"
               /></a>
             </li>
-            <li>
+            <li class="footer__list-item">
               <a href="https://www.youtube.com/"
                 ><img src="images/youtube.svg" width="24" alt="youtube"
               /></a>
@@ -573,14 +583,24 @@
 
       <hr />
 
-      <div>
-        <p>All rights Reserved</p>
-        <ul>
-          <li>About company</li>
-          <li>Privacy Policy</li>
-          <li>Help Center</li>
-          <li>Terms</li>
-          <li>Site map</li>
+      <div class="footer__additonal-info">
+        <p class="footer__left-text">All rights Reserved</p>
+        <ul class="footer__nav">
+          <li class="footer__nav-item">
+            <a class="footer__nav-item-link" href="">About company</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-item-link" href="">Privacy Policy</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-item-link" href="">Help Center</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-item-link" href="">Terms</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-item-link" href="">Site map</a>
+          </li>
         </ul>
       </div>
     </footer>
