@@ -1,0 +1,303 @@
+@import url("reset.css");
+
+/* Fonts */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype"),
+    url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../Montserrat-Medium.ttf") format("truetype"),
+    url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.ttf") format("truetype"),
+    url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype"),
+    url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+}
+
+:root {
+  --primary-text-color: #5c5c5c;
+  --header-text-color: #000000;
+  --button-bg-blue-color: #1b63f0;
+  --button-bg-hover-blue-color: #3173f8;
+  --button-bg-green-color: #97f5cd;
+  --button-bg-hover-green-color: #79e3b5;
+  --hover-link-color: var(--button-bg-blue-color);
+  --bg-color: #e1dcdc;
+  --button-bg-light-green-color: #64be97;
+  --button-bg-hover-light-green-color: #7bc3a3;
+}
+
+body {
+  font-family: "Montserrat";
+  font-size: 14px;
+  line-height: 1.57;
+  color: var(--primary-text-color);
+  background-color: var(--bg-color);
+}
+
+.navbar {
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.navbar__list,
+.logos__list,
+.choose__list,
+.section-courses__list,
+.section-take-tour__list,
+.section-preference__list,
+.section-customer__slider,
+.section-start__list,
+.section-blog__list,
+.section-blog__number-slider,
+.footer__list,
+.footer__nav {
+  list-style: none;
+}
+.navbar__list-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: #ffffff;
+}
+.navbar__list-link:hover {
+  color: var(--hover-link-color);
+}
+
+.btn {
+  padding: 12px 24px;
+  height: 40px;
+  text-decoration: none;
+  border-radius: 22px;
+  font-size: 12px;
+  line-height: 1.33;
+  font-weight: 700;
+  color: #ffffff;
+}
+.btn-blue {
+  background-color: var(--button-bg-blue-color);
+}
+.btn-blue:hover {
+  background-color: var(--button-bg-hover-blue-color);
+}
+.btn-green {
+  color: #000000;
+  background-color: var(--button-bg-green-color);
+}
+.btn-green:hover {
+  background-color: var(--button-bg-hover-green-color);
+}
+.btn-transparent {
+  border: 1px solid #ffffff;
+}
+.btn-transparent:hover {
+  border: 2px solid #ffffff;
+}
+.btn-light-green {
+  background-color: var(--button-bg-light-green-color);
+}
+.btn-light-green:hover {
+  background-color: var(--button-bg-hover-light-green-color);
+}
+.btn-1 {
+  width: 96px;
+}
+.btn-2 {
+  width: 116px;
+}
+.btn-3 {
+  width: 119px;
+}
+.btn-4 {
+  width: 108px;
+}
+.btn-5 {
+  width: 108px;
+}
+
+.section-education__header {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.22;
+  color: var(--header-text-color);
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.38;
+  color: var(--header-text-color);
+}
+
+.choose__list-item-title,
+.section-choose-us-2__title,
+.section-blog__title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+}
+.section-courses__description {
+  text-align: center;
+}
+.section-courses__header,
+.section-take-tour__header {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+}
+.section-courses__link,
+.section-take-tour__link {
+  text-decoration: none;
+  color: var(--button-bg-blue-color);
+}
+.section-courses__list {
+  color: #ffffff;
+}
+
+.section-courses__title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.section-courses__new-price {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+}
+
+.section-courses__old-price {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  text-decoration-line: line-through;
+}
+.section-take-tour__list-item::before {
+  content: "•";
+  width: 8px;
+  height: 8px;
+  color: #fde7e6;
+}
+
+.section-choose-us-2__title-featured {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.21;
+  letter-spacing: 0.4em;
+
+  color: #f6f2e9;
+}
+
+.section-choose-us-2__text {
+  color: #838383;
+}
+.section-choose-us-2__days {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #91a3ed;
+}
+.section-choose-us-2__hours {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #f0c41b;
+}
+.section-choose-us-2__min {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #fe5f60;
+}
+
+.section-preference__list-item {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.section-customer__title,
+.section-blog__text {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #000000;
+}
+.section-title-green {
+  color: var(--button-bg-light-green-color);
+}
+.section-start {
+  color: #ffffff;
+}
+
+.section-start__title {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.38;
+  color: #ffffff;
+}
+
+.section-blog__header {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  color: #5d74e4;
+}
+.button {
+  width: 120px;
+  height: 44px;
+  background: var(--button-bg-light-green-color);
+  box-shadow: 0px 4px 16px rgba(75, 202, 103, 0.58);
+  border-radius: 22px;
+  border: none;
+}
+.button:hover {
+  background: var(--button-bg-hover-light-green-color);
+}
+.form__input {
+  width: 420px;
+  height: 44px;
+  background: #f3f6fc;
+  border-radius: 22px;
+  border: none;
+}
+
+::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--primary-text-color);
+  padding: 0px 12px;
+}
+.footer__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.footer__additonal-info {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--primary-text-color);
+}
+.footer__nav-item-link {
+  text-decoration: none;
+  color: var(--primary-text-color);
+}
