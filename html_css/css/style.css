@@ -29,7 +29,6 @@
 :root {
   --white-color: #ffffff;
   --black-color: #000000;
-  --bg-color: #e1dcdc;
   --font-color: #5c5c5c;
   --heading-color: var(--black-color);
 
@@ -64,16 +63,66 @@ body {
   font-size: 14px;
   line-height: 1.57;
   color: var(--font-color);
-  background-color: var(--bg-color);
+}
+
+.container {
+  min-width: 375px;
+  width: 375px;
+  margin: 0 auto;
+  background-image: url("../images/background-top-2.svg"),
+    url("../images/background-top-1.svg");
+  background-position: right top, right top;
+  background-size: 357px, 375px;
+  background-repeat: no-repeat, no-repeat;
 }
 
 .header__image:hover {
   --color2: var(--black-color);
 }
+.header__image,
+.hamburger-menu {
+  display: inline;
+}
 
 .navbar {
+  display: flex;
+  justify-content: space-between;
   font-size: 12px;
   line-height: 1.33;
+  padding-top: 36px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.navbar__list {
+  display: none;
+}
+
+.section-education {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-education__block-1 {
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-bottom: 32px;
+  order: 2;
+}
+.section-education__block-2 {
+  order: 1;
+}
+.section-education__block-3 {
+  margin-left: 24px;
+  margin-bottom: 80px;
+  order: 3;
+}
+
+.logos__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 0;
 }
 
 .navbar__list,
@@ -90,6 +139,7 @@ body {
 .footer__nav {
   list-style: none;
 }
+
 .navbar__list-link {
   text-decoration: none;
   font-weight: 600;
@@ -149,6 +199,7 @@ body {
 }
 .btn-2 {
   width: 116px;
+  margin-right: 24px;
 }
 .btn-3 {
   width: 119px;
@@ -165,8 +216,12 @@ body {
   font-size: 36px;
   line-height: 1.22;
   color: var(--heading-color);
+  margin-top: 10px;
+  margin-bottom: 32px;
 }
-
+.section-education-description {
+  margin-bottom: 40px;
+}
 .section-title {
   font-weight: 700;
   font-size: 26px;
@@ -371,3 +426,32 @@ body {
 .footer__list-item-link:hover {
   color: var(--light-green-link-color);
 }
+
+/* @media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    background-size: 740px 652px, 778px 652px;
+  }
+  .hamburger-menu-link {
+    display: none;
+  }
+  .navbar {
+    padding-top: 24px;
+  }
+  .navbar-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 295px;
+    padding: 0px;
+    gap: 40px;
+  }
+  .navbar__list {
+    display: flex;
+    flex-direction: row;
+    margin: 12px;
+    align-items: flex-end;
+    padding: 0px;
+    gap: 20px;
+  }
+} */

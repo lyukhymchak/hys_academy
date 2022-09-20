@@ -14,627 +14,666 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- header section -->
-    <header class="header">
-      <nav class="navbar">
-        <a class="header__image" href="">
-          <svg width="54" height="24">
-            <use href="images/sprite.svg#icon-logo-union"></use>
-          </svg>
-        </a>
-        <ul class="navbar__list">
-          <li class="navbar__list-item">
-            <a class="navbar__list-link" href="#">Categories</a>
-          </li>
-          <li class="navbar__list-item">
-            <a class="navbar__list-link" href="#">Course</a>
-          </li>
-          <li class="navbar__list-item">
-            <a class="navbar__list-link" href="#">Explore</a>
-          </li>
-          <li class="navbar__list-item">
-            <a class="navbar__list-link" href="#">Degrees</a>
-          </li>
-        </ul>
-        <a class="btn btn-blue btn-1" href="#">Explore</a>
-      </nav>
-    </header>
-    <!-- main section -->
-    <main class="main">
-      <!-- section 0 - Education is the most powerfull weapon -->
-      <section class="section-education">
-        <div>
-          <h1 class="section-education__header">
-            Education is the most powerfull weapon
-          </h1>
-          <p class="section-description">
-            A bank is a financial institution accepts deposits from public and
-            creates credit. For all of your needs.
-          </p>
-          <a class="btn btn-blue btn-2" href="#">Read more</a>
-          <a class="btn btn-light-green btn-black-text btn-3" href="#form"
-            >Get started</a
-          >
-        </div>
-        <div>
-          <img
-            src="images/student-girl-image.svg"
-            width="500"
-            alt="student image"
-          />
-        </div>
-        <ul class="logos__list">
-          <li class="logos__list-item">
-            <img src="images/logo-youfone.png" width="155" alt="youfone" />
-          </li>
-          <li class="logos__list-item">
-            <img src="images/logo-nice.png" width="97" alt="nice" />
-          </li>
-          <li class="logos__list-item">
-            <img src="images/logo-swishfund.png" width="135" alt="swishfund" />
-          </li>
-          <li class="logos__list-item">
-            <img src="images/logo-brico.png" width="91" alt="brico" />
-          </li>
-          <li class="logos__list-item">
-            <img src="images/logo-praxis.png" width="102" alt="praxis" />
-          </li>
-        </ul>
-      </section>
-
-      <!-- section 1 - Why choose us? -->
-      <section class="section-why-choose-us">
-        <h2 class="section-title">
-          Shy shoose us? <span class="header2-line"></span>
-        </h2>
-        <ul class="choose__list">
-          <li class="choose__list-item">
-            <svg width="54" height="53">
-              <use href="images/sprite.svg#icon-certificate"></use>
-            </svg>
-            <h3 class="choose__list-item-title">Certificate</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod.A bank is a financial institution accepts deposits from
-              public and creates credit.
-            </p>
-          </li>
-          <li class="choose__list-item">
-            <svg width="40" height="53">
-              <use href="images/sprite.svg#icon-life-programs"></use>
-            </svg>
-            <h3 class="choose__list-item-title">Life programs</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-              institution accepts deposits from public
-            </p>
-          </li>
-          <li class="choose__list-item">
-            <svg width="43" height="53">
-              <use href="images/sprite.svg#icon-affordability"></use>
-            </svg>
-            <h3 class="choose__list-item-title">Affordability</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed. A
-              bank is a financial institution accepts deposits from public and
-              creates credit.
-            </p>
-          </li>
-          <li class="choose__list-item">
-            <svg width="43" height="53">
-              <use href="images/sprite.svg#icon-social"></use>
-            </svg>
-            <h3 class="choose__list-item-title">Social</h3>
-            <p>
-              A bank is a financial institution accepts deposits from public and
-              creates credit.
-            </p>
-          </li>
-        </ul>
-      </section>
-
-      <!-- section 2 - 2000+ Online courses -->
-      <section class="section-courses">
-        <div class="section-courses__description">
-          <h4 class="section-courses__header">
-            <a class="section-courses__link" href="#">MOST POPULAR COURSES</a>
-          </h4>
-          <h2 class="section-title">2000+ Online courses</h2>
-        </div>
-        <img src="images/arrow-circle-left.png" width="40" alt="arrow left" />
-        <ul class="section-courses__list">
-          <li class="section-courses__list-item">
-            <img
-              src="images/mentor-design.png"
-              width="48"
-              alt="mentor of design"
-            />
-            <h4 class="section-courses__header">DESIGN</h4>
-            <h3 class="section-courses__title">Learn Photoshop title</h3>
-            <hr />
-            <div>
-              <span class="section-courses__new-price">$260</span>
-              <span class="section-courses__old-price">$360</span>
-              <span>⭐⭐⭐⭐(4)</span>
+    <div class="container">
+      <!-- header section -->
+      <header class="header">
+        <nav class="navbar">
+          <div class="navbar-left">
+            <a class="hamburger-menu-link" href=""
+              ><img
+                class="hamburger-menu"
+                src="images/hamburger-menu.svg"
+                width="24"
+                alt="hamburger menu"
+            /></a>
+            <a class="header__image" href="">
+              <svg width="54" height="24">
+                <use href="images/sprite.svg#icon-logo-union"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="navbar-right">
+            <ul class="navbar__list">
+              <li class="navbar__list-item">
+                <a class="navbar__list-link" href="#">Categories</a>
+              </li>
+              <li class="navbar__list-item">
+                <a class="navbar__list-link" href="#">Course</a>
+              </li>
+              <li class="navbar__list-item">
+                <a class="navbar__list-link" href="#">Explore</a>
+              </li>
+              <li class="navbar__list-item">
+                <a class="navbar__list-link" href="#">Degrees</a>
+              </li>
+            </ul>
+            <a class="btn btn-blue btn-1" href="#">Explore</a>
+          </div>
+        </nav>
+      </header>
+      <!-- main section -->
+      <main class="main">
+        <!-- section 0 - Education is the most powerfull weapon -->
+        <section>
+          <div class="section-education">
+            <div class="section-education__block-1">
+              <h1 class="section-education__header">
+                Education is the most powerfull weapon
+              </h1>
+              <p class="section-description section-education-description">
+                A bank is a financial institution accepts deposits from public
+                and creates credit. For all of your needs.
+              </p>
+              <a class="btn btn-blue btn-2" href="#">Read more</a>
+              <a class="btn btn-light-green btn-black-text btn-3" href="#form"
+                >Get started</a
+              >
             </div>
-          </li>
-          <li class="section-courses__list-item">
-            <img
-              src="images/mentor-marketing.png"
-              width="48"
-              alt="mentor of design"
-            />
-            <h4 class="section-courses__header">Marketing</h4>
-            <h3 class="section-courses__title">
-              Learn Photoshop title trun...
-            </h3>
-            <hr />
-            <div>
-              <span class="section-courses__new-price">$260</span>
-              <span class="section-courses__old-price">$360</span>
-              <span>⭐⭐⭐⭐(4)</span>
+            <div class="section-education__block-2">
+              <img
+                src="images/student-girl-image.svg"
+                width="500"
+                alt="student image"
+              />
             </div>
-          </li>
-          <li class="section-courses__list-item">
-            <img
-              src="images/mentor-web-design.png"
-              width="48"
-              alt="mentor of web-design"
-            />
-            <h4 class="section-courses__header">Web design</h4>
-            <h3 class="section-courses__title">Learn Photoshop</h3>
-            <hr />
-            <div>
-              <span class="section-courses__new-price">$260</span>
-              <span class="section-courses__old-price">$360</span>
-              <span>⭐⭐⭐⭐(4)</span>
+            <div class="section-education__block-3">
+              <ul class="logos__list">
+                <li class="logos__list-item">
+                  <img
+                    src="images/logo-youfone.png"
+                    width="155"
+                    alt="youfone"
+                  />
+                </li>
+                <li class="logos__list-item">
+                  <img src="images/logo-nice.png" width="97" alt="nice" />
+                </li>
+                <li class="logos__list-item">
+                  <img
+                    src="images/logo-swishfund.png"
+                    width="135"
+                    alt="swishfund"
+                  />
+                </li>
+                <li class="logos__list-item">
+                  <img src="images/logo-brico.png" width="91" alt="brico" />
+                </li>
+                <li class="logos__list-item">
+                  <img src="images/logo-praxis.png" width="102" alt="praxis" />
+                </li>
+              </ul>
             </div>
-          </li>
-        </ul>
-        <img src="images/arrow-circle-right.png" width="40" alt="arrow right" />
-      </section>
+          </div>
+        </section>
 
-      <!-- section 3 - Take a tour  -->
-      <section class="section-take-tour">
-        <div>
-          <img
-            src="images/working-people.png"
-            width="730"
-            alt="working people"
-          />
-          <br />
-          <img src="images/circular-play-button.png" alt="" />
-        </div>
-        <div>
-          <h4 class="section-take-tour__header">
-            <a class="section-take-tour__link" href="#"
-              >UNIVERSOTY DESCRIPTION</a
-            >
-          </h4>
-          <h2 class="section-title">
-            Take a tour <span class="header2-line"></span>
-          </h2>
-          <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque
-          </p>
-          <p>
-            Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-            veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-          </p>
-          <ul class="section-take-tour__list">
-            <li class="section-take-tour__list-item">
-              Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-              consectetur
-            </li>
-            <li class="section-take-tour__list-item">
-              Ut enim ad minima veniam, quis nostrum exercitationem ullam
-              corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-              consequatur?
-            </li>
-          </ul>
-          <!-- <img src="images/circle.svg" width="32" alt="circle" /> -->
-          <div class="circle-whisper-blue"></div>
-          <!-- <img src="images/square.svg" width="40" alt="square" /> -->
-          <div class="square-white-gloss"></div>
-        </div>
-        <a class="btn btn-blue btn-4" href="#">Read more</a>
-      </section>
-
-      <!-- section 4 - Why choose us -->
-      <section class="section-choose-us-2">
-        <div>
+        <!-- section 1 - Why choose us? -->
+        <section class="section-why-choose-us">
           <h2 class="section-title">
             Shy shoose us? <span class="header2-line"></span>
           </h2>
-          <ul>
-            <li>
-              <h3 class="section-choose-us-2__title">
-                International Conference on Bussiness
-              </h3>
-              <p class="section-choose-us-2__text">
-                <svg width="20" height="20">
-                  <use href="images/sprite.svg#icon-calendar"></use>
-                </svg>
-                July 8, 2018
-                <svg width="20" height="20">
-                  <use href="images/sprite.svg#icon-clock"></use>
-                </svg>
-                5:00pm - 7:00pm
-                <svg width="20" height="20">
-                  <use href="images/sprite.svg#icon-map"></use>
-                </svg>
-                United States
+          <ul class="choose__list">
+            <li class="choose__list-item">
+              <svg width="54" height="53">
+                <use href="images/sprite.svg#icon-certificate"></use>
+              </svg>
+              <h3 class="choose__list-item-title">Certificate</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod.A bank is a financial institution accepts deposits from
+                public and creates credit.
               </p>
             </li>
-            <li>
-              <h3 class="section-choose-us-2__title">
-                International Conference on Bussiness
-              </h3>
-              <p class="section-choose-us-2__text">
-                <svg width="20" height="20">
-                  <use href="images/sprite.svg#icon-calendar"></use>
-                </svg>
-                July 8, 2018
-                <svg width="20" height="20">
-                  <use href="images/sprite.svg#icon-clock"></use>
-                </svg>
-                5:00pm - 7:00pm
-                <svg width="20" height="20">
-                  <use href="images/sprite.svg#icon-map"></use>
-                </svg>
-                United States
+            <li class="choose__list-item">
+              <svg width="40" height="53">
+                <use href="images/sprite.svg#icon-life-programs"></use>
+              </svg>
+              <h3 class="choose__list-item-title">Life programs</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                institution accepts deposits from public
               </p>
             </li>
-            <li>
-              <h3 class="section-choose-us-2__title">
-                International Conference on Bussiness
-              </h3>
-              <p class="section-choose-us-2__text">
-                <svg width="20" height="20">
-                  <use href="images/sprite.svg#icon-calendar"></use>
-                </svg>
-                July 8, 2018
-                <svg width="20" height="20">
-                  <use href="images/sprite.svg#icon-clock"></use>
-                </svg>
-                5:00pm - 7:00pm
-                <svg width="20" height="20">
-                  <use href="images/sprite.svg#icon-map"></use>
-                </svg>
-                United States
+            <li class="choose__list-item">
+              <svg width="43" height="53">
+                <use href="images/sprite.svg#icon-affordability"></use>
+              </svg>
+              <h3 class="choose__list-item-title">Affordability</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed. A
+                bank is a financial institution accepts deposits from public and
+                creates credit.
               </p>
             </li>
-            <li>
-              <h3 class="section-choose-us-2__title">
-                International Conference on Bussiness
-              </h3>
-              <p class="section-choose-us-2__text">
-                <svg width="20" height="20">
-                  <use href="images/sprite.svg#icon-calendar"></use>
-                </svg>
-                July 8, 2018
-                <svg width="20" height="20">
-                  <use href="images/sprite.svg#icon-clock"></use>
-                </svg>
-                5:00pm - 7:00pm
-                <svg width="20" height="20">
-                  <use href="images/sprite.svg#icon-map"></use>
-                </svg>
-                United States
+            <li class="choose__list-item">
+              <svg width="43" height="53">
+                <use href="images/sprite.svg#icon-social"></use>
+              </svg>
+              <h3 class="choose__list-item-title">Social</h3>
+              <p>
+                A bank is a financial institution accepts deposits from public
+                and creates credit.
               </p>
             </li>
           </ul>
-        </div>
-        <div>
-          <p class="section-choose-us-2__title-featured">FEATURED</p>
-          <p>
-            <span class="section-choose-us-2__days">$213</span>
-            <span>Days</span>
-            <span class="section-choose-us-2__hours">23 </span>
-            <span>Hours</span>
-            <span class="section-choose-us-2__min">59 </span> <span>Min</span>
-          </p>
+        </section>
 
-          <div>
-            <h3 class="section-choose-us-2__title">
-              International Conference on Bussiness
-            </h3>
-            <p class="section-choose-us-2__text">
-              <svg width="20" height="20">
-                <use href="images/sprite.svg#icon-calendar"></use>
-              </svg>
-              July 8, 2018
-              <svg width="20" height="20">
-                <use href="images/sprite.svg#icon-clock"></use>
-              </svg>
-              5:00pm - 7:00pm
-              <svg width="20" height="20">
-                <use href="images/sprite.svg#icon-map"></use>
-              </svg>
-              United States
-            </p>
+        <!-- section 2 - 2000+ Online courses -->
+        <section class="section-courses">
+          <div class="section-courses__description">
+            <h4 class="section-courses__header">
+              <a class="section-courses__link" href="#">MOST POPULAR COURSES</a>
+            </h4>
+            <h2 class="section-title">2000+ Online courses</h2>
           </div>
-          <a class="btn btn-blue btn-5" href="#">Become a Sponsor</a>
-        </div>
-      </section>
+          <img src="images/arrow-circle-left.png" width="40" alt="arrow left" />
+          <ul class="section-courses__list">
+            <li class="section-courses__list-item">
+              <img
+                src="images/mentor-design.png"
+                width="48"
+                alt="mentor of design"
+              />
+              <h4 class="section-courses__header">DESIGN</h4>
+              <h3 class="section-courses__title">Learn Photoshop title</h3>
+              <hr />
+              <div>
+                <span class="section-courses__new-price">$260</span>
+                <span class="section-courses__old-price">$360</span>
+                <span>⭐⭐⭐⭐(4)</span>
+              </div>
+            </li>
+            <li class="section-courses__list-item">
+              <img
+                src="images/mentor-marketing.png"
+                width="48"
+                alt="mentor of design"
+              />
+              <h4 class="section-courses__header">Marketing</h4>
+              <h3 class="section-courses__title">
+                Learn Photoshop title trun...
+              </h3>
+              <hr />
+              <div>
+                <span class="section-courses__new-price">$260</span>
+                <span class="section-courses__old-price">$360</span>
+                <span>⭐⭐⭐⭐(4)</span>
+              </div>
+            </li>
+            <li class="section-courses__list-item">
+              <img
+                src="images/mentor-web-design.png"
+                width="48"
+                alt="mentor of web-design"
+              />
+              <h4 class="section-courses__header">Web design</h4>
+              <h3 class="section-courses__title">Learn Photoshop</h3>
+              <hr />
+              <div>
+                <span class="section-courses__new-price">$260</span>
+                <span class="section-courses__old-price">$360</span>
+                <span>⭐⭐⭐⭐(4)</span>
+              </div>
+            </li>
+          </ul>
+          <img
+            src="images/arrow-circle-right.png"
+            width="40"
+            alt="arrow right"
+          />
+        </section>
 
-      <!-- section 5 - Which one do you prefer? -->
-      <section class="section-preference">
-        <h2 class="section-title">
-          Which one do you prefer? <span class="header2-line"></span>
-        </h2>
-        <p>
-          Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-          veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-        </p>
-        <img src="images/arrow-circle-left.png" width="40" alt="arrow left" />
-        <ul class="section-preference__list">
-          <li class="section-preference__list-item">Graphic Design</li>
-          <li class="section-preference__list-item">Web Design</li>
-          <li class="section-preference__list-item">Marketing</li>
-          <li class="section-preference__list-item">Education</li>
-        </ul>
-        <img src="images/arrow-circle-right.png" width="40" alt="arrow right" />
-      </section>
+        <!-- section 3 - Take a tour  -->
+        <section class="section-take-tour">
+          <div>
+            <img
+              src="images/working-people.png"
+              width="730"
+              alt="working people"
+            />
+            <br />
+            <img src="images/circular-play-button.png" alt="" />
+          </div>
+          <div>
+            <h4 class="section-take-tour__header">
+              <a class="section-take-tour__link" href="#"
+                >UNIVERSOTY DESCRIPTION</a
+              >
+            </h4>
+            <h2 class="section-title">
+              Take a tour <span class="header2-line"></span>
+            </h2>
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque
+            </p>
+            <p>
+              Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+              veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            </p>
+            <ul class="section-take-tour__list">
+              <li class="section-take-tour__list-item">
+                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                consectetur
+              </li>
+              <li class="section-take-tour__list-item">
+                Ut enim ad minima veniam, quis nostrum exercitationem ullam
+                corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                consequatur?
+              </li>
+            </ul>
+            <!-- <img src="images/circle.svg" width="32" alt="circle" /> -->
+            <div class="circle-whisper-blue"></div>
+            <!-- <img src="images/square.svg" width="40" alt="square" /> -->
+            <div class="square-white-gloss"></div>
+          </div>
+          <a class="btn btn-blue btn-4" href="#">Read more</a>
+        </section>
 
-      <!-- section 6 - Our great customers -->
-      <section class="section-customers">
-        <div>
-          <img src="images/img-our-great-customers.jpg" alt="" />
-        </div>
-        <div>
+        <!-- section 4 - Why choose us -->
+        <section class="section-choose-us-2">
+          <div>
+            <h2 class="section-title">
+              Shy shoose us? <span class="header2-line"></span>
+            </h2>
+            <ul>
+              <li>
+                <h3 class="section-choose-us-2__title">
+                  International Conference on Bussiness
+                </h3>
+                <p class="section-choose-us-2__text">
+                  <svg width="20" height="20">
+                    <use href="images/sprite.svg#icon-calendar"></use>
+                  </svg>
+                  July 8, 2018
+                  <svg width="20" height="20">
+                    <use href="images/sprite.svg#icon-clock"></use>
+                  </svg>
+                  5:00pm - 7:00pm
+                  <svg width="20" height="20">
+                    <use href="images/sprite.svg#icon-map"></use>
+                  </svg>
+                  United States
+                </p>
+              </li>
+              <li>
+                <h3 class="section-choose-us-2__title">
+                  International Conference on Bussiness
+                </h3>
+                <p class="section-choose-us-2__text">
+                  <svg width="20" height="20">
+                    <use href="images/sprite.svg#icon-calendar"></use>
+                  </svg>
+                  July 8, 2018
+                  <svg width="20" height="20">
+                    <use href="images/sprite.svg#icon-clock"></use>
+                  </svg>
+                  5:00pm - 7:00pm
+                  <svg width="20" height="20">
+                    <use href="images/sprite.svg#icon-map"></use>
+                  </svg>
+                  United States
+                </p>
+              </li>
+              <li>
+                <h3 class="section-choose-us-2__title">
+                  International Conference on Bussiness
+                </h3>
+                <p class="section-choose-us-2__text">
+                  <svg width="20" height="20">
+                    <use href="images/sprite.svg#icon-calendar"></use>
+                  </svg>
+                  July 8, 2018
+                  <svg width="20" height="20">
+                    <use href="images/sprite.svg#icon-clock"></use>
+                  </svg>
+                  5:00pm - 7:00pm
+                  <svg width="20" height="20">
+                    <use href="images/sprite.svg#icon-map"></use>
+                  </svg>
+                  United States
+                </p>
+              </li>
+              <li>
+                <h3 class="section-choose-us-2__title">
+                  International Conference on Bussiness
+                </h3>
+                <p class="section-choose-us-2__text">
+                  <svg width="20" height="20">
+                    <use href="images/sprite.svg#icon-calendar"></use>
+                  </svg>
+                  July 8, 2018
+                  <svg width="20" height="20">
+                    <use href="images/sprite.svg#icon-clock"></use>
+                  </svg>
+                  5:00pm - 7:00pm
+                  <svg width="20" height="20">
+                    <use href="images/sprite.svg#icon-map"></use>
+                  </svg>
+                  United States
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="section-choose-us-2__title-featured">FEATURED</p>
+            <p>
+              <span class="section-choose-us-2__days">$213</span>
+              <span>Days</span>
+              <span class="section-choose-us-2__hours">23 </span>
+              <span>Hours</span>
+              <span class="section-choose-us-2__min">59 </span> <span>Min</span>
+            </p>
+
+            <div>
+              <h3 class="section-choose-us-2__title">
+                International Conference on Bussiness
+              </h3>
+              <p class="section-choose-us-2__text">
+                <svg width="20" height="20">
+                  <use href="images/sprite.svg#icon-calendar"></use>
+                </svg>
+                July 8, 2018
+                <svg width="20" height="20">
+                  <use href="images/sprite.svg#icon-clock"></use>
+                </svg>
+                5:00pm - 7:00pm
+                <svg width="20" height="20">
+                  <use href="images/sprite.svg#icon-map"></use>
+                </svg>
+                United States
+              </p>
+            </div>
+            <a class="btn btn-blue btn-5" href="#">Become a Sponsor</a>
+          </div>
+        </section>
+
+        <!-- section 5 - Which one do you prefer? -->
+        <section class="section-preference">
           <h2 class="section-title">
-            Our great customers <span class="header2-line"></span>
+            Which one do you prefer? <span class="header2-line"></span>
           </h2>
-
-          <br />
-          <svg width="40" height="30">
-            <use href="images/sprite.svg#icon-commas"></use>
-          </svg>
-          <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque
-          </p>
           <p>
             Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
             veritatis et quasi architecto beatae vitae dicta sunt explicabo.
           </p>
-          <p class="section-customer__title">Stephanie Magion</p>
-          <ul class="section-customer__slider">
-            <li class="section-customer__slider-item"></li>
-            <li class="section-customer__slider-item"></li>
-            <li class="section-customer__slider-item"></li>
-            <li class="section-customer__slider-item"></li>
-            <li class="section-customer__slider-item"></li>
+          <img src="images/arrow-circle-left.png" width="40" alt="arrow left" />
+          <ul class="section-preference__list">
+            <li class="section-preference__list-item">Graphic Design</li>
+            <li class="section-preference__list-item">Web Design</li>
+            <li class="section-preference__list-item">Marketing</li>
+            <li class="section-preference__list-item">Education</li>
           </ul>
-        </div>
-      </section>
+          <img
+            src="images/arrow-circle-right.png"
+            width="40"
+            alt="arrow right"
+          />
+        </section>
 
-      <!-- section 7 - Ready to get started? -->
-      <section class="section-start">
-        <div>
-          <p>IT’S FAST, FREE AND VERY EASY!</p>
-          <h2 class="section-title section-title-green">
-            Ready to get started?
-          </h2>
-          <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque
-          </p>
-          <p>
-            Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-            veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-          </p>
-          <a class="btn btn-light-green" href="#form">Apply Now</a>
-          <a class="btn btn-transparent" href="#">Request Service</a>
-        </div>
-        <div>
-          <h3 class="section-start__title">
-            <svg width="24" height="24">
-              <use href="images/sprite.svg#icon-quick-link"></use>
+        <!-- section 6 - Our great customers -->
+        <section class="section-customers">
+          <div>
+            <img src="images/img-our-great-customers.jpg" alt="" />
+          </div>
+          <div>
+            <h2 class="section-title">
+              Our great customers <span class="header2-line"></span>
+            </h2>
+
+            <br />
+            <svg width="40" height="30">
+              <use href="images/sprite.svg#icon-commas"></use>
             </svg>
-            Quick Link
-          </h3>
-          <ul class="section-start__list">
-            <li class="section-start__list-item">
-              <svg width="24" height="24">
-                <use href="images/sprite.svg#icon-tuition-and-fees"></use>
-              </svg>
-              Tution and Fees
-            </li>
-            <li class="section-start__list-item">
-              <svg width="24" height="24">
-                <use
-                  href="images/sprite.svg#icon-review-and-rating"
-                  fill="black"
-                ></use>
-              </svg>
-              Review & Rating
-            </li>
-            <li class="section-start__list-item">
-              <svg width="24" height="24">
-                <use href="images/sprite.svg#icon-university-facilities"></use>
-              </svg>
-              Universoty Facilities
-            </li>
-            <li class="section-start__list-item">
-              <svg width="24" height="24">
-                <use href="images/sprite.svg#icon-community-qa"></use>
-              </svg>
-              Community Q&A
-            </li>
-          </ul>
-        </div>
-      </section>
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque
+            </p>
+            <p>
+              Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+              veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            </p>
+            <p class="section-customer__title">Stephanie Magion</p>
+            <ul class="section-customer__slider">
+              <li class="section-customer__slider-item"></li>
+              <li class="section-customer__slider-item"></li>
+              <li class="section-customer__slider-item"></li>
+              <li class="section-customer__slider-item"></li>
+              <li class="section-customer__slider-item"></li>
+            </ul>
+          </div>
+        </section>
 
-      <!-- section 8 - Latest Blog -->
-      <section class="section-blog">
-        <h2 class="section-title">
-          Latest Blog <span class="header2-line"></span>
-        </h2>
-        <ul class="section-blog__list">
-          <li class="section-blog__list-item">
-            <h4 class="section-blog__header">DESIGN</h4>
-            <img
-              src="images/latest-blog-image-1.jpg"
-              width="328"
-              alt="working at laptop"
-            />
-            <br />
-            <img
-              src="images/mentor-design.png"
-              width="48"
-              alt="mentor of design"
-            />
-            <h3 class="section-blog__title">
-              International Conference on Bussiness
+        <!-- section 7 - Ready to get started? -->
+        <section class="section-start">
+          <div>
+            <p>IT’S FAST, FREE AND VERY EASY!</p>
+            <h2 class="section-title section-title-green">
+              Ready to get started?
+            </h2>
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque
+            </p>
+            <p>
+              Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+              veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            </p>
+            <a class="btn btn-light-green" href="#form">Apply Now</a>
+            <a class="btn btn-transparent" href="#">Request Service</a>
+          </div>
+          <div>
+            <h3 class="section-start__title">
+              <svg width="24" height="24">
+                <use href="images/sprite.svg#icon-quick-link"></use>
+              </svg>
+              Quick Link
             </h3>
-            <p class="section-blog__text">Read Now</p>
-          </li>
-          <li class="section-blog__list-item">
-            <h4 class="section-blog__header">DESIGN</h4>
-            <img
-              src="images/latest-blog-image-2.jpg"
-              width="328"
-              alt="working at laptop"
-            />
-            <br />
-            <img
-              src="images/mentor-marketing.png"
-              width="48"
-              alt="mentor of design"
-            />
-            <h3 class="section-blog__title">
-              International Conference on Bussiness
-            </h3>
-            <p class="section-blog__text">Read Now</p>
-          </li>
-        </ul>
-        <div>
-          <ul class="section-blog__number-slider">
-            <li class="section-blog__number-slider-item">1</li>
-            <li class="section-blog__number-slider-item">2</li>
-            <li class="section-blog__number-slider-item">3</li>
-            <li class="section-blog__number-slider-item">4</li>
-            <li class="section-blog__number-slider-item">5</li>
-          </ul>
-        </div>
-      </section>
+            <ul class="section-start__list">
+              <li class="section-start__list-item">
+                <svg width="24" height="24">
+                  <use href="images/sprite.svg#icon-tuition-and-fees"></use>
+                </svg>
+                Tution and Fees
+              </li>
+              <li class="section-start__list-item">
+                <svg width="24" height="24">
+                  <use
+                    href="images/sprite.svg#icon-review-and-rating"
+                    fill="black"
+                  ></use>
+                </svg>
+                Review & Rating
+              </li>
+              <li class="section-start__list-item">
+                <svg width="24" height="24">
+                  <use
+                    href="images/sprite.svg#icon-university-facilities"
+                  ></use>
+                </svg>
+                Universoty Facilities
+              </li>
+              <li class="section-start__list-item">
+                <svg width="24" height="24">
+                  <use href="images/sprite.svg#icon-community-qa"></use>
+                </svg>
+                Community Q&A
+              </li>
+            </ul>
+          </div>
+        </section>
 
-      <!-- form -->
-      <form class="form" id="form">
-        <input class="form__input" type="text" placeholder="Name Surname" />
-        <input class="form__input" type="text" placeholder="Phone" />
-        <input
-          class="form__input"
-          type="text"
-          placeholder="Enter your email..."
-        />
-        <button class="button" type="submit">Send</button>
-      </form>
-    </main>
-    <!-- footer section -->
-    <footer class="footer">
-      <div>
-        <a class="header__image" href="">
-          <svg width="54" height="24">
-            <use href="images/sprite.svg#icon-logo-union"></use>
-          </svg>
-        </a>
-        <div>
-          <h3 class="footer__title">Company</h3>
-          <ul class="footer__list">
-            <li class="footer__list-item">
-              <a class="footer__list-item-link" href="">About Company</a>
+        <!-- section 8 - Latest Blog -->
+        <section class="section-blog">
+          <h2 class="section-title">
+            Latest Blog <span class="header2-line"></span>
+          </h2>
+          <ul class="section-blog__list">
+            <li class="section-blog__list-item">
+              <h4 class="section-blog__header">DESIGN</h4>
+              <img
+                src="images/latest-blog-image-1.jpg"
+                width="328"
+                alt="working at laptop"
+              />
+              <br />
+              <img
+                src="images/mentor-design.png"
+                width="48"
+                alt="mentor of design"
+              />
+              <h3 class="section-blog__title">
+                International Conference on Bussiness
+              </h3>
+              <p class="section-blog__text">Read Now</p>
             </li>
-            <li class="footer__list-item">
-              <a class="footer__list-item-link" href="">Feature Course</a>
-            </li>
-            <li class="footer__list-item">
-              <a class="footer__list-item-link" href="">Careers</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="footer__title">Help Links</h3>
-          <ul class="footer__list">
-            <li class="footer__list-item">
-              <a class="footer__list-item-link" href="">Student Support</a>
-            </li>
-            <li class="footer__list-item">
-              <a class="footer__list-item-link" href="">Course Policy</a>
-            </li>
-            <li class="footer__list-item">
-              <a class="footer__list-item-link" href="">Register Key</a>
+            <li class="section-blog__list-item">
+              <h4 class="section-blog__header">DESIGN</h4>
+              <img
+                src="images/latest-blog-image-2.jpg"
+                width="328"
+                alt="working at laptop"
+              />
+              <br />
+              <img
+                src="images/mentor-marketing.png"
+                width="48"
+                alt="mentor of design"
+              />
+              <h3 class="section-blog__title">
+                International Conference on Bussiness
+              </h3>
+              <p class="section-blog__text">Read Now</p>
             </li>
           </ul>
-        </div>
-        <div>
-          <h3 class="footer__title">Course</h3>
-          <ul class="footer__list">
-            <li class="footer__list-item">
-              <a class="footer__list-item-link" href="">Wordpres</a>
-            </li>
-            <li class="footer__list-item">
-              <a class="footer__list-item-link" href="">Photography</a>
-            </li>
-            <li class="footer__list-item">
-              <a class="footer__list-item-link" href="">Learning English</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="footer__title">Social Media</h3>
-          <ul class="footer__list">
-            <li class="footer__list-item">
-              <a class="footer__list-item-link" href="https://www.facebook.com/"
-                ><img src="images/facebook.svg" width="24" alt="facebook"
-              /></a>
-            </li>
-            <li class="footer__list-item">
-              <a
-                class="footer__list-item-link"
-                href="https://www.instagram.com/"
-                ><img src="images/instagram.svg" width="24" alt="instagram"
-              /></a>
-            </li>
-            <li class="footer__list-item">
-              <a class="footer__list-item-link" href="https://twitter.com/"
-                ><img src="images/twitter.svg" width="24" alt="twitter"
-              /></a>
-            </li>
-            <li class="footer__list-item">
-              <a class="footer__list-item-link" href="https://www.youtube.com/"
-                ><img src="images/youtube.svg" width="24" alt="youtube"
-              /></a>
-            </li>
-          </ul>
-        </div>
-      </div>
+          <div>
+            <ul class="section-blog__number-slider">
+              <li class="section-blog__number-slider-item">1</li>
+              <li class="section-blog__number-slider-item">2</li>
+              <li class="section-blog__number-slider-item">3</li>
+              <li class="section-blog__number-slider-item">4</li>
+              <li class="section-blog__number-slider-item">5</li>
+            </ul>
+          </div>
+        </section>
 
-      <hr />
+        <!-- form -->
+        <form class="form" id="form">
+          <input class="form__input" type="text" placeholder="Name Surname" />
+          <input class="form__input" type="text" placeholder="Phone" />
+          <input
+            class="form__input"
+            type="text"
+            placeholder="Enter your email..."
+          />
+          <button class="button" type="submit">Send</button>
+        </form>
+      </main>
+      <!-- footer section -->
+      <footer class="footer">
+        <div>
+          <a class="header__image" href="">
+            <svg width="54" height="24">
+              <use href="images/sprite.svg#icon-logo-union"></use>
+            </svg>
+          </a>
+          <div>
+            <h3 class="footer__title">Company</h3>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a class="footer__list-item-link" href="">About Company</a>
+              </li>
+              <li class="footer__list-item">
+                <a class="footer__list-item-link" href="">Feature Course</a>
+              </li>
+              <li class="footer__list-item">
+                <a class="footer__list-item-link" href="">Careers</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer__title">Help Links</h3>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a class="footer__list-item-link" href="">Student Support</a>
+              </li>
+              <li class="footer__list-item">
+                <a class="footer__list-item-link" href="">Course Policy</a>
+              </li>
+              <li class="footer__list-item">
+                <a class="footer__list-item-link" href="">Register Key</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer__title">Course</h3>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a class="footer__list-item-link" href="">Wordpres</a>
+              </li>
+              <li class="footer__list-item">
+                <a class="footer__list-item-link" href="">Photography</a>
+              </li>
+              <li class="footer__list-item">
+                <a class="footer__list-item-link" href="">Learning English</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer__title">Social Media</h3>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a
+                  class="footer__list-item-link"
+                  href="https://www.facebook.com/"
+                  ><img src="images/facebook.svg" width="24" alt="facebook"
+                /></a>
+              </li>
+              <li class="footer__list-item">
+                <a
+                  class="footer__list-item-link"
+                  href="https://www.instagram.com/"
+                  ><img src="images/instagram.svg" width="24" alt="instagram"
+                /></a>
+              </li>
+              <li class="footer__list-item">
+                <a class="footer__list-item-link" href="https://twitter.com/"
+                  ><img src="images/twitter.svg" width="24" alt="twitter"
+                /></a>
+              </li>
+              <li class="footer__list-item">
+                <a
+                  class="footer__list-item-link"
+                  href="https://www.youtube.com/"
+                  ><img src="images/youtube.svg" width="24" alt="youtube"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-      <div class="footer__additonal-info">
-        <p class="footer__left-text">All rights Reserved</p>
-        <ul class="footer__nav">
-          <li class="footer__nav-item">
-            <a class="footer__nav-item-link" href="">About company</a>
-          </li>
-          <li class="footer__nav-item">
-            <a class="footer__nav-item-link" href="">Privacy Policy</a>
-          </li>
-          <li class="footer__nav-item">
-            <a class="footer__nav-item-link" href="">Help Center</a>
-          </li>
-          <li class="footer__nav-item">
-            <a class="footer__nav-item-link" href="">Terms</a>
-          </li>
-          <li class="footer__nav-item">
-            <a class="footer__nav-item-link" href="">Site map</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
+        <hr />
+
+        <div class="footer__additonal-info">
+          <p class="footer__left-text">All rights Reserved</p>
+          <ul class="footer__nav">
+            <li class="footer__nav-item">
+              <a class="footer__nav-item-link" href="">About company</a>
+            </li>
+            <li class="footer__nav-item">
+              <a class="footer__nav-item-link" href="">Privacy Policy</a>
+            </li>
+            <li class="footer__nav-item">
+              <a class="footer__nav-item-link" href="">Help Center</a>
+            </li>
+            <li class="footer__nav-item">
+              <a class="footer__nav-item-link" href="">Terms</a>
+            </li>
+            <li class="footer__nav-item">
+              <a class="footer__nav-item-link" href="">Site map</a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
