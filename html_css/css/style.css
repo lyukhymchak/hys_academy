@@ -69,29 +69,40 @@ body {
   min-width: 375px;
   width: 375px;
   margin: 0 auto;
+  padding: 0 24px;
   background-image: url("../images/background-top-2.svg"),
     url("../images/background-top-1.svg");
   background-position: right top, right top;
   background-size: 357px, 375px;
   background-repeat: no-repeat, no-repeat;
+  /* border: 1px solid blue; */
 }
 
-.header__image:hover {
-  --color2: var(--black-color);
-}
 .header__image,
 .hamburger-menu {
   display: inline;
+}
+.header__image:hover {
+  --color2: var(--black-color);
+}
+.header__image {
+  margin-left: 12px;
+}
+.hamburger-menu-link {
+  margin-top: 32px;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
+  z-index: 1000;
   font-size: 12px;
   line-height: 1.33;
   padding-top: 36px;
-  margin-left: 24px;
-  margin-right: 24px;
+}
+.navbar-left,
+.navbar-right {
+  z-index: 2;
 }
 
 .navbar__list {
@@ -104,17 +115,18 @@ body {
 }
 
 .section-education__block-1 {
-  margin-left: 24px;
-  margin-right: 24px;
   margin-bottom: 32px;
   order: 2;
 }
 .section-education__block-2 {
+  z-index: 1;
+  margin-left: -24px;
+  margin-right: -24px;
+  margin-top: -24px;
   order: 1;
 }
 .section-education__block-3 {
-  margin-left: 24px;
-  margin-bottom: 80px;
+  margin-bottom: 86px;
   order: 3;
 }
 
@@ -123,6 +135,11 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   padding-left: 0;
+  margin-right: -24px;
+  margin-bottom: 0;
+}
+.logos__list-item {
+  margin-bottom: 22px;
 }
 
 .navbar__list,
@@ -138,6 +155,7 @@ body {
 .footer__list,
 .footer__nav {
   list-style: none;
+  padding: 0;
 }
 
 .navbar__list-link {
@@ -199,7 +217,7 @@ body {
 }
 .btn-2 {
   width: 116px;
-  margin-right: 24px;
+  margin: 40px 24px 40px 0;
 }
 .btn-3 {
   width: 119px;
@@ -216,11 +234,11 @@ body {
   font-size: 36px;
   line-height: 1.22;
   color: var(--heading-color);
-  margin-top: 10px;
-  margin-bottom: 32px;
 }
 .section-education-description {
+  margin-top: 32px;
   margin-bottom: 40px;
+  padding-right: 30px;
 }
 .section-title {
   font-weight: 700;
@@ -229,6 +247,13 @@ body {
   color: var(--heading-color);
 }
 
+.title-with-line::after {
+  content: "";
+  display: inline-block;
+  width: 60px;
+  height: 2px;
+  background-color: var(--blue-button-color);
+}
 .choose__list-item-title,
 .section-choose-us-2__title,
 .section-blog__title {
@@ -238,8 +263,15 @@ body {
   color: var(--black-color);
 }
 
-.section-courses__description {
+.choose__list-item {
   text-align: center;
+  margin-bottom: 20px;
+}
+.choose__list-item-title {
+  margin-top: 20px;
+}
+.choose__list {
+  margin-top: 56px;
 }
 
 .section-courses__header,
