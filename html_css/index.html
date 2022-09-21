@@ -19,14 +19,11 @@
       <header class="header">
         <nav class="navbar">
           <div class="navbar-left">
-            <a class="hamburger-menu-link" href=""
-              ><img
-                class="hamburger-menu"
-                src="images/hamburger-menu.svg"
-                width="24"
-                height="24"
-                alt="hamburger menu"
-            /></a>
+            <a class="hamburger-menu-link" href="">
+              <svg width="24" height="24">
+                <use href="images/sprite-plus.svg#icon-hamburger-menu"></use>
+              </svg>
+            </a>
             <a class="header__image" href="">
               <svg width="54" height="24">
                 <use href="images/sprite.svg#icon-logo-union"></use>
@@ -55,7 +52,7 @@
       <!-- main section -->
       <main class="main">
         <!-- section 0 - Education is the most powerfull weapon -->
-        <section>
+        <section class="section">
           <div class="section-education">
             <div class="section-education__block-1">
               <h1 class="section-education__header">
@@ -109,7 +106,7 @@
         </section>
 
         <!-- section 1 - Why choose us? -->
-        <section class="section-why-choose-us">
+        <section class="section section-why-choose-us">
           <h2 class="section-title title-with-line">Shy shoose us?</h2>
           <ul class="choose__list">
             <li class="choose__list-item">
@@ -117,7 +114,7 @@
                 <use href="images/sprite.svg#icon-certificate"></use>
               </svg>
               <h3 class="choose__list-item-title">Certificate</h3>
-              <p>
+              <p class="choose__list-item-text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod.A bank is a financial institution accepts deposits from
                 public and creates credit.
@@ -128,7 +125,7 @@
                 <use href="images/sprite.svg#icon-life-programs"></use>
               </svg>
               <h3 class="choose__list-item-title">Life programs</h3>
-              <p>
+              <p class="choose__list-item-text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                 institution accepts deposits from public
               </p>
@@ -138,7 +135,7 @@
                 <use href="images/sprite.svg#icon-affordability"></use>
               </svg>
               <h3 class="choose__list-item-title">Affordability</h3>
-              <p>
+              <p class="choose__list-item-text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed. A
                 bank is a financial institution accepts deposits from public and
                 creates credit.
@@ -149,7 +146,7 @@
                 <use href="images/sprite.svg#icon-social"></use>
               </svg>
               <h3 class="choose__list-item-title">Social</h3>
-              <p>
+              <p class="choose__list-item-text">
                 A bank is a financial institution accepts deposits from public
                 and creates credit.
               </p>
@@ -158,72 +155,77 @@
         </section>
 
         <!-- section 2 - 2000+ Online courses -->
-        <section class="section-courses">
+        <section class="section section-courses">
           <div class="section-courses__description">
             <h4 class="section-courses__header">
               <a class="section-courses__link" href="#">MOST POPULAR COURSES</a>
             </h4>
             <h2 class="section-title">2000+ Online courses</h2>
           </div>
-          <img src="images/arrow-circle-left.png" width="40" alt="arrow left" />
-          <ul class="section-courses__list">
-            <li class="section-courses__list-item">
-              <img
-                src="images/mentor-design.png"
-                width="48"
-                alt="mentor of design"
-              />
-              <h4 class="section-courses__header">DESIGN</h4>
-              <h3 class="section-courses__title">Learn Photoshop title</h3>
-              <hr />
-              <div>
-                <span class="section-courses__new-price">$260</span>
-                <span class="section-courses__old-price">$360</span>
-                <span>⭐⭐⭐⭐(4)</span>
-              </div>
-            </li>
-            <li class="section-courses__list-item">
-              <img
-                src="images/mentor-marketing.png"
-                width="48"
-                alt="mentor of design"
-              />
-              <h4 class="section-courses__header">Marketing</h4>
-              <h3 class="section-courses__title">
-                Learn Photoshop title trun...
-              </h3>
-              <hr />
-              <div>
-                <span class="section-courses__new-price">$260</span>
-                <span class="section-courses__old-price">$360</span>
-                <span>⭐⭐⭐⭐(4)</span>
-              </div>
-            </li>
-            <li class="section-courses__list-item">
-              <img
-                src="images/mentor-web-design.png"
-                width="48"
-                alt="mentor of web-design"
-              />
-              <h4 class="section-courses__header">Web design</h4>
-              <h3 class="section-courses__title">Learn Photoshop</h3>
-              <hr />
-              <div>
-                <span class="section-courses__new-price">$260</span>
-                <span class="section-courses__old-price">$360</span>
-                <span>⭐⭐⭐⭐(4)</span>
-              </div>
-            </li>
-          </ul>
-          <img
-            src="images/arrow-circle-right.png"
-            width="40"
-            alt="arrow right"
-          />
+          <div class="courses-carousel">
+            <svg width="40" height="40">
+              <use href="images/sprite-plus.svg#icon-slide-left"></use>
+            </svg>
+            <ul class="section-courses__list">
+              <li class="section-courses__list-item section-courser__course-1">
+                <img
+                  class="mentor-design"
+                  src="images/mentor-design.png"
+                  width="48"
+                  alt="mentor of design"
+                />
+                <h4 class="section-courses__header">DESIGN</h4>
+                <h3 class="section-courses__title">Learn Photoshop title</h3>
+                <hr class="section-courses__line" />
+                <div class="section-courses__prices">
+                  <div>
+                    <span class="section-courses__new-price">$260</span>
+                    <span class="section-courses__old-price">$360</span>
+                  </div>
+                  <span>⭐⭐⭐⭐(4)</span>
+                </div>
+              </li>
+              <li class="section-courses__list-item section-courser__course-2">
+                <img
+                  src="images/mentor-marketing.png"
+                  width="48"
+                  alt="mentor of design"
+                />
+                <h4 class="section-courses__header">Marketing</h4>
+                <h3 class="section-courses__title">
+                  Learn Photoshop title trun...
+                </h3>
+                <hr />
+                <div>
+                  <span class="section-courses__new-price">$260</span>
+                  <span class="section-courses__old-price">$360</span>
+                  <span>⭐⭐⭐⭐(4)</span>
+                </div>
+              </li>
+              <li class="section-courses__list-item section-courser__course-3">
+                <img
+                  src="images/mentor-web-design.png"
+                  width="48"
+                  alt="mentor of web-design"
+                />
+                <h4 class="section-courses__header">Web design</h4>
+                <h3 class="section-courses__title">Learn Photoshop</h3>
+                <hr />
+                <div>
+                  <span class="section-courses__new-price">$260</span>
+                  <span class="section-courses__old-price">$360</span>
+                  <span>⭐⭐⭐⭐(4)</span>
+                </div>
+              </li>
+            </ul>
+            <svg width="40" height="40">
+              <use href="images/sprite-plus.svg#icon-slide-right"></use>
+            </svg>
+          </div>
         </section>
 
         <!-- section 3 - Take a tour  -->
-        <section class="section-take-tour">
+        <section class="section section-take-tour">
           <div>
             <img
               src="images/working-people.png"
@@ -268,7 +270,7 @@
         </section>
 
         <!-- section 4 - Why choose us -->
-        <section class="section-choose-us-2">
+        <section class="section section-choose-us-2">
           <div>
             <h2 class="section-title title-with-line">Shy shoose us?</h2>
             <ul>
@@ -384,7 +386,7 @@
         </section>
 
         <!-- section 5 - Which one do you prefer? -->
-        <section class="section-preference">
+        <section class="section section-preference">
           <h2 class="section-title title-with-line">
             Which one do you prefer?
           </h2>
@@ -407,7 +409,7 @@
         </section>
 
         <!-- section 6 - Our great customers -->
-        <section class="section-customers">
+        <section class="section section-customers">
           <div>
             <img src="images/img-our-great-customers.jpg" alt="" />
           </div>
@@ -438,7 +440,7 @@
         </section>
 
         <!-- section 7 - Ready to get started? -->
-        <section class="section-start">
+        <section class="section section-start">
           <div>
             <p>IT’S FAST, FREE AND VERY EASY!</p>
             <h2 class="section-title section-title-green">
@@ -497,7 +499,7 @@
         </section>
 
         <!-- section 8 - Latest Blog -->
-        <section class="section-blog">
+        <section class="section section-blog">
           <h2 class="section-title title-with-line">Latest Blog</h2>
           <ul class="section-blog__list">
             <li class="section-blog__list-item">
