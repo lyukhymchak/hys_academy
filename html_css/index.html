@@ -499,11 +499,21 @@
             </p>
             <p class="section-customer__title">Stephanie Magion</p>
             <ul class="section-customer__slider">
-              <li class="section-customer__slider-item"></li>
-              <li class="section-customer__slider-item"></li>
-              <li class="section-customer__slider-item"></li>
-              <li class="section-customer__slider-item"></li>
-              <li class="section-customer__slider-item"></li>
+              <li class="section-customer__slider-item">
+                <button class="btn-slider-circle"></button>
+              </li>
+              <li class="section-customer__slider-item">
+                <button class="btn-slider-circle"></button>
+              </li>
+              <li class="section-customer__slider-item">
+                <button class="btn-slider-circle" disabled></button>
+              </li>
+              <li class="section-customer__slider-item">
+                <button class="btn-slider-circle"></button>
+              </li>
+              <li class="section-customer__slider-item">
+                <button class="btn-slider-circle"></button>
+              </li>
             </ul>
           </div>
         </section>
@@ -592,49 +602,77 @@
           <h2 class="section-title title-with-line">Latest Blog</h2>
           <ul class="section-blog__list">
             <li class="section-blog__list-item">
-              <h4 class="section-blog__header">DESIGN</h4>
-              <img
-                src="images/latest-blog-image-1.jpg"
-                width="328"
-                alt="working at laptop"
-              />
-              <br />
-              <img
-                src="images/mentor-design.png"
-                width="48"
-                alt="mentor of design"
-              />
-              <h3 class="section-blog__title">
-                International Conference on Bussiness
-              </h3>
-              <p class="section-blog__text">Read Now</p>
+              <div class="section-blog__block">
+                <h4 class="section-blog__header">DESIGN</h4>
+                <img
+                  class="section-blog__image"
+                  src="images/latest-blog-image-1.jpg"
+                  width="328"
+                  alt="working at laptop"
+                />
+                <div class="section-blog__block-bottom">
+                  <div>
+                    <img
+                      src="images/mentor-design.png"
+                      width="48"
+                      alt="mentor of design"
+                    />
+                  </div>
+                  <div>
+                    <h3 class="section-blog__title">
+                      International Conference on Bussiness
+                    </h3>
+                    <p class="section-blog__text">Read Now</p>
+                  </div>
+                </div>
+              </div>
             </li>
             <li class="section-blog__list-item">
-              <h4 class="section-blog__header">DESIGN</h4>
-              <img
-                src="images/latest-blog-image-2.jpg"
-                width="328"
-                alt="working at laptop"
-              />
-              <br />
-              <img
-                src="images/mentor-marketing.png"
-                width="48"
-                alt="mentor of design"
-              />
-              <h3 class="section-blog__title">
-                International Conference on Bussiness
-              </h3>
-              <p class="section-blog__text">Read Now</p>
+              <div class="section-blog__block">
+                <h4 class="section-blog__header">DESIGN</h4>
+                <img
+                  class="section-blog__image"
+                  src="images/latest-blog-image-2.jpg"
+                  width="328"
+                  alt="working at laptop"
+                />
+
+                <div class="section-blog__block-bottom">
+                  <div>
+                    <img
+                      class="section-blog__mentor-image"
+                      src="images/mentor-marketing.png"
+                      width="48"
+                      alt="mentor of design"
+                    />
+                  </div>
+                  <div>
+                    <h3 class="section-blog__title">
+                      International Conference on Bussiness
+                    </h3>
+                    <p class="section-blog__text">Read Now</p>
+                  </div>
+                </div>
+              </div>
             </li>
           </ul>
           <div>
             <ul class="section-blog__number-slider">
-              <li class="section-blog__number-slider-item">1</li>
-              <li class="section-blog__number-slider-item">2</li>
-              <li class="section-blog__number-slider-item">3</li>
-              <li class="section-blog__number-slider-item">4</li>
-              <li class="section-blog__number-slider-item">5</li>
+              <li class="section-blog__number-slider-item">
+                <button class="btn-slider">1</button>
+              </li>
+              <li class="section-blog__number-slider-item">
+                <button class="btn-slider">2</button>
+              </li>
+              <li class="section-blog__number-slider-item">
+                <button class="btn-slider" disabled>3</button>
+              </li>
+              <li class="section-blog__number-slider-item">
+                <button class="btn-slider">4</button>
+              </li>
+              <li class="section-blog__number-slider-item">
+                <button class="btn-slider">5</button>
+              </li>
             </ul>
           </div>
         </section>
@@ -703,7 +741,7 @@
           </div>
           <div>
             <h3 class="footer__title">Social Media</h3>
-            <ul class="footer__list">
+            <ul class="footer__list footer__list-social-media">
               <li class="footer__list-item">
                 <a
                   class="footer__list-item-link"
