@@ -167,7 +167,7 @@
               <use href="images/sprite-plus.svg#icon-slide-left"></use>
             </svg>
             <ul class="section-courses__list">
-              <li class="section-courses__list-item section-courser__course-1">
+              <li class="section-courses__list-item">
                 <img
                   class="mentor-design"
                   src="images/mentor-design.png"
@@ -185,7 +185,7 @@
                   <span>⭐⭐⭐⭐(4)</span>
                 </div>
               </li>
-              <li class="section-courses__list-item section-courser__course-2">
+              <li class="section-courses__list-item">
                 <img
                   src="images/mentor-marketing.png"
                   width="48"
@@ -202,7 +202,7 @@
                   <span>⭐⭐⭐⭐(4)</span>
                 </div>
               </li>
-              <li class="section-courses__list-item section-courser__course-3">
+              <li class="section-courses__list-item">
                 <img
                   src="images/mentor-web-design.png"
                   width="48"
@@ -272,8 +272,12 @@
 
         <!-- section 4 - Why choose us -->
         <section class="section section-choose-us-2">
-          <div>
-            <h2 class="section-title title-with-line">Shy shoose us?</h2>
+          <div class="section-choose-us-2__part-1">
+            <h2
+              class="section-title title-with-line section-choose-us-2__header"
+            >
+              Shy shoose us?
+            </h2>
             <ul class="section-choose-us-2__list">
               <li class="section-choose-us-2__list-item">
                 <h3 class="section-choose-us-2__title">
@@ -381,7 +385,8 @@
               </li>
             </ul>
           </div>
-          <div>
+          <div class="section-choose-us-2__part-2">
+            <div class="section-choose-us-2__background"></div>
             <p class="section-choose-us-2__title-featured">FEATURED</p>
             <div class="section-choose-us-2__time">
               <div>
@@ -414,7 +419,7 @@
                     <svg width="20" height="20">
                       <use href="images/sprite.svg#icon-clock"></use>
                     </svg>
-                    5:00pm - 7:00pm
+                    5pm - 7pm
                   </span>
                   <span class="section-choose-us-2__text-block">
                     <svg width="20" height="20">
@@ -434,32 +439,52 @@
           <h2 class="section-title title-with-line">
             Which one do you prefer?
           </h2>
-          <p>
+          <p class="section-preference__paragraf">
             Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
             veritatis et quasi architecto beatae vitae dicta sunt explicabo.
           </p>
-          <img src="images/arrow-circle-left.png" width="40" alt="arrow left" />
-          <ul class="section-preference__list">
-            <li class="section-preference__list-item">Graphic Design</li>
-            <li class="section-preference__list-item">Web Design</li>
-            <li class="section-preference__list-item">Marketing</li>
-            <li class="section-preference__list-item">Education</li>
-          </ul>
-          <img
-            src="images/arrow-circle-right.png"
-            width="40"
-            alt="arrow right"
-          />
+          <div class="preference-carousel">
+            <svg width="40" height="40">
+              <use href="images/sprite-plus.svg#icon-slide-left"></use>
+            </svg>
+            <ul class="section-preference__list">
+              <li class="section-preference__list-item">Graphic Design</li>
+              <li class="section-preference__list-item">Web Design</li>
+              <li class="section-preference__list-item">Marketing</li>
+              <li class="section-preference__list-item">Education</li>
+            </ul>
+            <svg width="40" height="40">
+              <use href="images/sprite-plus.svg#icon-slide-right"></use>
+            </svg>
+          </div>
         </section>
 
         <!-- section 6 - Our great customers -->
         <section class="section section-customers">
-          <div>
-            <img src="images/img-our-great-customers.jpg" alt="" />
+          <div class="section-customers__image">
+            <img
+              class="section-customers__image-1"
+              src="images/img-our-great-customers.jpg"
+              width="273"
+              alt=""
+            />
           </div>
-          <div>
+          <div class="section-customers__block">
             <h2 class="section-title title-with-line">Our great customers</h2>
-
+            <div class="section-customers__background-1">
+              <img
+                src="/html_css/images/background-green-ellipse.svg"
+                width="353"
+                alt="green ellipse"
+              />
+            </div>
+            <div class="section-customers__background-2">
+              <img
+                src="/html_css/images/background-green-shape.svg"
+                width="546"
+                alt="green shape"
+              />
+            </div>
             <br />
             <svg width="40" height="30">
               <use href="images/sprite.svg#icon-commas"></use>
@@ -485,60 +510,80 @@
 
         <!-- section 7 - Ready to get started? -->
         <section class="section section-start">
-          <div>
-            <p>IT’S FAST, FREE AND VERY EASY!</p>
-            <h2 class="section-title section-title-green">
-              Ready to get started?
-            </h2>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque
-            </p>
-            <p>
-              Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-              veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-            </p>
-            <a class="btn btn-light-green" href="#form">Apply Now</a>
-            <a class="btn btn-transparent" href="#">Request Service</a>
-          </div>
-          <div>
-            <h3 class="section-start__title">
-              <svg width="24" height="24">
-                <use href="images/sprite.svg#icon-quick-link"></use>
-              </svg>
-              Quick Link
-            </h3>
-            <ul class="section-start__list">
-              <li class="section-start__list-item">
+          <div class="section-start__container">
+            <div>
+              <p class="section-start__title-small">
+                IT’S FAST, FREE AND VERY EASY!
+              </p>
+              <h2
+                class="section-title section-start__header section-title-green"
+              >
+                Ready to get started?
+              </h2>
+              <div class="section-start__text">
+                <p class="section-start__paragraf">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque
+                </p>
+                <p>
+                  Laudantium, totam rem aperiam, eaque ipsa quae ab illo
+                  inventore veritatis et quasi architecto beatae vitae dicta
+                  sunt explicabo.
+                </p>
+              </div>
+              <a class="btn btn-light-green btn-6" href="#form">Apply Now</a>
+              <a class="btn btn-transparent btn-7" href="#">Request Service</a>
+            </div>
+            <div>
+              <h3 class="section-start__title">
                 <svg width="24" height="24">
-                  <use href="images/sprite.svg#icon-tuition-and-fees"></use>
+                  <use href="images/sprite.svg#icon-quick-link"></use>
                 </svg>
-                Tution and Fees
-              </li>
-              <li class="section-start__list-item">
-                <svg width="24" height="24">
-                  <use
-                    href="images/sprite.svg#icon-review-and-rating"
-                    fill="black"
-                  ></use>
-                </svg>
-                Review & Rating
-              </li>
-              <li class="section-start__list-item">
-                <svg width="24" height="24">
-                  <use
-                    href="images/sprite.svg#icon-university-facilities"
-                  ></use>
-                </svg>
-                Universoty Facilities
-              </li>
-              <li class="section-start__list-item">
-                <svg width="24" height="24">
-                  <use href="images/sprite.svg#icon-community-qa"></use>
-                </svg>
-                Community Q&A
-              </li>
-            </ul>
+                Quick Link
+              </h3>
+              <ul class="section-start__list">
+                <li class="section-start__list-item">
+                  <div class="section-start__list-item-block">
+                    <svg width="24" height="24">
+                      <use href="images/sprite.svg#icon-tuition-and-fees"></use>
+                    </svg>
+                    Tution and Fees
+                  </div>
+                  <hr class="section-start__line" />
+                </li>
+                <li class="section-start__list-item">
+                  <div class="section-start__list-item-block">
+                    <svg width="24" height="24">
+                      <use
+                        href="images/sprite.svg#icon-review-and-rating"
+                      ></use>
+                    </svg>
+                    Review & Rating
+                  </div>
+                  <hr class="section-start__line" />
+                </li>
+                <li class="section-start__list-item">
+                  <div class="section-start__list-item-block">
+                    <svg width="24" height="24">
+                      <use
+                        href="images/sprite.svg#icon-university-facilities"
+                      ></use>
+                    </svg>
+                    Universoty Facilities
+                  </div>
+                  <hr class="section-start__line" />
+                </li>
+                <li class="section-start__list-item">
+                  <div class="section-start__list-item-block">
+                    <svg width="24" height="24">
+                      <use href="images/sprite.svg#icon-community-qa"></use>
+                    </svg>
+                    Community Q&A
+                  </div>
+                  <hr class="section-start__line" />
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
