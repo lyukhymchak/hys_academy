@@ -36,6 +36,7 @@
   --hours-color: #f0c41b;
   --min-color: #fe5f60;
   --error-color: #f15b5b;
+  --icon-color: #25282b;
 }
 
 body {
@@ -43,16 +44,20 @@ body {
   font-size: 14px;
   line-height: 1.57;
   color: var(--font-color);
-  min-width: 375px;
-  max-width: 768px;
-  margin: 0 auto;
-  padding: 0 24px;
+  background-color: var(--white-color);
+}
+.container {
   background-image: url("../images/background-top-2.svg"),
     url("../images/background-top-1.svg");
   background-position: right top, right top;
   background-size: 357px, 375px;
   background-repeat: no-repeat, no-repeat;
-  background-color: var(--white-color);
+
+  min-width: 375px;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 24px;
+  z-index: -10;
 }
 
 .navbar__list,
@@ -74,15 +79,13 @@ body {
 }
 
 .container__header {
+  /* margin-left: 24px;
+  margin-right: 24px; */
   /* position: fixed;
   width: 100%;
-  background-image: url("../images/background-top-2.svg"),
-    url("../images/background-top-1.svg");
-  background-position: right top, right top;
-  background-size: 357px, 375px;
-  background-repeat: no-repeat, no-repeat;
-  background-color: var(--white-color); */
+  top: 0; */
 }
+
 .logo,
 .hamburger-menu {
   display: inline;
@@ -230,6 +233,10 @@ body {
   background-image: url("../images/background-img-design.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+.section-courses__list-item:hover {
+  box-shadow: 0px 6px 20px rgba(27, 99, 240, 0.4);
+  border-radius: 8px;
 }
 
 .mentor {
@@ -499,7 +506,7 @@ body {
   mask-image: url(../images/background-green-ellipse.svg);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  background-color: #64be97;
+  background-color: var(--green-button-color);
   opacity: 0.4;
 }
 .section-customers__background-2 {
@@ -666,7 +673,7 @@ body {
 .btn-number-slider:active,
 .btn-number-slider-active {
   color: var(--blue-button-color);
-  border: 1px solid #64be97;
+  border: 1px solid var(--green-button-color);
 }
 
 .section-start__title-small {
@@ -846,7 +853,7 @@ body {
 .youtube {
   width: 24px;
   height: 24px;
-  background-color: #25282b;
+  background-color: var(--icon-color);
   -webkit-mask-image: url(../images/youtube.svg);
   mask-image: url(../images/youtube.svg);
   -webkit-mask-repeat: no-repeat;
@@ -859,7 +866,7 @@ body {
 .instagram {
   width: 24px;
   height: 24px;
-  background-color: #25282b;
+  background-color: var(--icon-color);
   -webkit-mask-image: url(../images/instagram.svg);
   mask-image: url(../images/instagram.svg);
   -webkit-mask-repeat: no-repeat;
@@ -872,7 +879,7 @@ body {
 .facebook {
   width: 24px;
   height: 24px;
-  background-color: #25282b;
+  background-color: var(--icon-color);
   -webkit-mask-image: url(../images/facebook.svg);
   mask-image: url(../images/facebook.svg);
   -webkit-mask-repeat: no-repeat;
@@ -885,7 +892,7 @@ body {
 .twitter {
   width: 24px;
   height: 24px;
-  background-color: #25282b;
+  background-color: var(--icon-color);
   -webkit-mask-image: url(../images/twitter.svg);
   mask-image: url(../images/twitter.svg);
   -webkit-mask-repeat: no-repeat;
@@ -896,12 +903,15 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  body {
+  .container {
     background-size: 740px 652px, 778px 652px;
     min-width: 768px;
     max-width: 1024px;
   }
 
+  .container__header {
+    /* background-size: 740px 652px, 778px 652px; */
+  }
   .hamburger-menu {
     display: none;
   }
@@ -909,8 +919,8 @@ body {
   .navbar-right {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    padding: 0px;
+    align-items: center;
+    /* padding: 0px; */
     gap: 40px;
   }
   .navbar__list {
@@ -918,7 +928,7 @@ body {
     flex-direction: row;
     margin: 12px;
     align-items: flex-end;
-    padding: 0px;
+    /* padding: 0px; */
     gap: 20px;
   }
   .navbar__list-link {
@@ -1008,7 +1018,7 @@ body {
 }
 
 @media screen and (min-width: 1440px) {
-  body {
+  .container {
     width: 1440px;
     max-width: 1440px;
   }
@@ -1069,12 +1079,16 @@ body {
   .container__section-take-tour {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    gap: 20px;
+    justify-content: flex-start;
+    gap: 87px;
   }
   .section-take-tour__image {
-    width: 50%;
-    background-color: linear-gradient(235.25deg, #ffffff 41.4%, #fafbff 60.76%);
+    width: 730px;
+    background-color: linear-gradient(
+      235.25deg,
+      var(--white-color) 41.4%,
+      #fafbff 60.76%
+    );
   }
   .section-take-tour__text {
     width: 415px;
