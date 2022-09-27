@@ -20,12 +20,12 @@
         <div class="container__header container_1024">
           <nav class="navbar">
             <div class="navbar-left">
-              <a class="hamburger-menu" href="">
+              <a class="hamburger-menu" href="#">
                 <svg width="24" height="24">
                   <use href="images/sprite-plus.svg#icon-hamburger-menu"></use>
                 </svg>
               </a>
-              <a class="logo header__logo" href="">
+              <a class="logo header__logo" href="#">
                 <svg width="54" height="24">
                   <use href="images/sprite.svg#icon-logo-union"></use>
                 </svg>
@@ -46,7 +46,7 @@
                   <a class="navbar__list-link" href="#">Degrees</a>
                 </li>
               </ul>
-              <div><a class="btn btn-blue btn-1" href="#">Explore</a></div>
+              <div><a class="btn btn-blue" href="#">Explore</a></div>
             </div>
           </nav>
         </div>
@@ -65,7 +65,7 @@
                 and creates credit. For all of your needs.
               </p>
               <a class="btn btn-blue btn-2" href="#">Read more</a>
-              <a class="btn btn-light-green btn-black-text btn-3" href="#form"
+              <a class="btn btn-light-green btn-black-text" href="#form"
                 >Get started</a
               >
             </div>
@@ -178,9 +178,9 @@
               </h2>
             </div>
             <div class="courses-carousel">
-              <svg width="40" height="40">
-                <use href="images/sprite-plus.svg#icon-slide-left"></use>
-              </svg>
+              <button class="btn-slider">
+                <div class="slider-left"></div>
+              </button>
               <ul class="section-courses__list">
                 <li class="section-courses__list-item">
                   <img
@@ -241,9 +241,9 @@
                   </div>
                 </li>
               </ul>
-              <svg width="40" height="40">
-                <use href="images/sprite-plus.svg#icon-slide-right"></use>
-              </svg>
+              <button class="btn-slider">
+                <div class="slider-right"></div>
+              </button>
             </div>
           </div>
         </section>
@@ -251,11 +251,9 @@
         <section class="section section-take-tour">
           <div class="container__section-take-tour container_1440">
             <div class="section-take-tour__image">
-              <svg class="circular-play-button" width="43" height="53">
-                <use
-                  href="images/sprite-plus.svg#icon-circular-play-button"
-                ></use>
-              </svg>
+              <div>
+                <button class="btn-play"><div class="play"></div></button>
+              </div>
             </div>
             <div class="section-take-tour__text">
               <h4 class="section-take-tour__header">
@@ -272,6 +270,7 @@
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque
               </p>
+              <br />
               <p>
                 Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
                 veritatis et quasi architecto beatae vitae dicta sunt explicabo.
@@ -287,11 +286,8 @@
                   consequatur?
                 </li>
               </ul>
-              <!-- <img src="images/circle.svg" width="32" alt="circle" /> -->
               <div class="circle-whisper-blue"></div>
-              <!-- <img src="images/square.svg" width="40" alt="square" /> -->
               <div class="square-white-gloss"></div>
-              <div class="background-rectangle"></div>
               <a class="btn btn-blue btn-4" href="#">Read more</a>
             </div>
           </div>
@@ -459,7 +455,7 @@
                   </div>
                 </div>
                 <div>
-                  <a class="btn btn-blue btn-5" href="#">Become a Sponsor</a>
+                  <a class="btn btn-blue" href="#">Become a Sponsor</a>
                 </div>
               </div>
             </div>
@@ -476,9 +472,9 @@
               veritatis et quasi architecto beatae vitae dicta sunt explicabo.
             </p>
             <div class="preference-carousel">
-              <svg width="40" height="40">
-                <use href="images/sprite-plus.svg#icon-slide-left"></use>
-              </svg>
+              <button class="btn-slider">
+                <div class="slider-left"></div>
+              </button>
               <ul class="section-preference__list">
                 <li
                   class="section-preference__list-item preference__backimage-1"
@@ -501,37 +497,39 @@
                   Education
                 </li>
               </ul>
-              <svg width="40" height="40">
-                <use href="images/sprite-plus.svg#icon-slide-right"></use>
-              </svg>
+              <button class="btn-slider">
+                <div class="slider-right"></div>
+              </button>
             </div>
           </div>
         </section>
         <!-- section 6 - Our great customers -->
         <section class="section section-customers">
-          <div class="container__section-customers container_1024">
+          <div class="container__section-customers container_1440">
             <div class="section-customers__image">
               <img
                 class="section-customers__image-1"
                 src="images/img-our-great-customers.jpg"
-                width="273"
+                width=""
                 alt="our great customers"
               />
             </div>
             <div class="section-customers__block">
               <h2 class="section-title title-with-line">Our great customers</h2>
-              <br />
-              <div class="section-customers__background-1"></div>
               <div class="section-customers__background-2"></div>
-              <svg width="40" height="30">
-                <use href="images/sprite.svg#icon-commas"></use>
-              </svg>
+              <div class="section-customers__background-1"></div>
+              <div class="commas">
+                <svg width="40" height="30">
+                  <use href="images/sprite.svg#icon-commas"></use>
+                </svg>
+              </div>
               <figure class="section-customers__blockquote-block">
                 <blockquote class="section-customers__blockquote">
                   <p>
                     Sed ut perspiciatis unde omnis iste natus error sit
                     voluptatem accusantium doloremque.
                   </p>
+                  <br />
                   <p>
                     Laudantium, totam rem aperiam, eaque ipsa quae ab illo
                     inventore veritatis et quasi architecto beatae vitae dicta
@@ -588,10 +586,10 @@
                   sunt explicabo.
                 </p>
               </div>
-              <a class="btn btn-light-green btn-black-text btn-6" href="#form"
+              <a class="btn btn-light-green btn-black-text" href="#form"
                 >Apply Now</a
               >
-              <a class="btn btn-transparent btn-7" href="#">Request Service</a>
+              <a class="btn btn-transparent" href="#">Request Service</a>
             </div>
             <div class="section-start__column-2">
               <h3 class="section-start__title">
@@ -606,7 +604,7 @@
                     <svg width="24" height="24">
                       <use href="images/sprite.svg#icon-tuition-and-fees"></use>
                     </svg>
-                    <a class="section-start__list-item-link" href=""
+                    <a class="section-start__list-item-link" href="#"
                       >Tution and Fees</a
                     >
                   </div>
@@ -619,7 +617,7 @@
                         href="images/sprite.svg#icon-review-and-rating"
                       ></use>
                     </svg>
-                    <a class="section-start__list-item-link" href=""
+                    <a class="section-start__list-item-link" href="#"
                       >Review & Rating</a
                     >
                   </div>
@@ -632,7 +630,7 @@
                         href="images/sprite.svg#icon-university-facilities"
                       ></use>
                     </svg>
-                    <a class="section-start__list-item-link" href=""
+                    <a class="section-start__list-item-link" href="#"
                       >Universoty Facilities</a
                     >
                   </div>
@@ -643,7 +641,7 @@
                     <svg width="24" height="24">
                       <use href="images/sprite.svg#icon-community-qa"></use>
                     </svg>
-                    <a class="section-start__list-item-link" href=""
+                    <a class="section-start__list-item-link" href="#"
                       >Community Q&A</a
                     >
                   </div>
@@ -747,7 +745,7 @@
             <input class="form__input" type="text" placeholder="Phone" />
             <input
               class="form__input"
-              type="text"
+              type="email"
               placeholder="Enter your email..."
             />
             <button class="button button-1" type="submit">Send</button>
@@ -759,7 +757,7 @@
         <div class="container__footer container_1024">
           <div class="footer__navigation">
             <div class="header__image-footer">
-              <a class="logo footer__logo" href="">
+              <a class="logo footer__logo" href="#">
                 <svg width="54" height="24">
                   <use href="images/sprite.svg#icon-logo-union"></use>
                 </svg>
@@ -769,13 +767,13 @@
               <h3 class="footer__title">Company</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
-                  <a class="footer__list-item-link" href="">About Company</a>
+                  <a class="footer__list-item-link" href="#">About Company</a>
                 </li>
                 <li class="footer__list-item">
-                  <a class="footer__list-item-link" href="">Feature Course</a>
+                  <a class="footer__list-item-link" href="#">Feature Course</a>
                 </li>
                 <li class="footer__list-item">
-                  <a class="footer__list-item-link" href="">Careers</a>
+                  <a class="footer__list-item-link" href="#">Careers</a>
                 </li>
               </ul>
             </div>
@@ -783,13 +781,13 @@
               <h3 class="footer__title">Help Links</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
-                  <a class="footer__list-item-link" href="">Student Support</a>
+                  <a class="footer__list-item-link" href="#">Student Support</a>
                 </li>
                 <li class="footer__list-item">
-                  <a class="footer__list-item-link" href="">Course Policy</a>
+                  <a class="footer__list-item-link" href="#">Course Policy</a>
                 </li>
                 <li class="footer__list-item">
-                  <a class="footer__list-item-link" href="">Register Key</a>
+                  <a class="footer__list-item-link" href="#">Register Key</a>
                 </li>
               </ul>
             </div>
@@ -797,13 +795,15 @@
               <h3 class="footer__title">Course</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
-                  <a class="footer__list-item-link" href="">Wordpres</a>
+                  <a class="footer__list-item-link" href="#">Wordpres</a>
                 </li>
                 <li class="footer__list-item">
-                  <a class="footer__list-item-link" href="">Photography</a>
+                  <a class="footer__list-item-link" href="#">Photography</a>
                 </li>
                 <li class="footer__list-item">
-                  <a class="footer__list-item-link" href="">Learning English</a>
+                  <a class="footer__list-item-link" href="#"
+                    >Learning English</a
+                  >
                 </li>
               </ul>
             </div>
@@ -815,7 +815,7 @@
                     class="footer__list-item-link"
                     href="https://www.facebook.com/"
                   >
-                    <div class="facebook"></div
+                    <div class="social-icon facebook"></div
                   ></a>
                 </li>
                 <li class="footer__list-item">
@@ -823,12 +823,12 @@
                     class="footer__list-item-link"
                     href="https://www.instagram.com/"
                   >
-                    <div class="instagram"></div
+                    <div class="social-icon instagram"></div
                   ></a>
                 </li>
                 <li class="footer__list-item">
                   <a class="footer__list-item-link" href="https://twitter.com/">
-                    <div class="twitter"></div
+                    <div class="social-icon twitter"></div
                   ></a>
                 </li>
                 <li class="footer__list-item">
@@ -836,7 +836,7 @@
                     class="footer__list-item-link"
                     href="https://www.youtube.com/"
                   >
-                    <div class="youtube"></div
+                    <div class="social-icon youtube"></div
                   ></a>
                 </li>
               </ul>
@@ -849,19 +849,19 @@
             <p class="footer__left-text">All rights Reserved</p>
             <ul class="footer__nav">
               <li class="footer__nav-item">
-                <a class="footer__nav-item-link" href="">About company</a>
+                <a class="footer__nav-item-link" href="#">About company</a>
               </li>
               <li class="footer__nav-item">
-                <a class="footer__nav-item-link" href="">Privacy Policy</a>
+                <a class="footer__nav-item-link" href="#">Privacy Policy</a>
               </li>
               <li class="footer__nav-item">
-                <a class="footer__nav-item-link" href="">Help Center</a>
+                <a class="footer__nav-item-link" href="#">Help Center</a>
               </li>
               <li class="footer__nav-item">
-                <a class="footer__nav-item-link" href="">Terms</a>
+                <a class="footer__nav-item-link" href="#">Terms</a>
               </li>
               <li class="footer__nav-item">
-                <a class="footer__nav-item-link" href="">Site map</a>
+                <a class="footer__nav-item-link" href="#">Site map</a>
               </li>
             </ul>
           </div>
