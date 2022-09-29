@@ -691,15 +691,32 @@
         </section>
         <!-- form -->
         <div class="section container__form container_1024">
-          <form class="form" id="form">
-            <input class="form__input" type="text" placeholder="Name Surname" />
-            <input class="form__input" type="tel" placeholder="Phone" />
+          <form class="form" id="form" name="form">
+            <label for="name"> </label>
             <input
               class="form__input"
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Name Surname"
+            />
+            <label for="phone"> </label>
+            <input
+              class="form__input"
+              id="phone"
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+            />
+            <label for="email"> </label>
+            <input
+              class="form__input"
+              id="email"
               type="email"
+              name="email"
               placeholder="Enter your email..."
             />
-            <button class="button" type="submit">Send</button>
+            <button class="button" type="submit" name="submit">Send</button>
           </form>
         </div>
       </main>
