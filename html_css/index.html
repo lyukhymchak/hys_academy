@@ -21,12 +21,12 @@
           <nav class="navbar">
             <div class="navbar-left">
               <a class="hamburger-menu" href="#">
-                <svg width="24" height="24">
-                  <use href="images/sprite-plus.svg#icon-hamburger-menu"></use>
+                <svg class="hamburger-menu-svg">
+                  <use href="images/sprite.svg#icon-hamburger-menu"></use>
                 </svg>
               </a>
               <a class="logo header__logo" href="#">
-                <svg width="54" height="24">
+                <svg class="logo-svg">
                   <use href="images/sprite.svg#icon-logo-union"></use>
                 </svg>
               </a>
@@ -112,7 +112,7 @@
             <h2 class="section-header header-with-line">Shy shoose us?</h2>
             <ul class="choose-1__list">
               <li class="choose-1__item">
-                <svg width="54" height="53">
+                <svg class="choose-1__icon">
                   <use href="images/sprite.svg#icon-certificate"></use>
                 </svg>
                 <h3 class="choose-1__title">Certificate</h3>
@@ -123,7 +123,7 @@
                 </p>
               </li>
               <li class="choose-1__item">
-                <svg width="40" height="53">
+                <svg class="choose-1__icon">
                   <use href="images/sprite.svg#icon-life-programs"></use>
                 </svg>
                 <h3 class="choose-1__title">Life programs</h3>
@@ -133,7 +133,7 @@
                 </p>
               </li>
               <li class="choose-1__item">
-                <svg width="43" height="53">
+                <svg class="choose-1__icon">
                   <use href="images/sprite.svg#icon-affordability"></use>
                 </svg>
                 <h3 class="choose-1__title">Affordability</h3>
@@ -144,7 +144,7 @@
                 </p>
               </li>
               <li class="choose-1__item">
-                <svg width="43" height="53">
+                <svg class="choose-1__icon">
                   <use href="images/sprite.svg#icon-social"></use>
                 </svg>
                 <h3 class="choose-1__title">Social</h3>
@@ -168,9 +168,12 @@
               </h2>
             </div>
             <div class="courses-carousel">
-              <button class="btn-slider">
+              <svg class="left">
+                <use href="images/sprite.svg#icon-left"></use>
+              </svg>
+              <!-- <button class="btn-slider">
                 <div class="slider-left"></div>
-              </button>
+              </button> -->
               <ul class="courses__list">
                 <li class="courses__list-item">
                   <img
@@ -229,9 +232,12 @@
                   </div>
                 </li>
               </ul>
-              <button class="btn-slider">
+              <svg class="right">
+                <use href="images/sprite.svg#icon-right"></use>
+              </svg>
+              <!-- <button class="btn-slider">
                 <div class="slider-right"></div>
-              </button>
+              </button> -->
             </div>
           </div>
         </section>
@@ -240,7 +246,9 @@
           <div class="container__tour container_1440">
             <div class="tour__image">
               <div>
-                <button class="btn-play"><div class="play"></div></button>
+                <svg class="play">
+                  <use href="images/sprite.svg#icon-play"></use>
+                </svg>
               </div>
             </div>
             <div class="tour__text">
@@ -454,9 +462,12 @@
               veritatis et quasi architecto beatae vitae dicta sunt explicabo.
             </p>
             <div class="preference-carousel">
-              <button class="btn-slider">
-                <div class="slider-left"></div>
-              </button>
+              <svg class="left">
+                <use href="images/sprite.svg#icon-left"></use>
+              </svg>
+              <!-- <button class="btn-slider">
+               <div class="slider-left"></div>
+              </button> -->
               <ul class="preference__list">
                 <li class="preference__item preference__backimage-1">
                   Graphic Design
@@ -471,9 +482,12 @@
                   Education
                 </li>
               </ul>
-              <button class="btn-slider">
+              <svg class="right">
+                <use href="images/sprite.svg#icon-right"></use>
+              </svg>
+              <!-- <button class="btn-slider">
                 <div class="slider-right"></div>
-              </button>
+              </button> -->
             </div>
           </div>
         </section>
@@ -565,41 +579,51 @@
             </div>
             <div class="start__block-2">
               <h3 class="start__title">
-                <svg width="24" height="24">
+                <svg class="icon-link-title">
                   <use href="images/sprite.svg#icon-quick-link"></use>
                 </svg>
                 Quick Link
               </h3>
               <ul class="start__list">
                 <li class="start__item">
-                  <svg width="24" height="24">
-                    <use href="images/sprite.svg#icon-tuition-and-fees"></use>
-                  </svg>
-                  <a class="start__link" href="#">Tution and Fees</a>
+                  <a class="start__link" href="#">
+                    <svg class="icon-link">
+                      <use href="images/sprite.svg#icon-tuition-and-fees"></use>
+                    </svg>
+                    Tution and Fees
+                  </a>
 
                   <hr class="start__line" />
                 </li>
                 <li class="start__item">
-                  <svg width="24" height="24">
-                    <use href="images/sprite.svg#icon-review-and-rating"></use>
-                  </svg>
-                  <a class="start__link" href="#">Review & Rating</a>
+                  <a class="start__link" href="#">
+                    <svg class="icon-link">
+                      <use
+                        href="images/sprite.svg#icon-review-and-rating"
+                      ></use>
+                    </svg>
+                    Review & Rating</a
+                  >
                   <hr class="start__line" />
                 </li>
                 <li class="start__item">
-                  <svg width="24" height="24">
-                    <use
-                      href="images/sprite.svg#icon-university-facilities"
-                    ></use>
-                  </svg>
-                  <a class="start__link" href="#">Universoty Facilities</a>
+                  <a class="start__link" href="#">
+                    <svg class="icon-link">
+                      <use
+                        href="images/sprite.svg#icon-university-facilities"
+                      ></use>
+                    </svg>
+                    Universoty Facilities</a
+                  >
                   <hr class="start__line" />
                 </li>
                 <li class="start__item">
-                  <svg width="24" height="24">
-                    <use href="images/sprite.svg#icon-community-qa"></use>
-                  </svg>
-                  <a class="start__link" href="#">Community Q&A</a>
+                  <a class="start__link" href="#">
+                    <svg class="icon-link">
+                      <use href="images/sprite.svg#icon-community-qa"></use>
+                    </svg>
+                    Community Q&A</a
+                  >
                   <hr class="start__line" />
                 </li>
               </ul>
@@ -726,7 +750,7 @@
           <div class="footer__navigation-1">
             <div>
               <a class="logo footer__logo" href="#">
-                <svg width="54" height="24">
+                <svg class="logo-svg">
                   <use href="images/sprite.svg#icon-logo-union"></use>
                 </svg>
               </a>
@@ -778,23 +802,31 @@
               <ul class="footer__list footer__list-social-media">
                 <li class="footer__item">
                   <a class="footer__link" href="https://www.facebook.com/">
-                    <div class="social-icon facebook"></div
-                  ></a>
+                    <svg class="social-icon">
+                      <use href="images/sprite.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
                 </li>
                 <li class="footer__item">
                   <a class="footer__link" href="https://www.instagram.com/">
-                    <div class="social-icon instagram"></div
-                  ></a>
+                    <svg class="social-icon">
+                      <use href="images/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
                 </li>
                 <li class="footer__item">
-                  <a class="footer__link" href="https://twitter.com/">
-                    <div class="social-icon twitter"></div
-                  ></a>
+                  <a class="footer__link" href="https://www.twitter.com/">
+                    <svg class="social-icon">
+                      <use href="images/sprite.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
                 </li>
                 <li class="footer__item">
                   <a class="footer__link" href="https://www.youtube.com/">
-                    <div class="social-icon youtube"></div
-                  ></a>
+                    <svg class="social-icon">
+                      <use href="images/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
                 </li>
               </ul>
             </div>
