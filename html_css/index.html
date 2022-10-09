@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script defer src="/js/index.js" type="module"></script>
   </head>
   <body>
     <div class="container">
@@ -576,7 +577,6 @@
                     <use href="images/sprite.svg#icon-tuition-and-fees"></use>
                   </svg>
                   <a class="start__link" href="#">Tution and Fees</a>
-
                   <hr class="start__line" />
                 </li>
                 <li class="start__item">
@@ -610,83 +610,7 @@
         <section class="section blog">
           <div class="container__blog container_1024">
             <h2 class="section-header header-with-line">Latest Blog</h2>
-            <ul class="blog__list">
-              <li class="blog__item">
-                <div class="blog__block">
-                  <h4 class="blog__header">DESIGN</h4>
-                  <img
-                    class="blog__image"
-                    src="images/latest-blog-image-1.jpg"
-                    width="259"
-                    alt="working at laptop"
-                  />
-                  <div class="blog__block-bottom">
-                    <div>
-                      <img
-                        class="blog__mentor-image"
-                        src="images/mentor-design.png"
-                        width="48"
-                        alt="mentor of design"
-                      />
-                    </div>
-                    <div>
-                      <h3 class="blog__title">
-                        International Conference on Bussiness
-                      </h3>
-                      <p class="blog__text">Read Now</p>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="blog__item">
-                <div class="blog__block">
-                  <h4 class="blog__header">DESIGN</h4>
-                  <img
-                    class="blog__image"
-                    src="images/latest-blog-image-2.jpg"
-                    width="259"
-                    alt="working at laptop"
-                  />
-                  <div class="blog__block-bottom">
-                    <div>
-                      <img
-                        class="blog__mentor-image"
-                        src="images/mentor-marketing.png"
-                        width="48"
-                        alt="mentor of design"
-                      />
-                    </div>
-                    <div>
-                      <h3 class="blog__title">
-                        International Conference on Bussiness
-                      </h3>
-                      <p class="blog__text">Read Now</p>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <ul class="number-slider">
-                  <li class="number-slider-item">
-                    <button class="btn-number-slider">1</button>
-                  </li>
-                  <li class="number-slider-item">
-                    <button class="btn-number-slider">2</button>
-                  </li>
-                  <li class="number-slider-item">
-                    <button class="btn-number-slider btn-number-slider-active">
-                      3
-                    </button>
-                  </li>
-                  <li class="number-slider-item">
-                    <button class="btn-number-slider">4</button>
-                  </li>
-                  <li class="number-slider-item">
-                    <button class="btn-number-slider">5</button>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+            <div id="paginator"></div>
           </div>
         </section>
         <!-- form -->
