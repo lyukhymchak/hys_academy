@@ -1,13 +1,43 @@
-let hamburger = document.getElementsByClassName("hamburger-menu-logo")[0];
-console.log(hamburger);
-hamburger.onclick = function (){
-    let navbar = document.getElementsByClassName("navbar")[0];
-    console.log(navbar);
+let isOpen = false;
+const hamburger = document.querySelector(".hamburger-menu-logo");
+hamburger.addEventListener("click", clickHandler);
+
+function clickHandler() {
+  const navbar = document.querySelector(".navbar");
+  const btnNav = document.querySelector(".btn-nav");
+  if (!isOpen) {
+    btnNav.hidden = true;
     navbar.classList.add("hamburger-menu");
-    let closeBtn = document.getElementsByClassName("close-svg")[0];
-    closeBtn.onclick = function () {
-       navbar.classList.remove("hamburger-menu"); 
-    }
-};
+    isOpen = true;
+  } else {
+    closeMenu();
+  }
 
+  const closeBtn = document.querySelector(".close-svg");
+  closeBtn.addEventListener("click", function () {
+    closeMenu();
+  });
 
+  const navbarLinks = document.querySelectorAll(".navbar__link");
+  navbarLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      closeMenu();
+    });
+  });
+
+  //   navbar.addEventListener("click", () => {
+  //     if (!isOpen) {
+  //       btnNav.hidden = true;
+  //       navbar.classList.add("hamburger-menu");
+  //       isOpen = true;
+  //     } else {
+  //       closeMenu();
+  //     }
+  //   });
+
+  function closeMenu() {
+    navbar.classList.remove("hamburger-menu");
+    btnNav.hidden = false;
+    isOpen = false;
+  }
+}

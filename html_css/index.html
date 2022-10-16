@@ -41,19 +41,21 @@
             <div class="navbar-right">
               <ul class="navbar__list">
                 <li class="navbar__item">
-                  <a class="navbar__link" href="#">Categories</a>
+                  <a class="navbar__link" href="#features">Features</a>
                 </li>
                 <li class="navbar__item">
-                  <a class="navbar__link" href="#">Course</a>
+                  <a class="navbar__link" href="#courses">Course</a>
                 </li>
                 <li class="navbar__item">
-                  <a class="navbar__link" href="#">Explore</a>
+                  <a class="navbar__link" href="#tour">Explore</a>
                 </li>
                 <li class="navbar__item">
-                  <a class="navbar__link" href="#">Degrees</a>
+                  <a class="navbar__link" href="#blog">Blog</a>
                 </li>
               </ul>
-              <div><a class="btn btn-blue" href="#">Explore</a></div>
+              <div class="btn-nav">
+                <a class="btn btn-blue" href="#">Explore</a>
+              </div>
             </div>
           </nav>
         </div>
@@ -114,48 +116,48 @@
           </div>
         </section>
         <!-- section 1 - Why choose us? -->
-        <section class="section choose-1">
-          <div class="container__choose-1 container_1024">
-            <h2 class="section-header header-with-line">Shy shoose us?</h2>
-            <ul class="choose-1__list">
-              <li class="choose-1__item">
-                <svg class="choose-1__icon">
+        <section id="features" class="section features">
+          <div class="container__features container_1024">
+            <h2 class="section-header header-with-line">Our features</h2>
+            <ul class="features__list">
+              <li class="features__item">
+                <svg class="features__icon">
                   <use href="images/sprite.svg#icon-certificate"></use>
                 </svg>
-                <h3 class="choose-1__title">Certificate</h3>
-                <p class="choose-1__text">
+                <h3 class="features__title">Certificate</h3>
+                <p class="features__text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod.A bank is a financial institution accepts deposits
                   from public and creates credit.
                 </p>
               </li>
-              <li class="choose-1__item">
-                <svg class="choose-1__icon">
+              <li class="features__item">
+                <svg class="features__icon">
                   <use href="images/sprite.svg#icon-life-programs"></use>
                 </svg>
-                <h3 class="choose-1__title">Life programs</h3>
-                <p class="choose-1__text">
+                <h3 class="features__title">Life programs</h3>
+                <p class="features__text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   institution accepts deposits from public
                 </p>
               </li>
-              <li class="choose-1__item">
-                <svg class="choose-1__icon">
+              <li class="features__item">
+                <svg class="features__icon">
                   <use href="images/sprite.svg#icon-affordability"></use>
                 </svg>
-                <h3 class="choose-1__title">Affordability</h3>
-                <p class="choose-1__text">
+                <h3 class="features__title">Affordability</h3>
+                <p class="features__text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.
                   A bank is a financial institution accepts deposits from public
                   and creates credit.
                 </p>
               </li>
-              <li class="choose-1__item">
-                <svg class="choose-1__icon">
+              <li class="features__item">
+                <svg class="features__icon">
                   <use href="images/sprite.svg#icon-social"></use>
                 </svg>
-                <h3 class="choose-1__title">Social</h3>
-                <p class="choose-1__text">
+                <h3 class="features__title">Social</h3>
+                <p class="features__text">
                   A bank is a financial institution accepts deposits from public
                   and creates credit.
                 </p>
@@ -164,7 +166,7 @@
           </div>
         </section>
         <!-- section 2 - 2000+ Online courses -->
-        <section class="section courses">
+        <section id="courses" class="section courses">
           <div class="container__courses container_1024">
             <div class="courses__description">
               <h4 class="courses__header">
@@ -178,9 +180,6 @@
               <svg class="left">
                 <use href="images/sprite.svg#icon-left"></use>
               </svg>
-              <!-- <button class="btn-slider">
-                <div class="slider-left"></div>
-              </button> -->
               <ul class="courses__list">
                 <li class="courses__list-item">
                   <img
@@ -242,14 +241,11 @@
               <svg class="right">
                 <use href="images/sprite.svg#icon-right"></use>
               </svg>
-              <!-- <button class="btn-slider">
-                <div class="slider-right"></div>
-              </button> -->
             </div>
           </div>
         </section>
         <!-- section 3 - Take a tour  -->
-        <section class="section tour">
+        <section id="tour" class="section tour">
           <div class="container__tour container_1440">
             <div class="tour__image">
               <div>
@@ -472,9 +468,6 @@
               <svg class="left">
                 <use href="images/sprite.svg#icon-left"></use>
               </svg>
-              <!-- <button class="btn-slider">
-               <div class="slider-left"></div>
-              </button> -->
               <ul class="preference__list">
                 <li class="preference__item preference__backimage-1">
                   Graphic Design
@@ -492,9 +485,6 @@
               <svg class="right">
                 <use href="images/sprite.svg#icon-right"></use>
               </svg>
-              <!-- <button class="btn-slider">
-                <div class="slider-right"></div>
-              </button> -->
             </div>
           </div>
         </section>
@@ -637,7 +627,7 @@
           </div>
         </section>
         <!-- section 8 - Latest Blog -->
-        <section class="section blog">
+        <section id="blog" class="section blog">
           <div class="container__blog container_1024">
             <h2 class="section-header header-with-line">Latest Blog</h2>
             <ul class="blog__list">
@@ -864,5 +854,6 @@
       </footer>
     </div>
     <script src="/html_css/js/mobile-menu.js"></script>
+    <script src="/html_css/js/header.js"></script>
   </body>
 </html>
