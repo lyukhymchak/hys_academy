@@ -6,5 +6,5 @@ document.onload = init();
 
 function init() {
   paginator("paginator", dataForPaginator());
-  const slider = new Slider("slider", dataForSlider());
+  const slider = new Slider("preference-slider", dataForSlider());
 }

@@ -354,17 +354,33 @@ body {
 .preference {
   margin-bottom: 126px;
 }
+.preference__select {
+  display: flex;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--font-color);
+  width: 200px;
+  height: 48px;
+  margin: 21px auto;
+  padding: 14px 12px;
+  border: none;
+  border-radius: 22px;
+  background-color: var(--input-bg-color);
+}
+
 .preference__text {
   margin-top: 16px;
   margin-bottom: 40px;
   text-align: center;
 }
+
 .preference-carousel {
   display: flex;
   align-items: center;
   justify-content: center;
   column-gap: 20px;
 }
+
 .preference__item:not(:first-child) {
   display: none;
 }
@@ -377,10 +393,17 @@ body {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
+  padding: 0 8px;
   color: var(--white-color);
+  border-radius: 4px;
   background-image: url("../images/background-graphic-design.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-color: linear-gradient(
+    0deg,
+    rgba(101, 131, 255, 0.8),
+    rgba(101, 131, 255, 0.8)
+  );
+  background-size: 100%, 100%;
+  filter: drop-shadow(0px 7px 20px #e2edfb);
 }
 .preference__backimage-1 {
   background-image: url("../images/background-graphic-design.png");
@@ -1057,6 +1080,9 @@ body {
   }
   .preference {
     margin-bottom: 80px;
+  }
+  .preference__select {
+    margin: 32px auto;
   }
   .preference__list {
     display: flex;

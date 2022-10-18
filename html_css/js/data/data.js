@@ -6,5 +6,9 @@ export function dataForPaginator() {
 }
 
 export function dataForSlider() {
-  return dataSlider;
+  const myData = dataSlider.filter((element, index) => {
+    return element["albumId"] === 1 && index < 10;
+  });
+  console.log();
+  return myData;
 }
