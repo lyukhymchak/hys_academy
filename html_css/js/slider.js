@@ -1,37 +1,47 @@
 export class Slider {
   constructor(id, data) {
-    const preferenceSlider = document.getElementById(id);
-    preferenceSlider.appendChild(this.createSliderItemMarkup(data.length));
-    this.setData(data);
-    this.numberOfSlidesPerPage = this.getNumberOfSlides(window.innerWidth);
+    this.id = id;
+    this.data = data;
+    this.initSlider();
+  }
+
+  initSlider() {
+    this.slider = document
+      .getElementById(this.id)
+      .appendChild(this.createSliderItemMarkup(this.data.length));
+
+    this.setData(this.data);
+
+    this.numberOfSlidesPerPage = this.setNumberOfSlidesPerPage();
     this.curSlide = 0;
-    this.maxSlide = data.length;
+    this.maxSlide = this.data.length - this.numberOfSlidesPerPage;
   }
 
   createSliderItemMarkup(numberOfSlides) {
+    const div = document.createElement("div");
+    div.classList.add("preference-carousel");
+
     const ul = document.createElement("ul");
     ul.classList.add("preference__list");
-
     for (let i = 0; i < numberOfSlides; i++) {
       const li = document.createElement("li");
       li.classList.add("preference__item");
       ul.appendChild(li);
     }
 
-    const div = document.createElement("div");
-    div.classList.add("preference-carousel");
-
     const btnLeft = this.createBtn("left");
+    btnLeft.setAttribute("disabled", "");
 
     const btnRight = this.createBtn("right");
-    btnLeft.setAttribute("disabled", "");
 
     div.appendChild(btnLeft);
     div.appendChild(ul);
     div.appendChild(btnRight);
 
-    div.addEventListener("click", (event) => this.clickBtnSlider(event));
-
+    div.addEventListener("click", (event) => this.clickBtnSliderHandler(event));
+    window.addEventListener("resize", () => {
+      this.resizeWindowHandler();
+    });
     return div;
   }
 
@@ -49,7 +59,6 @@ export class Slider {
   }
 
   setData(data) {
-    let numberOfSlides = data.length;
     const liElements = document.querySelectorAll(".preference__item");
 
     liElements.forEach((element, index) => {
@@ -59,43 +68,60 @@ export class Slider {
     });
   }
 
-  clickBtnSlider(event) {
-    if (event.target.classList.toString().indexOf("left") > -1) {
-      this.curSlide--;
-      this.slide();
-      this.checkButtons();
-    }
-
-    if (event.target.classList.toString().indexOf("right") > -1) {
-      this.curSlide++;
-      this.slide();
-      this.checkButtons();
-    }
-  }
-
-  slide() {
-    const liElements = document.querySelectorAll(".preference__item");
-    liElements.forEach((element, index) => {
-      element.style.transform = `translateX(-${this.curSlide * 217}px)`;
-    });
-  }
-
-  getNumberOfSlides(width) {
+  setNumberOfSlidesPerPage() {
+    let width = window.innerWidth;
     const slider = document.querySelector(".preference__list");
+
     if (width <= 768) {
       slider.style.maxWidth = "207px";
       return 1;
     }
-    if (width >= 1440) {
+
+    if (width > 1440) {
       slider.style.maxWidth = "858px";
       return 4;
     }
+
     slider.style.maxWidth = "424px";
     return 2;
   }
+
+  clickBtnSliderHandler(event) {
+    if (event.target.classList.toString().indexOf("left") > -1) {
+      this.curSlide--;
+      this.changePosition();
+    }
+
+    if (event.target.classList.toString().indexOf("right") > -1) {
+      this.curSlide++;
+      this.changePosition();
+    }
+  }
+
+  resizeWindowHandler() {
+    this.maxSlide += this.numberOfSlidesPerPage;
+    this.numberOfSlidesPerPage = this.setNumberOfSlidesPerPage();
+    this.maxSlide -= this.numberOfSlidesPerPage;
+
+    if (this.curSlide > this.maxSlide) {
+      this.curSlide = this.maxSlide;
+      this.changePosition();
+    }
+  }
+
+  changePosition() {
+    const liElements = document.querySelectorAll(".preference__item");
+
+    liElements.forEach((element) => {
+      element.style.transform = `translateX(-${this.curSlide * 217}px)`;
+    });
+
+    this.checkButtons();
+  }
+
   checkButtons() {
-    const btnRight = document.querySelector(".btn-slider-right");
-    const btnLeft = document.querySelector(".btn-slider-left");
+    const btnRight = this.slider.querySelector(".btn-slider-right");
+    const btnLeft = this.slider.querySelector(".btn-slider-left");
 
     if (this.curSlide === 0) {
       btnLeft.setAttribute("disabled", "");
@@ -103,7 +129,7 @@ export class Slider {
       btnLeft.removeAttribute("disabled");
     }
 
-    if (this.curSlide + this.numberOfSlidesPerPage === this.maxSlide) {
+    if (this.curSlide >= this.maxSlide) {
       btnRight.setAttribute("disabled", "");
     } else {
       btnRight.removeAttribute("disabled");
