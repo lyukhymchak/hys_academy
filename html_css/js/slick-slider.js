@@ -1,18 +1,49 @@
 export class SlickSlider {
-  constructor(id) {
-    this.id = id;
-    this.initSlickSlider(id);
+  constructor(selector, data) {
+    this.createSlickSliderItemMarkup(selector, data);
+    this.initSlickSlider(selector);
   }
 
-  initSlickSlider(id) {
-    $(id).slick({
+  createSlickSliderItemMarkup(selector, data) {
+    const ul = document.querySelector(selector);
+    for (let i = 0; i < data.length; i++) {
+      ul.appendChild(this.createCardTemplate(data[i]));
+    }
+  }
+
+  createCardTemplate(card) {
+    const li = document.createElement("li");
+    const div = document.createElement("div");
+    div.classList.add("courses__list-item");
+    div.style.backgroundImage = `url(${card.url})`;
+    div.innerHTML = `<img
+                      class="courses__mentor"
+                      src="${card.mentor}"
+                      width="48"
+                      alt="mentor"
+                    />
+                    <h4 class="courses__header">${card.header}</h4>
+                    <h3 class="courses__title">${card.title}</h3>
+                    <hr class="courses__line" />
+                    <div class="courses__prices">
+                      <div>
+                        <span class="courses__new-price">${card.newPrice}</span>
+                        <span class="courses__old-price">${card.oldPrice}</span>
+                      </div>
+                      <span>⭐⭐⭐⭐(4)</span>
+                    </div>`;
+    li.appendChild(div);
+    return li;
+  }
+
+  initSlickSlider(selector) {
+    $(selector).slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,
       variableWidth: true,
       infinite: false,
       cssEase: "ease-out",
-      lazyLoad: "ondemand",
       mobileFirst: true,
       responsive: [
         {
