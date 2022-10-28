@@ -6,7 +6,6 @@ import {
 
 export class Storage {
   constructor() {
-    console.log(dataForPaginator());
     this.setDataToLocalStorage("paginator", dataForPaginator());
     this.setDataToLocalStorage("slider", dataForSlider());
     this.setDataToLocalStorage("slickSlider", dataForSlickSlider());
