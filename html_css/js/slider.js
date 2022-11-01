@@ -1,20 +1,19 @@
 export class Slider {
   constructor(id, data) {
     this.id = id;
-    this.data = data;
-    this.initSlider();
+    this.initSlider(data);
   }
 
-  initSlider() {
-    this.slider = document
-      .getElementById(this.id)
-      .appendChild(this.createSliderItemMarkup(this.data.length));
+  initSlider(data) {
+    this.slider = document.getElementById(this.id);
+    this.slider.innerHTML = "";
+    this.slider.appendChild(this.createSliderItemMarkup(data.length));
 
-    this.setData(this.data);
+    this.setData(data);
 
     this.numberOfSlidesPerPage = this.setNumberOfSlidesPerPage();
     this.curSlide = 0;
-    this.maxSlide = this.data.length - this.numberOfSlidesPerPage;
+    this.maxSlide = data.length - this.numberOfSlidesPerPage;
   }
 
   createSliderItemMarkup(numberOfSlides) {
@@ -42,6 +41,7 @@ export class Slider {
     window.addEventListener("resize", () => {
       this.resizeWindowHandler();
     });
+
     return div;
   }
 
