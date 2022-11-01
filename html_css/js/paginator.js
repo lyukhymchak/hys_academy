@@ -4,8 +4,8 @@ export function paginator(selector, data) {
 }
 
 function createBlogHtml(data) {
-  const ul = document.createElement("ul");
-  ul.classList.add("blog__list");
+  const ul = document.createElement('ul');
+  ul.classList.add('blog__list');
 
   if (data.length === 0) {
     return ul;
@@ -16,7 +16,7 @@ function createBlogHtml(data) {
     ul.appendChild(createLi(data[1]));
   }
 
-  const li = document.createElement("li");
+  const li = document.createElement('li');
   li.appendChild(createNumberSlider(data));
   ul.appendChild(li);
 
@@ -24,21 +24,21 @@ function createBlogHtml(data) {
 }
 
 function createNumberSlider(data) {
-  const ul = document.createElement("ul");
-  ul.classList.add("number-slider");
+  const ul = document.createElement('ul');
+  ul.classList.add('number-slider');
 
   let numberOfSlides =
     data.length % 2 === 0 ? data.length / 2 : Math.trunc(data.length / 2) + 1;
 
   for (let i = 0; i < numberOfSlides; i++) {
-    const li = document.createElement("li");
-    li.classList.add("number-slider-item");
+    const li = document.createElement('li');
+    li.classList.add('number-slider-item');
 
-    const button = document.createElement("button");
-    button.classList.add("btn-number-slider");
+    const button = document.createElement('button');
+    button.classList.add('btn-number-slider');
 
     if (i === 0) {
-      button.classList.add("btn-number-slider-active");
+      button.classList.add('btn-number-slider-active');
     }
 
     button.innerHTML = i + 1;
@@ -47,16 +47,16 @@ function createNumberSlider(data) {
     ul.appendChild(li);
   }
 
-  ul.addEventListener("click", (event) => clickBtnSliderHandler(event, data));
+  ul.addEventListener('click', event => clickBtnSliderHandler(event, data));
   return ul;
 }
 
 function clickBtnSliderHandler(event, data) {
-  if (event.target.classList.contains("btn-number-slider")) {
-    const activeBtn = document.querySelector(".btn-number-slider-active");
-    activeBtn.classList.remove("btn-number-slider-active");
+  if (event.target.classList.contains('btn-number-slider')) {
+    const activeBtn = document.querySelector('.btn-number-slider-active');
+    activeBtn.classList.remove('btn-number-slider-active');
 
-    event.target.classList.add("btn-number-slider-active");
+    event.target.classList.add('btn-number-slider-active');
 
     event.path[4].childNodes[0].innerHTML = createCardTemplate(
       data[2 * (Number(event.target.innerHTML) - 1)]
@@ -69,7 +69,7 @@ function clickBtnSliderHandler(event, data) {
       Number(event.target.innerHTML) === numberOfSlides &&
       data.length % 2 !== 0
     ) {
-      event.path[4].childNodes[1].innerHTML = "";
+      event.path[4].childNodes[1].innerHTML = '';
     } else {
       event.path[4].childNodes[1].innerHTML = createCardTemplate(
         data[2 * Number(event.target.innerHTML) - 1]
@@ -79,8 +79,8 @@ function clickBtnSliderHandler(event, data) {
 }
 
 function createLi(card) {
-  const li = document.createElement("li");
-  li.classList.add("blog__item");
+  const li = document.createElement('li');
+  li.classList.add('blog__item');
   li.innerHTML = createCardTemplate(card);
   return li;
 }

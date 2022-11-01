@@ -1,25 +1,30 @@
 export class Select {
   constructor(id) {
-    this.init(id);
+    this.id = id;
+
+    this.initSelectList(this.id);
   }
 
-  init(id) {
-    const select = document.getElementById(id);
-    select.appendChild(this.createSelectItemMarkup());
+  initSelectList(id) {
+    const divSelectList = document.querySelector(id);
+
+    divSelectList.appendChild(this.getSelectListMarkup());
   }
 
-  createSelectItemMarkup() {
-    const select = document.createElement("select");
-    select.classList.add("preference__select");
+  getSelectListMarkup() {
+    const selectList = document.createElement('select');
+
+    selectList.classList.add('preference__select');
 
     for (let i = 0; i < 3; i++) {
-      const option = document.createElement("option");
-      option.setAttribute("value", `${i + 1}`);
-      option.innerHTML = `Item ${i + 1}`;
+      const option = document.createElement('option');
 
-      select.appendChild(option);
+      option.setAttribute('value', `${i + 1}`);
+      option.innerHTML = `Album ${i + 1}`;
+
+      selectList.appendChild(option);
     }
 
-    return select;
+    return selectList;
   }
 }

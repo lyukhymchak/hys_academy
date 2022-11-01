@@ -12,9 +12,9 @@ export class SlickSlider {
   }
 
   createCardTemplate(card) {
-    const li = document.createElement("li");
-    const div = document.createElement("div");
-    div.classList.add("courses__list-item");
+    const li = document.createElement('li');
+    const div = document.createElement('div');
+    div.classList.add('courses__list-item');
     div.style.backgroundImage = `url(${card.url})`;
     div.innerHTML = `<img
                       class="courses__mentor"
@@ -43,7 +43,7 @@ export class SlickSlider {
       arrows: true,
       variableWidth: true,
       infinite: false,
-      cssEase: "ease-out",
+      cssEase: 'ease-out',
       mobileFirst: true,
       responsive: [
         {
