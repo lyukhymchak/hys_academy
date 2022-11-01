@@ -1,26 +1,25 @@
-export class Select{
-    constructor(id) {
-        this.init(id);
-     }
+export class Select {
+  constructor(id) {
+    this.init(id);
+  }
 
-    init(id) {
-        const select = document.getElementById(id);
-        select.appendChild(this.createSelectItemMarkup());
+  init(id) {
+    const select = document.getElementById(id);
+    select.appendChild(this.createSelectItemMarkup());
+  }
+
+  createSelectItemMarkup() {
+    const select = document.createElement("select");
+    select.classList.add("preference__select");
+
+    for (let i = 0; i < 3; i++) {
+      const option = document.createElement("option");
+      option.setAttribute("value", `${i + 1}`);
+      option.innerHTML = `Item ${i + 1}`;
+
+      select.appendChild(option);
     }
 
-    createSelectItemMarkup() { 
-        const select = document.createElement("select");
-        select.classList.add("preference__select");
-
-        for (let i = 0; i < 3; i++) {
-            const option = document.createElement("option");
-            option.setAttribute("value", `item-${i}`)
-            option.innerHTML = `Item ${i + 1}`;
-            
-            select.appendChild(option);
-        }
-
-        return select;
-    }
+    return select;
+  }
 }
-
