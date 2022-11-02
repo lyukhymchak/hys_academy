@@ -31,6 +31,7 @@
   --min-color: #fe5f60;
   --error-color: #f15b5b;
   --icon-color: #25282b;
+  --shadow: #e2edfb;
 }
 
 body {
@@ -557,7 +558,7 @@ use {
     ),
     url("../images/background-graphic-design.jpg");
   background-size: 100%, 100%;
-  filter: drop-shadow(0px 7px 20px #e2edfb);
+  filter: drop-shadow(0px 7px 20px var(--shadow));
 }
 
 .preference__backimage-1 {
@@ -668,7 +669,7 @@ use {
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* circle-slider elements */
+
 .circle-slider {
   display: flex;
   flex-wrap: nowrap;
@@ -806,7 +807,7 @@ use {
 .blog__text {
   margin-bottom: 24px;
 }
-/* number-slider elements */
+
 .number-slider {
   display: flex;
   justify-content: flex-start;
@@ -829,7 +830,7 @@ use {
 }
 
 .btn-number-slider:hover {
-  box-shadow: 0px 4px 16px #e2edfb;
+  box-shadow: 0px 4px 16px var(--shadow);
   cursor: pointer;
 }
 
@@ -885,6 +886,7 @@ use {
   border-radius: 22px;
   border: none;
 }
+
 ::placeholder {
   font-weight: 500;
   font-size: 14px;
@@ -1039,7 +1041,7 @@ use {
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  box-shadow: 0px 4px 16px #e2edfb;
+  box-shadow: 0px 4px 16px var(--shadow);
 }
 
 .left:hover,
