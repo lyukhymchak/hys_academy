@@ -1,7 +1,10 @@
-const header = document.querySelector(".header");
-window.addEventListener("scroll", scrollHandler);
+export function initFixedHeader() {
+  window.addEventListener("scroll", scrollHandler);
+}
 
 function scrollHandler() {
+  const header = document.querySelector(".header");
+
   if (window.scrollY >= header.clientHeight) {
     header.classList.add("header-fixed");
   } else {
