@@ -78,11 +78,11 @@ export class Slider {
     }
 
     if (width > 1440) {
-      slider.style.maxWidth = "858px";
+      slider.style.maxWidth = "888px";
       return 4;
     }
 
-    slider.style.maxWidth = "424px";
+    slider.style.maxWidth = "434px";
     return 2;
   }
 
@@ -113,7 +113,7 @@ export class Slider {
     const liElements = document.querySelectorAll(".preference__item");
 
     liElements.forEach((element) => {
-      element.style.transform = `translateX(-${this.curSlide * 217}px)`;
+      element.style.transform = `translateX(-${this.curSlide * 227}px)`;
     });
 
     this.checkButtons();

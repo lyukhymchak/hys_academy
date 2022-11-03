@@ -43,6 +43,7 @@ body {
   background-color: var(--white-color);
 }
 
+.arrow,
 use {
   pointer-events: none;
 }
@@ -542,6 +543,7 @@ use {
 .preference {
   margin-bottom: 126px;
 }
+
 .preference__select {
   display: flex;
   font-size: 16px;
@@ -568,9 +570,10 @@ use {
   justify-content: center;
   column-gap: 20px;
 }
+
 .preference__list {
   display: flex;
-  column-gap: 10px;
+  column-gap: 20px;
   flex-wrap: nowrap;
   width: 100%;
   max-width: 207px;
@@ -855,7 +858,7 @@ use {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-/* number-slider elements */
+
 .number-slider {
   display: flex;
   justify-content: flex-start;
@@ -1120,14 +1123,17 @@ use {
   box-shadow: 0px 4px 16px rgba(75, 202, 103, 0.56);
   border-radius: 20px;
 }
+
 .btn-play:hover {
   border: 2px solid var(--green-color);
 }
+
 .btn-play:active {
   border: 2px solid var(--active-button);
   background: var(--active-button);
   box-shadow: 0px 4px 16px rgba(75, 202, 103, 0.56);
 }
+
 .play {
   width: 40px;
   height: 40px;
@@ -1218,9 +1224,11 @@ use {
     max-width: 1024px;
     background-size: 740px 652px, 778px 652px;
   }
+
   .courses__list {
     max-width: 600px;
   }
+
   .btn {
     padding: 12px 24px;
   }
@@ -1291,6 +1299,7 @@ use {
 
   .preference__list {
     display: flex;
+    max-width: 434px;
     column-gap: 20px;
   }
 
@@ -1336,9 +1345,11 @@ use {
     width: 1440px;
     max-width: 1440px;
   }
+
   .courses__list {
     max-width: 890px;
   }
+
   .section-header {
     text-align: left;
   }
@@ -1477,15 +1488,17 @@ use {
   .preference {
     margin-bottom: 80px;
   }
+
   .preference__select {
     margin: 32px auto;
   }
+
   .preference__list {
     display: flex;
-    column-gap: 10px;
+    column-gap: 20px;
     flex-wrap: nowrap;
     width: 100%;
-    max-width: 858px;
+    max-width: 888px;
     max-height: 197px;
     overflow: hidden;
   }
@@ -1582,10 +1595,12 @@ use {
     justify-content: flex-start;
     margin-left: 87px;
   }
+
   .blog__header {
     padding: 18px 42px 46px 35px;
     line-height: 1.33;
   }
+
   .blog__block {
     width: 415px;
     margin-right: 20px;
@@ -1595,6 +1610,7 @@ use {
   .blog__image {
     width: 328px;
   }
+
   .blog__mentor-image {
     margin-left: 16px;
     margin-right: 24px;
