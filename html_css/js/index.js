@@ -1,8 +1,10 @@
 import { paginator } from "./paginator.js";
 import { dataForPaginator } from "./data/data.js";
 
-document.onload = init();
+window.addEventListener("DOMContentLoaded", () => {
+  initPaginator();
+});
 
-function init() {
+function initPaginator() {
   paginator("paginator", dataForPaginator());
 }
