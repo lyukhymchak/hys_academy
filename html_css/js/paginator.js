@@ -1,92 +1,65 @@
 export function paginator(selector, data) {
   const paginatorDiv = document.getElementById(selector);
-  paginatorDiv.appendChild(createBlogHtml(data));
+
+  paginatorDiv.appendChild(getBlogHTML(data));
+  paginatorDiv.addEventListener("click", (event) =>
+    clickBtnPaginatorHandler(event, data)
+  );
 }
 
-function createBlogHtml(data) {
-  const ul = document.createElement("ul");
-  ul.classList.add("blog__list");
+function getBlogHTML(data) {
+  const cardsPerPage = data.length > 2 ? 2 : data.length;
+  const countOfVisiblePages = getCountOfVisiblePages(data.length);
 
-  if (data.length === 0) {
-    return ul;
-  } else if (data.length === 1) {
-    ul.appendChild(createLi(data[0]));
-  } else {
-    ul.appendChild(createLi(data[0]));
-    ul.appendChild(createLi(data[1]));
+  const divBlog = document.createElement("div");
+  const divCards = [];
+
+  for (let i = 0; i < cardsPerPage; i++) {
+    const dataAtr = `card-${i + 1}`;
+
+    divCards[dataAtr] = document.createElement("div");
+    divCards[dataAtr].setAttribute("data-card", dataAtr);
+    divCards[dataAtr].innerHTML = getCardTemplate(data[i]);
+    divBlog.appendChild(divCards[dataAtr]);
   }
 
-  const li = document.createElement("li");
-  li.appendChild(createNumberSlider(data));
-  ul.appendChild(li);
+  if (countOfVisiblePages > 1) {
+    const divPaginator = document.createElement("div");
 
-  return ul;
-}
-
-function createNumberSlider(data) {
-  const ul = document.createElement("ul");
-  ul.classList.add("number-slider");
-
-  let numberOfSlides =
-    data.length % 2 === 0 ? data.length / 2 : Math.trunc(data.length / 2) + 1;
-
-  for (let i = 0; i < numberOfSlides; i++) {
-    const li = document.createElement("li");
-    li.classList.add("number-slider-item");
-
-    const button = document.createElement("button");
-    button.classList.add("btn-number-slider");
-
-    if (i === 0) {
-      button.classList.add("btn-number-slider-active");
-    }
-
-    button.innerHTML = i + 1;
-
-    li.appendChild(button);
-    ul.appendChild(li);
+    divPaginator.classList.add("blog__paginator");
+    divPaginator.appendChild(getPaginatorHTML(0, countOfVisiblePages));
+    divBlog.appendChild(divPaginator);
   }
 
-  ul.addEventListener("click", (event) => clickBtnSliderHandler(event, data));
-  return ul;
+  divBlog.classList.add("blog__list");
+
+  return divBlog;
 }
 
-function clickBtnSliderHandler(event, data) {
-  if (event.target.classList.contains("btn-number-slider")) {
-    const activeBtn = document.querySelector(".btn-number-slider-active");
-    activeBtn.classList.remove("btn-number-slider-active");
+function getPaginatorHTML(indexOfActiveBtn, endIndex, startIndex = 0) {
+  const div = document.createElement("div");
 
-    event.target.classList.add("btn-number-slider-active");
-
-    event.path[4].childNodes[0].innerHTML = createCardTemplate(
-      data[2 * (Number(event.target.innerHTML) - 1)]
-    );
-
-    let numberOfSlides =
-      data.length % 2 === 0 ? data.length / 2 : Math.trunc(data.length / 2) + 1;
-
-    if (
-      Number(event.target.innerHTML) === numberOfSlides &&
-      data.length % 2 !== 0
-    ) {
-      event.path[4].childNodes[1].innerHTML = "";
-    } else {
-      event.path[4].childNodes[1].innerHTML = createCardTemplate(
-        data[2 * Number(event.target.innerHTML) - 1]
-      );
-    }
+  for (let i = startIndex; i < endIndex; i++) {
+    div.appendChild(getBtnHTML(i + 1));
   }
+
+  div.childNodes[indexOfActiveBtn].classList.add("btn-number-slider-active");
+  div.classList.add("number-slider");
+
+  return div;
 }
 
-function createLi(card) {
-  const li = document.createElement("li");
-  li.classList.add("blog__item");
-  li.innerHTML = createCardTemplate(card);
-  return li;
+function getBtnHTML(numberOfPage) {
+  const button = document.createElement("button");
+
+  button.classList.add("btn-number-slider");
+  button.innerHTML = numberOfPage;
+
+  return button;
 }
 
-function createCardTemplate(card) {
-  return `<div class="blog__block">
+function getCardTemplate(card) {
+  return `<div class="blog__block" ">
                   <h4 class="blog__header">${card.category}</h4>
                   <img
                     class="blog__image"
@@ -111,4 +84,87 @@ function createCardTemplate(card) {
                   </div>
                 </div>
             `;
+}
+
+function getCountOfPages(count) {
+  const cardsPerPage = 2;
+
+  if (count % cardsPerPage === 0) {
+    return count / cardsPerPage;
+  }
+
+  return Math.trunc(count / cardsPerPage) + 1;
+}
+
+function getCountOfVisiblePages(count) {
+  const cardsPerPage = 2;
+  const countOfVisiblePages = 5;
+
+  if (count / cardsPerPage <= countOfVisiblePages) {
+    return getCountOfPages(count);
+  }
+
+  return countOfVisiblePages;
+}
+
+function clickBtnPaginatorHandler(event, data) {
+  if (event.target.classList.contains("btn-number-slider")) {
+    const countOfPages = getCountOfPages(data.length);
+    const numberOfCurrentPage = Number(event.target.innerHTML);
+    const indexOfCard1 = 2 * (numberOfCurrentPage - 1);
+    const indexOfCard2 = 2 * numberOfCurrentPage - 1;
+
+    const divOfCard1 = document.querySelector(`div[data-card="card-1"]`);
+    const divOfCard2 = document.querySelector(`div[data-card="card-2"]`);
+
+    divOfCard1.innerHTML = getCardTemplate(data[indexOfCard1]);
+
+    if (isLastCardSingle(indexOfCard2, data.length)) {
+      divOfCard2.innerHTML = "";
+    } else {
+      divOfCard2.innerHTML = getCardTemplate(data[indexOfCard2]);
+    }
+
+    refreshPaginatorHTML(event.target, numberOfCurrentPage, countOfPages);
+  }
+}
+
+function isLastCardSingle(indexOfCard, indexOfLastElement) {
+  return indexOfCard === indexOfLastElement && indexOfLastElement % 2 != 0;
+}
+
+function refreshPaginatorHTML(btn, numberOfCurrentPage, countOfPages) {
+  if (
+    countOfPages < 5 ||
+    numberOfCurrentPage === 1 ||
+    numberOfCurrentPage === countOfPages
+  ) {
+    сhangeActiveBtn(btn);
+    return;
+  }
+
+  const numSlider = document.querySelector(".blog__paginator");
+  numSlider.innerHTML = "";
+
+  switch (numberOfCurrentPage) {
+    case 2:
+      numSlider.appendChild(getPaginatorHTML(1, 5, 0));
+      break;
+    case countOfPages - 1:
+      numSlider.appendChild(
+        getPaginatorHTML(3, countOfPages, countOfPages - 5)
+      );
+      break;
+    default:
+      numSlider.appendChild(
+        getPaginatorHTML(2, numberOfCurrentPage + 2, numberOfCurrentPage - 3)
+      );
+  }
+}
+
+function сhangeActiveBtn(btn) {
+  const activeBtn = document.querySelector(".btn-number-slider-active");
+
+  activeBtn.classList.remove("btn-number-slider-active");
+  btn.classList.add("btn-number-slider-active");
 }
