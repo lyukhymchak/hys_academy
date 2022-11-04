@@ -14,6 +14,15 @@ export class App {
     initFixedHeader();
     initMobileMenu();
 
+    const storage = new Storage();
+
+    initPaginator(storage.getDatafromLocalStorage('paginator'));
+
+    const slider = initSlider(storage.getDatafromLocalStorage('slider'));
+    const slickSlider = initslickSlider(
+      storage.getDatafromLocalStorage('slickSlider')
+    );
+
     const data = await this.makeRequest();
 
     const select = new Select('#select');
@@ -23,20 +32,13 @@ export class App {
       this.onAlbumChange(event, slider)
     );
 
-    const storage = new Storage();
-
-    initPaginator(storage.getDatafromLocalStorage('paginator'));
-
-    initSlider(storage.getDatafromLocalStorage('slider'));
-    initslickSlider(storage.getDatafromLocalStorage('slickSlider'));
-
     formOnLoad();
   }
 
   async onAlbumChange(event, s) {
     let data = await this.makeRequest(event.target.value);
 
-    s.initSlider(data);
+    s.setData(data);
   }
 
   async makeRequest(albumID = 1) {
@@ -46,20 +48,18 @@ export class App {
 
     const result = await response.json();
 
-    return result.slice(0, this.getRandomArbitrary(4, 15));
-  }
-
-  getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
+    return result.slice(0, 10);
   }
 }
 
 function initSlider(data) {
   const slider = new Slider('preference-slider', data);
+  return slider;
 }
 
 function initslickSlider(data) {
   const slickSlider = new SlickSlider('.slick-slider', data);
+  return slickSlider;
 }
 
 function initPaginator(data) {
