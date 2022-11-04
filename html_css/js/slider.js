@@ -1,51 +1,55 @@
 export class Slider {
   constructor(id, data) {
-    this.id = id;
-    this.data = data;
-    this.initSlider();
+    this.initSlider(id, data);
   }
 
-  initSlider() {
+  initSlider(id, data) {
     this.slider = document
-      .getElementById(this.id)
-      .appendChild(this.createSliderItemMarkup(this.data.length));
+      .getElementById(id)
+      .appendChild(this.getSliderItemMarkup(data.length));
 
-    this.setData(this.data);
+    this.setData(data);
 
-    this.numberOfSlidesPerPage = this.setNumberOfSlidesPerPage();
+    this.numberOfSlidesPerPage = this.getNumberOfSlidesPerPage();
     this.curSlide = 0;
-    this.maxSlide = this.data.length - this.numberOfSlidesPerPage;
-  }
+    this.maxSlide = data.length - this.numberOfSlidesPerPage;
 
-  createSliderItemMarkup(numberOfSlides) {
-    const div = document.createElement("div");
-    div.classList.add("preference-carousel");
+    this.slider.addEventListener("click", (event) =>
+      this.clickBtnSliderHandler(event)
+    );
 
-    const ul = document.createElement("ul");
-    ul.classList.add("preference__list");
-    for (let i = 0; i < numberOfSlides; i++) {
-      const li = document.createElement("li");
-      li.classList.add("preference__item");
-      ul.appendChild(li);
-    }
-
-    const btnLeft = this.createBtn("left");
-    btnLeft.setAttribute("disabled", "");
-
-    const btnRight = this.createBtn("right");
-
-    div.appendChild(btnLeft);
-    div.appendChild(ul);
-    div.appendChild(btnRight);
-
-    div.addEventListener("click", (event) => this.clickBtnSliderHandler(event));
     window.addEventListener("resize", () => {
       this.resizeWindowHandler();
     });
-    return div;
   }
 
-  createBtn(direction) {
+  getSliderItemMarkup(numberOfSlides) {
+    const divPreference = document.createElement("div");
+    const ulPreference = document.createElement("ul");
+
+    divPreference.classList.add("preference-carousel");
+    ulPreference.classList.add("preference__list");
+
+    for (let i = 0; i < numberOfSlides; i++) {
+      const li = document.createElement("li");
+
+      li.classList.add("preference__item");
+      ulPreference.appendChild(li);
+    }
+
+    const btnLeft = this.getBtnHTML("left");
+    btnLeft.setAttribute("disabled", "");
+
+    const btnRight = this.getBtnHTML("right");
+
+    divPreference.appendChild(btnLeft);
+    divPreference.appendChild(ulPreference);
+    divPreference.appendChild(btnRight);
+
+    return divPreference;
+  }
+
+  getBtnHTML(direction) {
     const btn = document.createElement("button");
 
     btn.classList.add("btn-slider");
@@ -55,64 +59,55 @@ export class Slider {
                         <use href="images/sprite-plus.svg#icon-chevron-${direction}"></use>
                     </svg>
                     `;
+
     return btn;
   }
 
   setData(data) {
-    const liElements = document.querySelectorAll(".preference__item");
+    const elementsOfSlider = this.slider.querySelectorAll(".preference__item");
 
-    liElements.forEach((element, index) => {
-      element.style.backgroundImage = `url(${data[index].url})`;
+    elementsOfSlider.forEach((element, index) => {
       const title = data[index].title.split(" ");
+
       element.innerHTML = title[0] + " " + title[1];
+      element.style.backgroundImage = `url(${data[index].url})`;
     });
   }
 
-  setNumberOfSlidesPerPage() {
-    let width = window.innerWidth;
-    const slider = document.querySelector(".preference__list");
+  getNumberOfSlidesPerPage() {
+    const width = window.innerWidth;
+    const sliderList = this.slider.querySelector(".preference__list");
 
     if (width <= 768) {
-      slider.style.maxWidth = "207px";
+      sliderList.style.maxWidth = "207px";
       return 1;
     }
 
     if (width > 1440) {
-      slider.style.maxWidth = "888px";
+      sliderList.style.maxWidth = "888px";
       return 4;
     }
 
-    slider.style.maxWidth = "434px";
+    sliderList.style.maxWidth = "434px";
     return 2;
   }
 
   clickBtnSliderHandler(event) {
-    if (event.target.classList.toString().indexOf("left") > -1) {
+    if (event.target.classList.contains("btn-slider-left")) {
       this.curSlide--;
       this.changePosition();
     }
 
-    if (event.target.classList.toString().indexOf("right") > -1) {
+    if (event.target.classList.contains("btn-slider-right")) {
       this.curSlide++;
       this.changePosition();
     }
   }
 
-  resizeWindowHandler() {
-    this.maxSlide += this.numberOfSlidesPerPage;
-    this.numberOfSlidesPerPage = this.setNumberOfSlidesPerPage();
-    this.maxSlide -= this.numberOfSlidesPerPage;
-
-    if (this.curSlide > this.maxSlide) {
-      this.curSlide = this.maxSlide;
-      this.changePosition();
-    }
-  }
-
   changePosition() {
-    const liElements = document.querySelectorAll(".preference__item");
+    const elementsOfSlider = this.slider.querySelectorAll(".preference__item");
 
-    liElements.forEach((element) => {
+    elementsOfSlider.forEach((element) => {
       element.style.transform = `translateX(-${this.curSlide * 227}px)`;
     });
 
@@ -134,5 +129,17 @@ export class Slider {
     } else {
       btnRight.removeAttribute("disabled");
     }
+  }
+
+  resizeWindowHandler() {
+    this.maxSlide += this.numberOfSlidesPerPage;
+    this.numberOfSlidesPerPage = this.getNumberOfSlidesPerPage();
+    this.maxSlide -= this.numberOfSlidesPerPage;
+
+    if (this.curSlide > this.maxSlide) {
+      this.curSlide = this.maxSlide;
+    }
+
+    this.changePosition();
   }
 }
