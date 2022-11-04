@@ -1,5 +1,7 @@
 const FORM_DATA_KEY = 'formData';
+
 const form = document.getElementById('form');
+const btnSubmit = form.querySelector('button[type=submit]');
 const name = form.querySelector('input[type=text]');
 const tel = form.querySelector('input[type=tel]');
 const email = form.querySelector('input[type=email]');
@@ -28,18 +30,11 @@ function retrieveRecords() {
   }
 }
 
-function formChangeData() {
-  const form = document.getElementById('form');
-  form.addEventListener('keydown', storeRecords);
+function formOnLoad() {
+  retrieveRecords();
 
-  const btnSubmit = form.querySelector('button[type=submit]');
+  form.addEventListener('keydown', storeRecords);
   btnSubmit.addEventListener('click', clearStorage);
 }
 
-function formOnLoad() {
-  window.addEventListener('load', () => {
-    retrieveRecords();
-  });
-}
-
-export { formChangeData, formOnLoad };
+export { formOnLoad };

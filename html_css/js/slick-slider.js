@@ -6,16 +6,19 @@ export class SlickSlider {
 
   createSlickSliderItemMarkup(selector, data) {
     const ul = document.querySelector(selector);
+
     for (let i = 0; i < data.length; i++) {
-      ul.appendChild(this.createCardTemplate(data[i]));
+      ul.appendChild(this.getCardTemplate(data[i]));
     }
   }
 
-  createCardTemplate(card) {
+  getCardTemplate(card) {
     const li = document.createElement('li');
     const div = document.createElement('div');
+
     div.classList.add('courses__list-item');
     div.style.backgroundImage = `url(${card.url})`;
+
     div.innerHTML = `<img
                       class="courses__mentor"
                       src="${card.mentor}"
@@ -65,12 +68,12 @@ export class SlickSlider {
                         <svg class="arrow arrow-left" width="24" height="24">
                             <use href="images/sprite-plus.svg#icon-chevron-left"></use>
                         </svg>
-                    </button>`,
+                  </button>`,
       nextArrow: `<button class="btn-slider btn-slider-right btn-slick-right">
                         <svg class="arrow arrow-right" width="24" height="24">
                             <use href="images/sprite-plus.svg#icon-chevron-right"></use>
                         </svg>
-                    </button>`,
+                  </button>`,
     });
   }
 }
