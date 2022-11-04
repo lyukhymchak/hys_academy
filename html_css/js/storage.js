@@ -16,6 +16,7 @@ export class Storage {
       return JSON.parse(localStorage.getItem(key));
     }
   }
+
   setDataToLocalStorage(key, data) {
     if (!localStorage.getItem(key)) {
       localStorage.setItem(key, JSON.stringify(data));
