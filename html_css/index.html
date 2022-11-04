@@ -30,33 +30,42 @@
         <div class="container__header container_1024">
           <nav class="navbar">
             <div class="navbar-left">
-              <a class="hamburger-menu" href="#">
-                <svg width="24" height="24">
-                  <use href="images/sprite-plus.svg#icon-hamburger-menu"></use>
+              <div class="logo-and-hamburger">
+                <a class="hamburger-menu-logo" href="#">
+                  <svg class="hamburger-menu-svg">
+                    <use href="images/sprite.svg#icon-hamburger-menu"></use>
+                  </svg>
+                </a>
+                <a class="logo header__logo" href="#">
+                  <svg class="logo-svg">
+                    <use href="images/sprite.svg#icon-logo-union"></use>
+                  </svg>
+                </a>
+              </div>
+              <div>
+                <svg class="close-svg">
+                  <use href="images/sprite.svg#icon-close"></use>
                 </svg>
-              </a>
-              <a class="logo header__logo" href="#">
-                <svg width="54" height="24">
-                  <use href="images/sprite.svg#icon-logo-union"></use>
-                </svg>
-              </a>
+              </div>
             </div>
             <div class="navbar-right">
               <ul class="navbar__list">
                 <li class="navbar__item">
-                  <a class="navbar__link" href="#">Categories</a>
+                  <a class="navbar__link" href="#features">Features</a>
                 </li>
                 <li class="navbar__item">
-                  <a class="navbar__link" href="#">Course</a>
+                  <a class="navbar__link" href="#courses">Course</a>
                 </li>
                 <li class="navbar__item">
-                  <a class="navbar__link" href="#">Explore</a>
+                  <a class="navbar__link" href="#tour">Explore</a>
                 </li>
                 <li class="navbar__item">
-                  <a class="navbar__link" href="#">Degrees</a>
+                  <a class="navbar__link" href="#blog">Blog</a>
                 </li>
               </ul>
-              <div><a class="btn btn-blue" href="#">Explore</a></div>
+              <div class="btn-explore">
+                <a class="btn btn-blue" href="#">Explore</a>
+              </div>
             </div>
           </nav>
         </div>
@@ -117,48 +126,48 @@
           </div>
         </section>
         <!-- section 1 - Why choose us? -->
-        <section class="section choose-1">
-          <div class="container__choose-1 container_1024">
-            <h2 class="section-header header-with-line">Shy shoose us?</h2>
-            <ul class="choose-1__list">
-              <li class="choose-1__item">
-                <svg width="54" height="53">
+        <section id="features" class="section features">
+          <div class="container__features container_1024">
+            <h2 class="section-header header-with-line">Our features</h2>
+            <ul class="features__list">
+              <li class="features__item">
+                <svg class="features__icon">
                   <use href="images/sprite.svg#icon-certificate"></use>
                 </svg>
-                <h3 class="choose-1__title">Certificate</h3>
-                <p class="choose-1__text">
+                <h3 class="features__title">Certificate</h3>
+                <p class="features__text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod.A bank is a financial institution accepts deposits
                   from public and creates credit.
                 </p>
               </li>
-              <li class="choose-1__item">
-                <svg width="40" height="53">
+              <li class="features__item">
+                <svg class="features__icon">
                   <use href="images/sprite.svg#icon-life-programs"></use>
                 </svg>
-                <h3 class="choose-1__title">Life programs</h3>
-                <p class="choose-1__text">
+                <h3 class="features__title">Life programs</h3>
+                <p class="features__text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   institution accepts deposits from public
                 </p>
               </li>
-              <li class="choose-1__item">
-                <svg width="43" height="53">
+              <li class="features__item">
+                <svg class="features__icon">
                   <use href="images/sprite.svg#icon-affordability"></use>
                 </svg>
-                <h3 class="choose-1__title">Affordability</h3>
-                <p class="choose-1__text">
+                <h3 class="features__title">Affordability</h3>
+                <p class="features__text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.
                   A bank is a financial institution accepts deposits from public
                   and creates credit.
                 </p>
               </li>
-              <li class="choose-1__item">
-                <svg width="43" height="53">
+              <li class="features__item">
+                <svg class="features__icon">
                   <use href="images/sprite.svg#icon-social"></use>
                 </svg>
-                <h3 class="choose-1__title">Social</h3>
-                <p class="choose-1__text">
+                <h3 class="features__title">Social</h3>
+                <p class="features__text">
                   A bank is a financial institution accepts deposits from public
                   and creates credit.
                 </p>
@@ -167,7 +176,7 @@
           </div>
         </section>
         <!-- section 2 - 2000+ Online courses -->
-        <section class="section courses">
+        <section id="courses" class="section courses">
           <div class="container__courses container_1024">
             <div class="courses__description">
               <h4 class="courses__header">
@@ -183,11 +192,13 @@
           </div>
         </section>
         <!-- section 3 - Take a tour  -->
-        <section class="section tour">
+        <section id="tour" class="section tour">
           <div class="container__tour container_1440">
             <div class="tour__image">
               <div>
-                <button class="btn-play"><div class="play"></div></button>
+                <svg class="play">
+                  <use href="images/sprite.svg#icon-play"></use>
+                </svg>
               </div>
             </div>
             <div class="tour__text">
@@ -438,7 +449,6 @@
                     Sed ut perspiciatis unde omnis iste natus error sit
                     voluptatem accusantium doloremque.
                   </p>
-                  <br />
                   <p>
                     Laudantium, totam rem aperiam, eaque ipsa quae ab illo
                     inventore veritatis et quasi architecto beatae vitae dicta
@@ -498,40 +508,51 @@
             </div>
             <div class="start__block-2">
               <h3 class="start__title">
-                <svg width="24" height="24">
+                <svg class="icon-link-title">
                   <use href="images/sprite.svg#icon-quick-link"></use>
                 </svg>
                 Quick Link
               </h3>
               <ul class="start__list">
                 <li class="start__item">
-                  <svg width="24" height="24">
-                    <use href="images/sprite.svg#icon-tuition-and-fees"></use>
-                  </svg>
-                  <a class="start__link" href="#">Tution and Fees</a>
+                  <a class="start__link" href="#">
+                    <svg class="icon-link">
+                      <use href="images/sprite.svg#icon-tuition-and-fees"></use>
+                    </svg>
+                    Tution and Fees
+                  </a>
+
                   <hr class="start__line" />
                 </li>
                 <li class="start__item">
-                  <svg width="24" height="24">
-                    <use href="images/sprite.svg#icon-review-and-rating"></use>
-                  </svg>
-                  <a class="start__link" href="#">Review & Rating</a>
+                  <a class="start__link" href="#">
+                    <svg class="icon-link">
+                      <use
+                        href="images/sprite.svg#icon-review-and-rating"
+                      ></use>
+                    </svg>
+                    Review & Rating</a
+                  >
                   <hr class="start__line" />
                 </li>
                 <li class="start__item">
-                  <svg width="24" height="24">
-                    <use
-                      href="images/sprite.svg#icon-university-facilities"
-                    ></use>
-                  </svg>
-                  <a class="start__link" href="#">Universoty Facilities</a>
+                  <a class="start__link" href="#">
+                    <svg class="icon-link">
+                      <use
+                        href="images/sprite.svg#icon-university-facilities"
+                      ></use>
+                    </svg>
+                    Universoty Facilities</a
+                  >
                   <hr class="start__line" />
                 </li>
                 <li class="start__item">
-                  <svg width="24" height="24">
-                    <use href="images/sprite.svg#icon-community-qa"></use>
-                  </svg>
-                  <a class="start__link" href="#">Community Q&A</a>
+                  <a class="start__link" href="#">
+                    <svg class="icon-link">
+                      <use href="images/sprite.svg#icon-community-qa"></use>
+                    </svg>
+                    Community Q&A</a
+                  >
                   <hr class="start__line" />
                 </li>
               </ul>
@@ -539,7 +560,7 @@
           </div>
         </section>
         <!-- section 8 - Latest Blog -->
-        <section class="section blog">
+        <section id="blog" class="section blog">
           <div class="container__blog container_1024">
             <h2 class="section-header header-with-line">Latest Blog</h2>
             <div id="paginator"></div>
@@ -547,15 +568,32 @@
         </section>
         <!-- form -->
         <div class="section container__form container_1024">
-          <form class="form" id="form">
-            <input class="form__input" type="text" placeholder="Name Surname" />
-            <input class="form__input" type="tel" placeholder="Phone" />
+          <form class="form" id="form" name="form">
+            <label for="name"> </label>
             <input
               class="form__input"
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Name Surname"
+            />
+            <label for="phone"> </label>
+            <input
+              class="form__input"
+              id="phone"
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+            />
+            <label for="email"> </label>
+            <input
+              class="form__input"
+              id="email"
               type="email"
+              name="email"
               placeholder="Enter your email..."
             />
-            <button class="button" type="submit">Send</button>
+            <button class="button" type="submit" name="submit">Send</button>
           </form>
         </div>
       </main>
@@ -563,9 +601,9 @@
       <footer class="footer">
         <div class="container__footer container_1024">
           <div class="footer__navigation-1">
-            <div>
-              <a class="logo footer__logo" href="#">
-                <svg width="54" height="24">
+            <div class="footer__logo">
+              <a class="logo" href="#">
+                <svg class="logo-svg">
                   <use href="images/sprite.svg#icon-logo-union"></use>
                 </svg>
               </a>
@@ -617,23 +655,31 @@
               <ul class="footer__list footer__list-social-media">
                 <li class="footer__item">
                   <a class="footer__link" href="https://www.facebook.com/">
-                    <div class="social-icon facebook"></div
-                  ></a>
+                    <svg class="social-icon">
+                      <use href="images/sprite.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
                 </li>
                 <li class="footer__item">
                   <a class="footer__link" href="https://www.instagram.com/">
-                    <div class="social-icon instagram"></div
-                  ></a>
+                    <svg class="social-icon">
+                      <use href="images/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
                 </li>
                 <li class="footer__item">
-                  <a class="footer__link" href="https://twitter.com/">
-                    <div class="social-icon twitter"></div
-                  ></a>
+                  <a class="footer__link" href="https://www.twitter.com/">
+                    <svg class="social-icon">
+                      <use href="images/sprite.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
                 </li>
                 <li class="footer__item">
                   <a class="footer__link" href="https://www.youtube.com/">
-                    <div class="social-icon youtube"></div
-                  ></a>
+                    <svg class="social-icon">
+                      <use href="images/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
                 </li>
               </ul>
             </div>
