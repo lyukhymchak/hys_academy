@@ -6,12 +6,10 @@ export function dataForPaginator() {
   return data;
 }
 
-export function dataForSlider() {
-  const myData = dataSlider.filter((element, index) => {
-    return element["albumId"] === 1 && index < 10;
+export function dataForSlider(n = 10) {
+  return dataSlider.filter((element, index) => {
+    return element["albumId"] === 1 && index < n;
   });
-
-  return myData;
 }
 
 export function dataForSlickSlider() {

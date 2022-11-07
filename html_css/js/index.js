@@ -13,11 +13,15 @@ window.addEventListener("DOMContentLoaded", () => {
   initPaginator();
   initFixedHeader();
   initMobileMenu();
-  initSliders();
+  initSlider();
+  iniSlickSlider();
 });
 
-function initSliders() {
+function initSlider() {
   const slider = new Slider("preference-slider", dataForSlider());
+}
+
+function iniSlickSlider() {
   const slickSlider = new SlickSlider(".slick-slider", dataForSlickSlider());
 }
 
