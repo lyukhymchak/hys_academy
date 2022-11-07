@@ -1,0 +1,62 @@
+[
+  {
+    "albumId": 1,
+    "id": 1,
+    "title": "Learn Photoshop 1",
+    "header": "DESIGN",
+    "mentor": "images/mentor-design.png",
+    "url": "images/background-img-design.jpg",
+    "oldPrice": "$360",
+    "newPrice": "$260"
+  },
+  {
+    "albumId": 1,
+    "id": 2,
+    "title": "Learn Photoshop 2",
+    "header": "Marketing",
+    "mentor": "images/mentor-marketing.png",
+    "url": "images/background-img-marketing.jpg",
+    "oldPrice": "$360",
+    "newPrice": "$260"
+  },
+  {
+    "albumId": 1,
+    "id": 3,
+    "title": "Learn Photoshop 3",
+    "header": "Web design",
+    "mentor": "images/mentor-web-design.png",
+    "url": "images/background-img-web-design.jpg",
+    "oldPrice": "$360",
+    "newPrice": "$260"
+  },
+  {
+    "albumId": 1,
+    "id": 4,
+    "title": "Learn Photoshop 4",
+    "header": "DESIGN",
+    "mentor": "images/mentor-design.png",
+    "url": "images/background-img-design.jpg",
+    "oldPrice": "$360",
+    "newPrice": "$260"
+  },
+  {
+    "albumId": 1,
+    "id": 5,
+    "title": "Learn Photoshop 5",
+    "header": "Marketing",
+    "mentor": "images/mentor-marketing.png",
+    "url": "images/background-img-marketing.jpg",
+    "oldPrice": "$360",
+    "newPrice": "$260"
+  },
+  {
+    "albumId": 1,
+    "id": 6,
+    "title": "Learn Photoshop 6",
+    "header": "Web design",
+    "mentor": "images/mentor-web-design.png",
+    "url": "images/background-img-web-design.jpg",
+    "oldPrice": "$360",
+    "newPrice": "$260"
+  }
+]

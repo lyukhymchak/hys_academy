@@ -11,7 +11,24 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href=" https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+    />
+
     <link rel="stylesheet" href="css/style.css" />
+    <script defer src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+    ></script>
     <script defer src="js/index.js" type="module"></script>
   </head>
   <body>
@@ -177,71 +194,8 @@
                 2000+ Online courses
               </h2>
             </div>
-            <div class="courses-carousel">
-              <svg class="left">
-                <use href="images/sprite.svg#icon-left"></use>
-              </svg>
-              <ul class="courses__list">
-                <li class="courses__list-item">
-                  <img
-                    class="mentor"
-                    src="images/mentor-design.png"
-                    width="48"
-                    alt="mentor of design"
-                  />
-                  <h4 class="courses__header">DESIGN</h4>
-                  <h3 class="courses__title">Learn Photoshop title</h3>
-                  <hr class="courses__line" />
-                  <div class="courses__prices">
-                    <div>
-                      <span class="courses__new-price">$260</span>
-                      <span class="courses__old-price">$360</span>
-                    </div>
-                    <span>⭐⭐⭐⭐(4)</span>
-                  </div>
-                </li>
-                <li class="courses__list-item courses__backimage-2">
-                  <img
-                    class="mentor"
-                    src="images/mentor-marketing.png"
-                    width="48"
-                    alt="mentor of design"
-                  />
-                  <h4 class="courses__header">Marketing</h4>
-                  <h3 class="courses__title">Learn Photoshop title trun...</h3>
-                  <hr class="courses__line" />
-                  <div class="courses__prices">
-                    <div>
-                      <span class="courses__new-price">$260</span>
-                      <span class="courses__old-price">$360</span>
-                    </div>
-                    <span>⭐⭐⭐⭐(4)</span>
-                  </div>
-                </li>
-                <li class="courses__list-item courses__backimage-3">
-                  <img
-                    class="mentor"
-                    src="images/mentor-web-design.png"
-                    width="48"
-                    alt="mentor of web-design"
-                  />
-                  <h4 class="courses__header">Web design</h4>
-                  <h3 class="courses__title">Learn Photoshop</h3>
-                  <hr class="courses__line" />
-                  <div>
-                    <div class="courses__prices">
-                      <div>
-                        <span class="courses__new-price">$260</span>
-                        <span class="courses__old-price">$360</span>
-                      </div>
-                      <span>⭐⭐⭐⭐(4)</span>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <svg class="right">
-                <use href="images/sprite.svg#icon-right"></use>
-              </svg>
+            <div class="courses__carousel">
+              <ul class="courses__list slick-slider"></ul>
             </div>
           </div>
         </section>
@@ -465,28 +419,14 @@
               Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
               veritatis et quasi architecto beatae vitae dicta sunt explicabo.
             </p>
-            <div class="preference-carousel">
-              <svg class="left">
-                <use href="images/sprite.svg#icon-left"></use>
-              </svg>
-              <ul class="preference__list">
-                <li class="preference__item preference__backimage-1">
-                  Graphic Design
-                </li>
-                <li class="preference__item preference__backimage-2">
-                  Web Design
-                </li>
-                <li class="preference__item preference__backimage-3">
-                  Marketing
-                </li>
-                <li class="preference__item preference__backimage-4">
-                  Education
-                </li>
-              </ul>
-              <svg class="right">
-                <use href="images/sprite.svg#icon-right"></use>
-              </svg>
-            </div>
+            <select class="preference__select" name="Label">
+              <option selected disabled hidden>Label</option>
+              <option value="Item 1">Item 1</option>
+              <option value="Item 2">Item 2</option>
+              <option value="Item 3">Item 3</option>
+              <option value="Item 4">Item 4</option>
+            </select>
+            <div id="preference-slider"></div>
           </div>
         </section>
         <!-- section 6 - Our great customers -->
