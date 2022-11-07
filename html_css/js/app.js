@@ -16,7 +16,6 @@ export class App {
     const storage = new Storage();
 
     initPaginator(storage.getDatafromLocalStorage("paginator"));
-
     initSlider(storage.getDatafromLocalStorage("slider"));
     initslickSlider(storage.getDatafromLocalStorage("slickSlider"));
 

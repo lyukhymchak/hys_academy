@@ -1,10 +1,16 @@
 const FORM_DATA_KEY = "formData";
 
 const form = document.getElementById("form");
-const btnSubmit = form.querySelector("button[type=submit]");
 const name = form.querySelector("input[type=text]");
 const tel = form.querySelector("input[type=tel]");
 const email = form.querySelector("input[type=email]");
+
+function formOnLoad() {
+  retrieveRecords();
+
+  form.addEventListener("input", storeRecords);
+  form.addEventListener("submit", clearStorage);
+}
 
 function clearStorage() {
   localStorage.removeItem(FORM_DATA_KEY);
@@ -28,13 +34,6 @@ function retrieveRecords() {
     tel.value = data.tel;
     email.value = data.email;
   }
-}
-
-function formOnLoad() {
-  retrieveRecords();
-
-  form.addEventListener("keydown", storeRecords);
-  btnSubmit.addEventListener("click", clearStorage);
 }
 
 export { formOnLoad };

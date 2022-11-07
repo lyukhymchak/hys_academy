@@ -18,8 +18,6 @@ export class Storage {
   }
 
   setDataToLocalStorage(key, data) {
-    if (!localStorage.getItem(key)) {
-      localStorage.setItem(key, JSON.stringify(data));
-    }
+    localStorage.setItem(key, JSON.stringify(data));
   }
 }
