@@ -4,7 +4,7 @@ import { paginator } from "./paginator.js";
 import { Slider } from "./slider.js";
 import { SlickSlider } from "./slick-slider.js";
 import { Storage } from "./storage.js";
-import { formOnLoad } from "./form.js";
+import { Form } from "./form.js";
 
 export class App {
   constructor() {}
@@ -19,7 +19,7 @@ export class App {
     initSlider(storage.getDatafromLocalStorage("slider"));
     initslickSlider(storage.getDatafromLocalStorage("slickSlider"));
 
-    formOnLoad();
+    initForm();
   }
 }
 
@@ -33,4 +33,8 @@ function initslickSlider(data) {
 
 function initPaginator(data) {
   paginator("paginator", data);
+}
+
+function initForm() {
+  const form = new Form("form");
 }

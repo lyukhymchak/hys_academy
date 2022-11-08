@@ -1,39 +1,48 @@
-const FORM_DATA_KEY = "formData";
+export class Form {
+  constructor(id) {
+    const FORM_DATA_KEY = id + "Data";
+    this.form = document.getElementById(id);
+    this.name = form.querySelector("input[type=text]");
+    this.tel = form.querySelector("input[type=tel]");
+    this.email = form.querySelector("input[type=email]");
 
-const form = document.getElementById("form");
-const name = form.querySelector("input[type=text]");
-const tel = form.querySelector("input[type=tel]");
-const email = form.querySelector("input[type=email]");
+    this.retrieveRecords(FORM_DATA_KEY);
 
-function formOnLoad() {
-  retrieveRecords();
+    form.addEventListener("input", () => this.storeRecords(FORM_DATA_KEY));
+    form.addEventListener("submit", (event, key) =>
+      this.clearStorage(event, FORM_DATA_KEY)
+    );
+  }
 
-  form.addEventListener("input", storeRecords);
-  form.addEventListener("submit", clearStorage);
-}
+  retrieveRecords(key) {
+    const data = JSON.parse(localStorage.getItem(key));
 
-function clearStorage() {
-  localStorage.removeItem(FORM_DATA_KEY);
-}
+    if (data !== null) {
+      this.name.value = data.name;
+      this.tel.value = data.tel;
+      this.email.value = data.email;
+    }
+  }
 
-function storeRecords() {
-  const data = {
-    name: name.value,
-    tel: tel.value,
-    email: email.value,
-  };
+  clearStorage(event, key) {
+    event.preventDefault();
 
-  localStorage.setItem(FORM_DATA_KEY, JSON.stringify(data));
-}
+    localStorage.removeItem(key);
 
-function retrieveRecords() {
-  const data = JSON.parse(localStorage.getItem(FORM_DATA_KEY));
+    this.name.value = "";
+    this.tel.value = "";
+    this.email.value = "";
+  }
 
-  if (data !== null) {
-    name.value = data.name;
-    tel.value = data.tel;
-    email.value = data.email;
+  storeRecords(key) {
+    const data = {
+      name: this.name.value,
+      tel: this.tel.value,
+      email: email.value,
+    };
+
+    localStorage.setItem(key, JSON.stringify(data));
   }
 }
 
-export { formOnLoad };
+// export { formOnLoad };
