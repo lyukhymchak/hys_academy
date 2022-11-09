@@ -910,7 +910,13 @@ use {
   border: 2px solid var(--blue-color);
 }
 
-.form__input:invalid {
+.form-error-text {
+  display: none;
+  align-self: flex-start;
+  color: var(--error-color);
+}
+
+.field-error {
   border: 1px solid var(--error-color);
 }
 
