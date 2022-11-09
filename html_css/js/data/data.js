@@ -1,9 +1,9 @@
-import data from "./data.json" assert { type: "json" };
+import dataPaginator from "./dataPaginator.json" assert { type: "json" };
 import dataSlider from "./dataSlider.json" assert { type: "json" };
 import dataSlickSlider from "./dataSlickSlider.json" assert { type: "json" };
 
 export function dataForPaginator() {
-  return data;
+  return dataPaginator;
 }
 
 export function dataForSlider(n = 10) {

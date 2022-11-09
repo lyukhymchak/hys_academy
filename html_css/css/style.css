@@ -910,7 +910,13 @@ use {
   border: 2px solid var(--blue-color);
 }
 
-.form__input:invalid {
+.form-error-text {
+  display: none;
+  align-self: flex-start;
+  color: var(--error-color);
+}
+
+.field-error {
   border: 1px solid var(--error-color);
 }
 
@@ -1033,24 +1039,6 @@ use {
   border-radius: 20px;
 }
 
-.slider-right {
-  width: 24px;
-  height: 24px;
-  background-color: var(--green-color);
-  -webkit-mask: url(../images/right.svg);
-  mask: url(../images/right.svg);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-}
-.slider-left {
-  width: 24px;
-  height: 24px;
-  background-color: var(--green-color);
-  -webkit-mask: url(../images/left.svg);
-  mask: url(../images/left.svg);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-}
 .btn-slider:hover:enabled {
   box-shadow: 0px 4px 16px #e2edfb;
   background: var(--green-color);
