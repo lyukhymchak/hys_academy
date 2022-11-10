@@ -4,8 +4,8 @@ import { paginator } from './paginator.js';
 import { Slider } from './slider.js';
 import { SlickSlider } from './slick-slider.js';
 import { Storage } from './storage.js';
+import { Form } from './form.js';
 import { Select } from './select.js';
-import { formOnLoad } from './form.js';
 
 export class App {
   constructor() {}
@@ -18,10 +18,11 @@ export class App {
 
     initPaginator(storage.getDatafromLocalStorage('paginator'));
 
+    initSlickSlider(storage.getDatafromLocalStorage('slickSlider'));
+
+    initForm();
+
     const slider = initSlider(storage.getDatafromLocalStorage('slider'));
-    const slickSlider = initslickSlider(
-      storage.getDatafromLocalStorage('slickSlider')
-    );
 
     const data = await this.makeRequest();
 
@@ -31,8 +32,6 @@ export class App {
     selectList.addEventListener('change', (event, _) =>
       this.onAlbumChange(event, slider)
     );
-
-    formOnLoad();
   }
 
   async onAlbumChange(event, s) {
@@ -57,11 +56,14 @@ function initSlider(data) {
   return slider;
 }
 
-function initslickSlider(data) {
+function initSlickSlider(data) {
   const slickSlider = new SlickSlider('.slick-slider', data);
-  return slickSlider;
 }
 
 function initPaginator(data) {
   paginator('paginator', data);
+}
+
+function initForm() {
+  const form = new Form('form');
 }

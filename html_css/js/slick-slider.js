@@ -8,35 +8,34 @@ export class SlickSlider {
     const ul = document.querySelector(selector);
 
     for (let i = 0; i < data.length; i++) {
-      ul.appendChild(this.getCardTemplate(data[i]));
+      const li = document.createElement('li');
+
+      li.innerHTML = this.getCardTemplate(data[i]);
+      ul.appendChild(li);
     }
   }
 
   getCardTemplate(card) {
-    const li = document.createElement('li');
-    const div = document.createElement('div');
+    return `<div class="courses__list-item" style="background-image: url(${card.url});"><img class="courses__mentor" src="${card.mentor}" width="48" alt="mentor">
+              <h4 class="courses__header">${card.header}</h4>
+              <h3 class="courses__title">${card.title}</h3>
+              <hr class="courses__line">
+              <div class="courses__prices">
+                <div>
+                  <span class="courses__new-price">${card.newPrice}</span>
+                  <span class="courses__old-price">${card.oldPrice}</span>
+                </div>
+                <span>⭐⭐⭐⭐(4)</span>
+              </div>
+            </div>`;
+  }
 
-    div.classList.add('courses__list-item');
-    div.style.backgroundImage = `url(${card.url})`;
-
-    div.innerHTML = `<img
-                      class="courses__mentor"
-                      src="${card.mentor}"
-                      width="48"
-                      alt="mentor"
-                    />
-                    <h4 class="courses__header">${card.header}</h4>
-                    <h3 class="courses__title">${card.title}</h3>
-                    <hr class="courses__line" />
-                    <div class="courses__prices">
-                      <div>
-                        <span class="courses__new-price">${card.newPrice}</span>
-                        <span class="courses__old-price">${card.oldPrice}</span>
-                      </div>
-                      <span>⭐⭐⭐⭐(4)</span>
-                    </div>`;
-    li.appendChild(div);
-    return li;
+  getBtnHTML(direction) {
+    return `<button class="btn-slider btn-slider-${direction} btn-slick-${direction}">
+                        <svg class="arrow arrow-${direction}" width="24" height="24">
+                            <use href="images/sprite-plus.svg#icon-chevron-${direction}"></use>
+                        </svg>
+                  </button>`;
   }
 
   initSlickSlider(selector) {
@@ -64,16 +63,8 @@ export class SlickSlider {
           },
         },
       ],
-      prevArrow: `<button class="btn-slider btn-slider-left btn-slick-left">
-                        <svg class="arrow arrow-left" width="24" height="24">
-                            <use href="images/sprite-plus.svg#icon-chevron-left"></use>
-                        </svg>
-                  </button>`,
-      nextArrow: `<button class="btn-slider btn-slider-right btn-slick-right">
-                        <svg class="arrow arrow-right" width="24" height="24">
-                            <use href="images/sprite-plus.svg#icon-chevron-right"></use>
-                        </svg>
-                  </button>`,
+      prevArrow: this.getBtnHTML('left'),
+      nextArrow: this.getBtnHTML('right'),
     });
   }
 }

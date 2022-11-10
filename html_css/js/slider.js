@@ -55,12 +55,15 @@ export class Slider {
     btn.classList.add('btn-slider');
     btn.classList.add(`btn-slider-${direction}`);
 
-    btn.innerHTML = `<svg class="arrow arrow-${direction}" width="24" height="24">
-                        <use href="images/sprite-plus.svg#icon-chevron-${direction}"></use>
-                    </svg>
-                    `;
+    btn.innerHTML = this.getSvgHTML(direction);
 
     return btn;
+  }
+
+  getSvgHTML(direction) {
+    return `<svg class="arrow arrow-${direction}" width="24" height="24">
+              <use href="images/sprite-plus.svg#icon-chevron-${direction}"></use>
+            </svg>`;
   }
 
   setData(data) {
@@ -78,18 +81,23 @@ export class Slider {
     const width = window.innerWidth;
     const sliderList = this.slider.querySelector('.preference__list');
 
-    if (width <= 768) {
-      sliderList.style.maxWidth = '207px';
+    if (width <= 600) {
+      sliderList.style.minWidth = '207px';
       return 1;
     }
 
-    if (width > 1440) {
-      sliderList.style.maxWidth = '888px';
-      return 4;
+    if (width > 600 && width <= 900) {
+      sliderList.style.minWidth = '434px';
+      return 2;
     }
 
-    sliderList.style.maxWidth = '434px';
-    return 2;
+    if (width > 900 && width < 1440) {
+      sliderList.style.minWidth = '651px';
+      return 3;
+    }
+
+    sliderList.style.minWidth = '888px';
+    return 4;
   }
 
   clickBtnSliderHandler(event) {

@@ -11,11 +11,15 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href=" https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
     />
     <script defer src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script
@@ -564,30 +568,39 @@
         <div class="section container__form container_1024">
           <form class="form" id="form" name="form">
             <label for="name"> </label>
+            <div class="form-error-text">Invalid name</div>
             <input
               class="form__input"
               id="name"
               type="text"
               name="name"
               placeholder="Name Surname"
+              pattern="^[a-zA-Z ]+$"
+              required
             />
-            <label for="phone"> </label>
+            <label for="tel"> </label>
+            <div class="form-error-text">Invalid phone</div>
             <input
               class="form__input"
-              id="phone"
+              id="tel"
               type="tel"
-              name="phone"
+              name="tel"
               placeholder="Phone"
+              pattern="^[0-9\+]{9,15}$"
+              required
             />
             <label for="email"> </label>
+            <div class="form-error-text">Invalid email</div>
             <input
               class="form__input"
               id="email"
               type="email"
               name="email"
               placeholder="Enter your email..."
+              pattern="^[a-zA-Z0-9_\.]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+              required
             />
-            <button class="button" type="submit" name="submit">Send</button>
+            <button class="button" type="submit" name="btn-submit">Send</button>
           </form>
         </div>
       </main>
