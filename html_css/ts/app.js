@@ -5,7 +5,7 @@ import { Slider } from './slider.js';
 import { SlickSlider } from './slick-slider.js';
 import { Storage } from './storage.js';
 import { Form } from './form.js';
-import { Select } from './select.js';
+import { Select } from './select.ts';
 
 export class App {
   constructor() {}

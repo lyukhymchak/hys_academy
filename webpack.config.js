@@ -11,7 +11,7 @@ module.exports = {
   context: path.resolve(__dirname, './html_css'),
 
   entry: {
-    main: ['./js/index.ts', './css/style.css'],
+    main: ['./ts/index.ts', './css/style.css'],
   },
 
   devServer: {
@@ -30,20 +30,6 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
-      // {
-      //   test: /\.(js|jsx)$/,
-      //   exclude: /(node_modules|bower_components)/,
-      //   use: {
-      //     loader: 'babel-loader',
-      //     options: {
-      //       presets: ['@babel/preset-env'],
-      //       plugins: [
-      //         '@babel/plugin-proposal-object-rest-spread',
-      //         '@babel/plugin-syntax-import-assertions',
-      //       ],
-      //     },
-      //   },
-      // },
       {
         test: /\.(ttf|woff)$/i,
         type: 'asset/resource',
