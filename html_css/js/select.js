@@ -1,8 +1,6 @@
 export class Select {
   constructor(id) {
-    this.id = id;
-
-    this.initSelectList(this.id);
+    this.initSelectList(id);
   }
 
   initSelectList(id) {
