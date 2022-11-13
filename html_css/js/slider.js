@@ -1,11 +1,12 @@
 export class Slider {
   constructor(id, data) {
-    this.initSlider(id, data);
+    this.id = id;
+    this.initSlider(data);
   }
 
-  initSlider(id, data) {
+  initSlider(data) {
     this.slider = document
-      .getElementById(id)
+      .getElementById(this.id)
       .appendChild(this.getSliderItemMarkup(data.length));
 
     this.setData(data);
@@ -149,5 +150,9 @@ export class Slider {
     }
 
     this.changePosition();
+  }
+
+  emptySlider() {
+    this.slider.innerHTML = '';
   }
 }

@@ -22,22 +22,21 @@ export class App {
 
     initForm();
 
-    const slider = initSlider(storage.getDatafromLocalStorage('slider'));
-
     const data = await this.makeRequest();
+    const slider = initSlider(data);
 
     const select = new Select('#select');
 
     const selectList = document.getElementById('select');
-    selectList.addEventListener('change', (event, _) =>
+    selectList.addEventListener('change', event =>
       this.onAlbumChange(event, slider)
     );
   }
 
   async onAlbumChange(event, s) {
     let data = await this.makeRequest(event.target.value);
-
-    s.setData(data);
+    s.emptySlider();
+    s.initSlider(data);
   }
 
   async makeRequest(albumID = 1) {
@@ -47,8 +46,12 @@ export class App {
 
     const result = await response.json();
 
-    return result.slice(0, 10);
+    return result.slice(0, getRandomNumber(4, 20));
   }
+}
+
+function getRandomNumber(min, max) {
+  return Math.random() * (max - min) + min;
 }
 
 function initSlider(data) {
