@@ -1,7 +1,7 @@
 import { initFixedHeader } from './fixed-header.js';
 import { initMobileMenu } from './mobile-menu.js';
 import { paginator } from './paginator.js';
-import { Slider } from './slider.js';
+import { Slider } from './slider.ts';
 import { SlickSlider } from './slick-slider.js';
 import { Storage } from './storage.js';
 import { Form } from './form.js';
