@@ -1,14 +1,14 @@
 export class Select {
-  constructor(id) {
-    this.id = id;
+  #el;
 
-    this.initSelectList(this.id);
+  constructor(selector) {
+    this.initSelectList(selector);
   }
 
-  initSelectList(id) {
-    const divSelectList = document.querySelector(id);
+  initSelectList(selector) {
+    this.#el = document.querySelector(selector);
 
-    divSelectList.appendChild(this.getSelectListMarkup());
+    this.#el.appendChild(this.getSelectListMarkup());
   }
 
   getSelectListMarkup() {

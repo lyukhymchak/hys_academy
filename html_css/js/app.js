@@ -22,8 +22,8 @@ export class App {
 
     initForm();
 
-    const data = await this.makeRequest();
-    const slider = initSlider(data);
+    const dataForSlider = await this.makeRequestForSliderData();
+    const slider = initSlider(dataForSlider);
 
     const select = new Select('#select');
 
@@ -34,19 +34,25 @@ export class App {
   }
 
   async onAlbumChange(event, s) {
-    let data = await this.makeRequest(event.target.value);
+    let data = await this.makeRequestForSliderData(event.target.value);
     s.emptySlider();
     s.initSlider(data);
   }
 
-  async makeRequest(albumID = 1) {
-    const response = await fetch(
-      `https://jsonplaceholder.typicode.com/albums/${albumID}/photos`
-    );
+  async makeRequestForSliderData(albumID = 1) {
+    try {
+      const response = await fetch(
+        `https://jsonplaceholder.typicode.com/albums/${albumID}/photos`
+      );
 
-    const result = await response.json();
+      const result = await response.json();
 
-    return result.slice(0, getRandomNumber(4, 20));
+      return result.slice(0, getRandomNumber(4, 20));
+    } catch (e) {
+      console.error(e);
+
+      return [];
+    }
   }
 }
 

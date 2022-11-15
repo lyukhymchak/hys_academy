@@ -6,9 +6,9 @@ export function dataForPaginator() {
   return dataPaginator;
 }
 
-export function dataForSlider(n = 10) {
+export function dataForSlider(numberOfSlides = 10) {
   return dataSlider.filter(
-    (element, index) => element['albumId'] === 1 && index < n
+    (element, index) => element['albumId'] === 1 && index < numberOfSlides
   );
 }
 
