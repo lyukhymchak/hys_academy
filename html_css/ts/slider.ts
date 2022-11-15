@@ -3,17 +3,19 @@ import { SliderData } from './data/SliderData';
 
 export class Slider {
   slider: HTMLDivElement;
+  id: string;
   numberOfSlidesPerPage: number;
   curSlide: number;
   maxSlide: number;
 
   constructor(id: string, data: SliderData[]) {
-    this.initSlider(id, data);
+    this.id = id;
+    this.initSlider(data);
   }
 
-  initSlider(id: string, data: SliderData[]): void {
+  initSlider(data: SliderData[]): void {
     this.slider = document
-      .getElementById(id)
+      .getElementById(this.id)
       .appendChild(this.getSliderItemMarkup(data.length));
 
     this.setData(data);
@@ -164,5 +166,9 @@ export class Slider {
     }
 
     this.changePosition();
+  }
+
+  emptySlider() {
+    this.slider.innerHTML = '';
   }
 }

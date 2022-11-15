@@ -11,7 +11,7 @@ export class Storage {
     this.setDataToLocalStorage('slickSlider', dataForSlickSlider());
   }
 
-  getDatafromLocalStorage(key: string): string {
+  getDatafromLocalStorage(key: string): object {
     if (localStorage.getItem(key)) {
       return JSON.parse(localStorage.getItem(key));
     }

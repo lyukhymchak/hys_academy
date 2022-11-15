@@ -52,15 +52,14 @@ export class Form {
     localStorage.setItem(key, JSON.stringify(data));
   }
 
-  validateForm(e: Event, key: string): void {
-    e.preventDefault();
+  validateForm(event: Event, key: string): void {
+    event.preventDefault();
 
     let formErrors: boolean = false;
-    const form = e.target as HTMLFormElement;
-    const field: Element[] = Array.from(form.elements);
+    const form = event.target as HTMLFormElement;
+    const fields = Array.from(form.elements) as HTMLInputElement[];
 
-    for (const el of field) {
-      const element = el as HTMLInputElement;
+    for (const element of fields) {
       this.markFieldAsError(element, false);
       this.toggleErrorField(element, false);
 
@@ -73,7 +72,7 @@ export class Form {
 
     if (!formErrors) {
       form.submit();
-      this.clearStorage(e, key);
+      this.clearStorage(event, key);
     }
   }
 
@@ -90,12 +89,15 @@ export class Form {
 
   markFieldAsError(field: HTMLInputElement, show: boolean): void {
     field.classList.toggle('field-error', show);
+
     this.toggleErrorField(field, show);
   }
 
-  inputFormHandler(e: Event, key: string) {
+  inputFormHandler(event: Event, key: string) {
     this.storeRecords(key);
-    const target = e.target as HTMLInputElement;
+
+    const target = event.target as HTMLInputElement;
+
     if (target.classList.contains('form__input')) {
       this.markFieldAsError(target, !target.checkValidity());
     }
