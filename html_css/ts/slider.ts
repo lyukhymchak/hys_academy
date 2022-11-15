@@ -1,5 +1,5 @@
 import { HtmlTagObject } from 'html-webpack-plugin';
-import { SliderData } from './data/SliderData';
+import { SliderData } from './types/SliderData';
 
 export class Slider {
   slider: HTMLDivElement;

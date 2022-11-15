@@ -7,9 +7,9 @@ import { Storage } from './storage';
 import { Form } from './form';
 import { Select } from './select';
 
-import { PaginatorData } from './data/PaginatorData';
-import { SliderData } from './data/SliderData';
-import { SlickSliderData } from './data/SlickSliderData';
+import { PaginatorData } from './types/PaginatorData';
+import { SliderData } from './types/SliderData';
+import { SlickSliderData } from './types/SlickSliderData';
 
 export class App {
   constructor() {}
@@ -30,22 +30,18 @@ export class App {
 
     initForm();
 
-    const slider = initSlider(
-      storage.getDatafromLocalStorage('slider') as SliderData[]
-    );
-
-    const data = await this.makeRequest();
+    const dataForSlider = await this.makeRequestForSliderData();
+    const slider = initSlider(dataForSlider);
 
     const select = new Select('#select');
 
-    const selectList = document.getElementById('select');
-    selectList.addEventListener('change', event =>
+    select.el.addEventListener('change', event =>
       this.onAlbumChange(event, slider)
     );
   }
 
   async onAlbumChange(event: Event, s: Slider) {
-    let data = await this.makeRequest(
+    let data = await this.makeRequestForSliderData(
       (event.target as HTMLSelectElement).value
     );
 
@@ -53,7 +49,7 @@ export class App {
     s.initSlider(data);
   }
 
-  async makeRequest(albumID: string = '1') {
+  async makeRequestForSliderData(albumID: string = '1') {
     try {
       const response = await fetch(
         `https://jsonplaceholder.typicode.com/albums/${albumID}/photos`

@@ -1,4 +1,4 @@
-import { SlickSliderData } from './data/SlickSliderData';
+import { SlickSliderData } from './types/SlickSliderData';
 
 export class SlickSlider {
   constructor(selector: string, data: SlickSliderData[]) {
