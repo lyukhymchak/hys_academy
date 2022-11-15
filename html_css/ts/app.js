@@ -2,9 +2,9 @@ import { initFixedHeader } from './fixed-header.ts';
 import { initMobileMenu } from './mobile-menu.ts';
 import { paginator } from './paginator.js';
 import { Slider } from './slider.ts';
-import { SlickSlider } from './slick-slider.js';
+import { SlickSlider } from './slick-slider.ts';
 import { Storage } from './storage.ts';
-import { Form } from './form.js';
+import { Form } from './form.ts';
 import { Select } from './select.ts';
 
 export class App {

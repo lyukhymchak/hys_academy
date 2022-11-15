@@ -1,10 +1,12 @@
+import { SlickSliderData } from './data/SlickSliderData';
+
 export class SlickSlider {
-  constructor(selector, data) {
+  constructor(selector: string, data: SlickSliderData[]) {
     this.createSlickSliderItemMarkup(selector, data);
     this.initSlickSlider(selector);
   }
 
-  createSlickSliderItemMarkup(selector, data) {
+  createSlickSliderItemMarkup(selector: string, data: SlickSliderData[]): void {
     const ul = document.querySelector(selector);
 
     for (let i = 0; i < data.length; i++) {
@@ -15,7 +17,7 @@ export class SlickSlider {
     }
   }
 
-  getCardTemplate(card) {
+  getCardTemplate(card: SlickSliderData): string {
     return `<div class="courses__list-item" style="background-image: url(${card.url});"><img class="courses__mentor" src="${card.mentor}" width="48" alt="mentor">
               <h4 class="courses__header">${card.header}</h4>
               <h3 class="courses__title">${card.title}</h3>
@@ -30,15 +32,15 @@ export class SlickSlider {
             </div>`;
   }
 
-  getBtnHTML(direction) {
+  getBtnHTML(direction: string): string {
     return `<button class="btn-slider btn-slider-${direction} btn-slick-${direction}">
-                        <svg class="arrow arrow-${direction}" width="24" height="24">
-                            <use href="images/sprite-plus.svg#icon-chevron-${direction}"></use>
-                        </svg>
-                  </button>`;
+              <svg class="arrow arrow-${direction}" width="24" height="24">
+                <use href="images/sprite-plus.svg#icon-chevron-${direction}"></use>
+              </svg>
+            </button>`;
   }
 
-  initSlickSlider(selector) {
+  initSlickSlider(selector: string) {
     $(selector).slick({
       slidesToShow: 1,
       slidesToScroll: 1,
