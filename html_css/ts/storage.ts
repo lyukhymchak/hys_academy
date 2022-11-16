@@ -1,32 +1,33 @@
-import {
-  dataForPaginator,
-  dataForSlider,
-  dataForSlickSlider,
-} from './data/data';
-
-import { SliderData } from './models/SliderData.model';
 import { SlickSliderData } from './models/SlickSliderData.model';
 import { PaginatorData } from './models/PaginatorData.model';
+import { SliderData } from './models/SliderData.model';
 
-export class Storage {
-  constructor() {
-    this.setDataToLocalStorage<PaginatorData>('paginator', dataForPaginator());
+type DataType = SlickSliderData | PaginatorData | SliderData;
 
-    this.setDataToLocalStorage<SliderData>('slider', dataForSlider());
+interface LocalStorage<T> {
+  getDatafromLocalStorage<T>(): Array<T>;
+  setDataToLocalStorage<T>(data: Array<T>): void;
+  init<T>(data: Array<T>): void;
+}
 
-    this.setDataToLocalStorage<SlickSliderData>(
-      'slickSlider',
-      dataForSlickSlider()
-    );
+export default class Storage implements LocalStorage<DataType> {
+  private readonly key: string;
+
+  constructor(key: string) {
+    this.key = key;
   }
 
-  getDatafromLocalStorage<DataType>(key: string): Array<DataType> {
-    if (localStorage.getItem(key)) {
-      return JSON.parse(localStorage.getItem(key));
+  init<DataType>(data: Array<DataType>): void {
+    this.setDataToLocalStorage(data);
+  }
+
+  getDatafromLocalStorage<DataType>(): Array<DataType> {
+    if (localStorage.getItem(this.key)) {
+      return JSON.parse(localStorage.getItem(this.key));
     }
   }
 
-  setDataToLocalStorage<DataType>(key: string, data: Array<DataType>): void {
-    localStorage.setItem(key, JSON.stringify(data));
+  setDataToLocalStorage<DataType>(data: Array<DataType>): void {
+    localStorage.setItem(this.key, JSON.stringify(data));
   }
 }

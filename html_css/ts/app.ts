@@ -3,9 +3,11 @@ import { initMobileMenu } from './mobile-menu';
 import { paginator } from './paginator';
 import { Slider } from './slider';
 import { SlickSlider } from './slick-slider';
-import { Storage } from './storage';
+import Storage from './storage';
 import { Form } from './form';
 import { Select } from './select';
+
+import { dataForPaginator, dataForSlickSlider } from './data/data';
 
 import { PaginatorData } from './models/PaginatorData.model';
 import { SliderData } from './models/SliderData.model';
@@ -18,15 +20,9 @@ export class App {
     initFixedHeader();
     initMobileMenu();
 
-    const storage = new Storage();
+    initPaginator();
 
-    initPaginator(
-      storage.getDatafromLocalStorage('paginator') as PaginatorData[]
-    );
-
-    initSlickSlider(
-      storage.getDatafromLocalStorage('slickSlider') as SlickSliderData[]
-    );
+    initSlickSlider();
 
     initForm();
 
@@ -75,12 +71,21 @@ function initSlider(data: SliderData[]) {
   return slider;
 }
 
-function initSlickSlider(data: SlickSliderData[]) {
-  const slickSlider = new SlickSlider('.slick-slider', data);
+function initSlickSlider() {
+  const storageSlickSlider = new Storage('slickSlider');
+  storageSlickSlider.init<SlickSliderData>(dataForSlickSlider());
+
+  const slickSlider = new SlickSlider(
+    '.slick-slider',
+    storageSlickSlider.getDatafromLocalStorage()
+  );
 }
 
-function initPaginator(data: PaginatorData[]) {
-  paginator('paginator', data);
+function initPaginator() {
+  const storagePaginator = new Storage('paginator');
+  storagePaginator.init<PaginatorData>(dataForPaginator());
+
+  paginator('paginator', storagePaginator.getDatafromLocalStorage());
 }
 
 function initForm() {
