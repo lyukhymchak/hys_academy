@@ -7,9 +7,9 @@ import { Storage } from './storage';
 import { Form } from './form';
 import { Select } from './select';
 
-import { PaginatorData } from './types/PaginatorData';
-import { SliderData } from './types/SliderData';
-import { SlickSliderData } from './types/SlickSliderData';
+import { PaginatorData } from './models/PaginatorData.model';
+import { SliderData } from './models/SliderData.model';
+import { SlickSliderData } from './models/SlickSliderData.model';
 
 export class App {
   constructor() {}

@@ -1,4 +1,4 @@
-import { AlbumEnum } from './enums/AlbumEnum';
+import { AlbumEnum } from './models/AlbumEnum.model';
 
 export class Select {
   private _el: Element;

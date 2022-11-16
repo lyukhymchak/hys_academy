@@ -1,4 +1,4 @@
-import { PaginatorData } from './types/PaginatorData';
+import { PaginatorData } from './models/PaginatorData.model';
 
 export function paginator(selector: string, data: PaginatorData[]) {
   const paginatorDiv = document.getElementById(selector);
