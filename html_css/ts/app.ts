@@ -9,25 +9,30 @@ import { Select } from './select';
 
 import { dataForPaginator, dataForSlickSlider } from './data/data';
 
-import { PaginatorData } from './models/PaginatorData.model';
 import { SliderData } from './models/SliderData.model';
-import { SlickSliderData } from './models/SlickSliderData.model';
 
-export class App {
-  constructor() {}
+abstract class AppAbstract {
+  protected baseUrl = 'https://jsonplaceholder.typicode.com/albums/';
 
-  async init() {
+  abstract getSliderData(albumID: string): Promise<SliderData[]>;
+}
+export class App extends AppAbstract {
+  constructor() {
+    super();
+  }
+
+  public async init() {
     initFixedHeader();
     initMobileMenu();
 
-    initPaginator();
+    this.initPaginator();
 
-    initSlickSlider();
+    this.initSlickSlider();
 
-    initForm();
+    this.initForm();
 
-    const dataForSlider = await this.makeRequestForSliderData();
-    const slider = initSlider(dataForSlider);
+    const dataForSlider = await this.getSliderData();
+    const slider = this.initSlider(dataForSlider);
 
     const select = new Select('#select');
 
@@ -36,57 +41,54 @@ export class App {
     );
   }
 
-  async onAlbumChange(event: Event, s: Slider) {
-    let data = await this.makeRequestForSliderData(
+  private async onAlbumChange(event: Event, s: Slider) {
+    let data = await this.getSliderData(
       (event.target as HTMLSelectElement).value
     );
-
+    s.emptySlider();
     s.initSlider(data);
   }
 
-  async makeRequestForSliderData(albumID: string = '1') {
+  async getSliderData(albumID: string = '1'): Promise<SliderData[]> {
     try {
-      const response = await fetch(
-        `https://jsonplaceholder.typicode.com/albums/${albumID}/photos`
-      );
+      const url: string = this.baseUrl + `${albumID}/photos`;
+      const response = await fetch(url);
 
       const result = await response.json();
 
-      return result.slice(0, getRandomNumber(4, 20));
+      return result.slice(0, this.getRandomNumber(4, 20));
     } catch (e) {
       console.error(e);
-
-      return [];
     }
   }
-}
 
-function getRandomNumber(min: number, max: number) {
-  return Math.random() * (max - min) + min;
-}
+  private getRandomNumber(min: number, max: number) {
+    return Math.random() * (max - min) + min;
+  }
 
-function initSlider(data: SliderData[]) {
-  const slider = new Slider('preference-slider', data);
-  return slider;
-}
+  private initSlider(data: SliderData[]) {
+    const slider = new Slider('preference-slider', data);
+    return slider;
+  }
 
-function initSlickSlider() {
-  const storageSlickSlider = new Storage('slickSlider');
-  storageSlickSlider.init(dataForSlickSlider());
+  private initSlickSlider() {
+    const storageSlickSlider = new Storage('slickSlider');
+    storageSlickSlider.init(dataForSlickSlider());
 
-  const slickSlider = new SlickSlider(
-    '.slick-slider',
-    storageSlickSlider.getDatafromLocalStorage()
-  );
-}
+    const slickSlider = new SlickSlider(
+      '.slick-slider',
+      storageSlickSlider.getDatafromLocalStorage()
+    );
+  }
 
-function initPaginator() {
-  const storagePaginator = new Storage('paginator');
-  storagePaginator.init(dataForPaginator());
+  private initPaginator() {
+    const storagePaginator = new Storage('paginator');
+    storagePaginator.init(dataForPaginator());
 
-  paginator('paginator', storagePaginator.getDatafromLocalStorage());
-}
+    paginator('paginator', storagePaginator.getDatafromLocalStorage());
+  }
 
-function initForm() {
-  const form = new Form('form');
+  private initForm() {
+    const form = new Form('form');
+  }
 }
