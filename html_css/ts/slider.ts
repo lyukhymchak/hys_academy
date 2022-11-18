@@ -1,19 +1,18 @@
-import { HtmlTagObject } from 'html-webpack-plugin';
 import { SliderData } from './models/SliderData.model';
 
 export class Slider {
-  slider: HTMLDivElement;
-  id: string;
-  numberOfSlidesPerPage: number;
-  curSlide: number;
-  maxSlide: number;
+  private slider: HTMLDivElement;
+  private id: string;
+  private numberOfSlidesPerPage: number;
+  private curSlide: number;
+  private maxSlide: number;
 
   constructor(id: string, data: SliderData[]) {
     this.id = id;
     this.initSlider(data);
   }
 
-  initSlider(data: SliderData[]): void {
+  public initSlider(data: SliderData[]): void {
     this.slider = document
       .getElementById(this.id)
       .appendChild(this.getSliderItemMarkup(data.length));
@@ -33,7 +32,11 @@ export class Slider {
     });
   }
 
-  getSliderItemMarkup(numberOfSlides: number): HTMLDivElement {
+  public emptySlider(): void {
+    this.slider.innerHTML = '';
+  }
+
+  private getSliderItemMarkup(numberOfSlides: number): HTMLDivElement {
     const divPreference = document.createElement('div');
     const ulPreference = document.createElement('ul');
 
@@ -59,7 +62,7 @@ export class Slider {
     return divPreference;
   }
 
-  getBtnHTML(direction: string): HTMLButtonElement {
+  private getBtnHTML(direction: string): HTMLButtonElement {
     const btn = document.createElement('button');
 
     btn.classList.add('btn-slider');
@@ -70,13 +73,13 @@ export class Slider {
     return btn;
   }
 
-  getSvgHTML(direction: string): string {
+  private getSvgHTML(direction: string): string {
     return `<svg class="arrow arrow-${direction}" width="24" height="24">
               <use href="images/sprite-plus.svg#icon-chevron-${direction}"></use>
             </svg>`;
   }
 
-  setData(data: SliderData[]): void {
+  private setData(data: SliderData[]): void {
     const elementsOfSlider: NodeListOf<HTMLLIElement> =
       this.slider.querySelectorAll('.preference__item');
 
@@ -88,7 +91,7 @@ export class Slider {
     });
   }
 
-  getNumberOfSlidesPerPage(): number {
+  private getNumberOfSlidesPerPage(): number {
     const width: number = window.innerWidth;
     const sliderList: HTMLElement =
       this.slider.querySelector('.preference__list');
@@ -112,7 +115,7 @@ export class Slider {
     return 4;
   }
 
-  clickBtnSliderHandler(event: Event): void {
+  private clickBtnSliderHandler(event: Event): void {
     const target = event.target as HTMLButtonElement;
 
     if (target.classList.contains('btn-slider-left')) {
@@ -126,7 +129,7 @@ export class Slider {
     }
   }
 
-  changePosition(): void {
+  private changePosition(): void {
     const elementsOfSlider: NodeListOf<HTMLLIElement> =
       this.slider.querySelectorAll('.preference__item');
 
@@ -137,7 +140,7 @@ export class Slider {
     this.checkButtons();
   }
 
-  checkButtons(): void {
+  private checkButtons(): void {
     const btnRight: HTMLButtonElement =
       this.slider.querySelector('.btn-slider-right');
     const btnLeft: HTMLButtonElement =
@@ -156,7 +159,7 @@ export class Slider {
     }
   }
 
-  resizeWindowHandler(): void {
+  private resizeWindowHandler(): void {
     this.maxSlide += this.numberOfSlidesPerPage;
     this.numberOfSlidesPerPage = this.getNumberOfSlidesPerPage();
     this.maxSlide -= this.numberOfSlidesPerPage;
@@ -166,9 +169,5 @@ export class Slider {
     }
 
     this.changePosition();
-  }
-
-  emptySlider() {
-    this.slider.innerHTML = '';
   }
 }

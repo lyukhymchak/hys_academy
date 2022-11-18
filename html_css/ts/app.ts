@@ -31,7 +31,7 @@ export class App {
 
     const select = new Select('#select');
 
-    select.el.addEventListener('change', event =>
+    select.element.addEventListener('change', event =>
       this.onAlbumChange(event, slider)
     );
   }
@@ -41,7 +41,6 @@ export class App {
       (event.target as HTMLSelectElement).value
     );
 
-    s.emptySlider();
     s.initSlider(data);
   }
 
@@ -73,7 +72,7 @@ function initSlider(data: SliderData[]) {
 
 function initSlickSlider() {
   const storageSlickSlider = new Storage('slickSlider');
-  storageSlickSlider.init<SlickSliderData>(dataForSlickSlider());
+  storageSlickSlider.init(dataForSlickSlider());
 
   const slickSlider = new SlickSlider(
     '.slick-slider',
@@ -83,7 +82,7 @@ function initSlickSlider() {
 
 function initPaginator() {
   const storagePaginator = new Storage('paginator');
-  storagePaginator.init<PaginatorData>(dataForPaginator());
+  storagePaginator.init(dataForPaginator());
 
   paginator('paginator', storagePaginator.getDatafromLocalStorage());
 }

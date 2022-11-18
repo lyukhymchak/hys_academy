@@ -1,26 +1,31 @@
 import { AlbumEnum } from './models/AlbumEnum.model';
 
-export class Select {
-  private _el: Element;
-
-  get el(): Element {
-    return this._el;
-  }
-
-  set el(element: Element) {
-    this._el = element;
-  }
+interface Init {
+  init(): void;
+}
+export class Select implements Init {
+  private el: HTMLSelectElement;
+  private id: string;
 
   constructor(id: string) {
-    this.initSelectList(id);
+    this.id = id;
+    this.init();
   }
 
-  initSelectList(id: string): void {
-    this.el = document.querySelector(id);
-    this.el.appendChild(this.getSelectListMarkup());
+  public get element(): HTMLSelectElement {
+    return this.el;
   }
 
-  getSelectListMarkup(): HTMLElement {
+  private set element(element: HTMLSelectElement) {
+    this.el = element;
+  }
+
+  public init(): void {
+    this.element = document.querySelector(this.id);
+    this.element.appendChild(this.getSelectListMarkup());
+  }
+
+  private getSelectListMarkup(): HTMLElement {
     const selectList: HTMLSelectElement = document.createElement('select');
 
     selectList.classList.add('preference__select');
