@@ -2,13 +2,13 @@ import {
   dataForPaginator,
   dataForSlider,
   dataForSlickSlider,
-} from "./data/data.js";
+} from './data/data.js';
 
 export class Storage {
   constructor() {
-    this.setDataToLocalStorage("paginator", dataForPaginator());
-    this.setDataToLocalStorage("slider", dataForSlider());
-    this.setDataToLocalStorage("slickSlider", dataForSlickSlider());
+    this.setDataToLocalStorage('paginator', dataForPaginator());
+    this.setDataToLocalStorage('slider', dataForSlider());
+    this.setDataToLocalStorage('slickSlider', dataForSlickSlider());
   }
 
   getDatafromLocalStorage(key) {

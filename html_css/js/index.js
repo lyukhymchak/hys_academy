@@ -1,7 +1,7 @@
-import { App } from "./app.js";
+import { App } from './app.js';
 
 const app = new App();
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener('DOMContentLoaded', () => {
   app.init();
 });

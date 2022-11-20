@@ -8,7 +8,7 @@ export class SlickSlider {
     const ul = document.querySelector(selector);
 
     for (let i = 0; i < data.length; i++) {
-      const li = document.createElement("li");
+      const li = document.createElement('li');
 
       li.innerHTML = this.getCardTemplate(data[i]);
       ul.appendChild(li);
@@ -45,7 +45,7 @@ export class SlickSlider {
       arrows: true,
       variableWidth: true,
       infinite: false,
-      cssEase: "ease-out",
+      cssEase: 'ease-out',
       mobileFirst: true,
       responsive: [
         {
@@ -63,8 +63,8 @@ export class SlickSlider {
           },
         },
       ],
-      prevArrow: this.getBtnHTML("left"),
-      nextArrow: this.getBtnHTML("right"),
+      prevArrow: this.getBtnHTML('left'),
+      nextArrow: this.getBtnHTML('right'),
     });
   }
 }

@@ -1,28 +1,28 @@
 export class Form {
   constructor(id) {
-    const FORM_DATA_KEY = id + "Data";
+    const FORM_DATA_KEY = id + 'Data';
 
     this.form = document.getElementById(id);
 
     this.inputs = Array.from(this.form.elements).filter(
-      (el) => el.nodeName === "INPUT"
+      el => el.nodeName === 'INPUT'
     );
 
     this.retrieveRecords(FORM_DATA_KEY);
 
-    this.form.setAttribute("novalidate", true);
+    this.form.setAttribute('novalidate', true);
 
-    for (const inputElement of this.inputs) {
-      inputElement.addEventListener("input", (e) => {
-        this.markFieldAsError(e.target, !e.target.checkValidity());
-      });
-    }
+    this.addEventListeners(FORM_DATA_KEY);
+  }
 
-    this.form.addEventListener("submit", (event) =>
-      this.validateForm(event, FORM_DATA_KEY)
+  addEventListeners(key) {
+    this.form.addEventListener('submit', event =>
+      this.validateForm(event, key)
     );
 
-    this.form.addEventListener("input", () => this.storeRecords(FORM_DATA_KEY));
+    this.form.addEventListener('input', event =>
+      this.inputFormHandler(event, key)
+    );
   }
 
   retrieveRecords(key) {
@@ -42,7 +42,7 @@ export class Form {
   storeRecords(key) {
     const data = [];
 
-    this.inputs.forEach((element) => {
+    this.inputs.forEach(element => {
       data.push([element.name, element.value]);
     });
 
@@ -76,20 +76,24 @@ export class Form {
   toggleErrorField(field, show) {
     const errorText = field.previousElementSibling;
 
-    if (errorText !== null) {
-      if (errorText.classList.contains("form-error-text")) {
-        errorText.style.display = show ? "block" : "none";
-        errorText.setAttribute("aria-hidden", show);
-      }
+    if (!errorText || !errorText.classList.contains('form-error-text')) {
+      return;
     }
+
+    errorText.style.display = show ? 'block' : 'none';
+    errorText.setAttribute('aria-hidden', show);
   }
 
   markFieldAsError(field, show) {
-    if (show) {
-      field.classList.add("field-error");
-    } else {
-      field.classList.remove("field-error");
-      this.toggleErrorField(field, false);
+    field.classList.toggle('field-error', show);
+    this.toggleErrorField(field, show);
+  }
+
+  inputFormHandler(e, key) {
+    this.storeRecords(key);
+
+    if (e.target.classList.contains('form__input')) {
+      this.markFieldAsError(e.target, !e.target.checkValidity());
     }
   }
 }

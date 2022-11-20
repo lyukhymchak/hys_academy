@@ -2,7 +2,7 @@ export function paginator(selector, data) {
   const paginatorDiv = document.getElementById(selector);
 
   paginatorDiv.appendChild(getBlogHTML(data));
-  paginatorDiv.addEventListener("click", (event) =>
+  paginatorDiv.addEventListener('click', event =>
     clickBtnPaginatorHandler(event, data)
   );
 }
@@ -11,48 +11,48 @@ function getBlogHTML(data) {
   const cardsPerPage = data.length > 2 ? 2 : data.length;
   const countOfVisiblePages = getCountOfVisiblePages(data.length);
 
-  const divBlog = document.createElement("div");
+  const divBlog = document.createElement('div');
   const divCards = [];
 
   for (let i = 0; i < cardsPerPage; i++) {
     const dataAtr = `card-${i + 1}`;
 
-    divCards[dataAtr] = document.createElement("div");
-    divCards[dataAtr].setAttribute("data-card", dataAtr);
+    divCards[dataAtr] = document.createElement('div');
+    divCards[dataAtr].setAttribute('data-card', dataAtr);
     divCards[dataAtr].innerHTML = getCardTemplate(data[i]);
     divBlog.appendChild(divCards[dataAtr]);
   }
 
   if (countOfVisiblePages > 1) {
-    const divPaginator = document.createElement("div");
+    const divPaginator = document.createElement('div');
 
-    divPaginator.classList.add("blog__paginator");
+    divPaginator.classList.add('blog__paginator');
     divPaginator.appendChild(getPaginatorHTML(0, countOfVisiblePages));
     divBlog.appendChild(divPaginator);
   }
 
-  divBlog.classList.add("blog__list");
+  divBlog.classList.add('blog__list');
 
   return divBlog;
 }
 
 function getPaginatorHTML(indexOfActiveBtn, endIndex, startIndex = 0) {
-  const div = document.createElement("div");
+  const div = document.createElement('div');
 
   for (let i = startIndex; i < endIndex; i++) {
     div.appendChild(getBtnHTML(i + 1));
   }
 
-  div.childNodes[indexOfActiveBtn].classList.add("btn-number-slider-active");
-  div.classList.add("number-slider");
+  div.childNodes[indexOfActiveBtn].classList.add('btn-number-slider-active');
+  div.classList.add('number-slider');
 
   return div;
 }
 
 function getBtnHTML(numberOfPage) {
-  const button = document.createElement("button");
+  const button = document.createElement('button');
 
-  button.classList.add("btn-number-slider");
+  button.classList.add('btn-number-slider');
   button.innerHTML = numberOfPage;
 
   return button;
@@ -108,7 +108,7 @@ function getCountOfVisiblePages(count) {
 }
 
 function clickBtnPaginatorHandler(event, data) {
-  if (event.target.classList.contains("btn-number-slider")) {
+  if (event.target.classList.contains('btn-number-slider')) {
     const countOfPages = getCountOfPages(data.length);
     const numberOfCurrentPage = Number(event.target.innerHTML);
     const indexOfCard1 = 2 * (numberOfCurrentPage - 1);
@@ -120,7 +120,7 @@ function clickBtnPaginatorHandler(event, data) {
     divOfCard1.innerHTML = getCardTemplate(data[indexOfCard1]);
 
     if (isLastCardSingle(indexOfCard2, data.length)) {
-      divOfCard2.innerHTML = "";
+      divOfCard2.innerHTML = '';
     } else {
       divOfCard2.innerHTML = getCardTemplate(data[indexOfCard2]);
     }
@@ -143,8 +143,8 @@ function refreshPaginatorHTML(btn, numberOfCurrentPage, countOfPages) {
     return;
   }
 
-  const numSlider = document.querySelector(".blog__paginator");
-  numSlider.innerHTML = "";
+  const numSlider = document.querySelector('.blog__paginator');
+  numSlider.innerHTML = '';
 
   switch (numberOfCurrentPage) {
     case 2:
@@ -163,8 +163,8 @@ function refreshPaginatorHTML(btn, numberOfCurrentPage, countOfPages) {
 }
 
 function сhangeActiveBtn(btn) {
-  const activeBtn = document.querySelector(".btn-number-slider-active");
+  const activeBtn = document.querySelector('.btn-number-slider-active');
 
-  activeBtn.classList.remove("btn-number-slider-active");
-  btn.classList.add("btn-number-slider-active");
+  activeBtn.classList.remove('btn-number-slider-active');
+  btn.classList.add('btn-number-slider-active');
 }
