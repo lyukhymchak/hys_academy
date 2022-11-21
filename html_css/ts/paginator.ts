@@ -1,7 +1,7 @@
 import { PaginatorData } from './interfaces/PaginatorData';
 
-export function paginator(selector: string, data: PaginatorData[]) {
-  const paginatorDiv = document.getElementById(selector);
+export function paginator(selector: string, data: PaginatorData[]): void {
+  const paginatorDiv: HTMLElement = document.getElementById(selector);
 
   paginatorDiv.appendChild(getBlogHTML(data));
   paginatorDiv.addEventListener('click', (event: Event) =>
@@ -58,7 +58,7 @@ function getPaginatorHTML(
 }
 
 function getBtnHTML(numberOfPage: number): HTMLButtonElement {
-  const button = document.createElement('button');
+  const button: HTMLButtonElement = document.createElement('button');
 
   button.classList.add('btn-number-slider');
   button.innerHTML = String(numberOfPage);
@@ -116,7 +116,7 @@ function getCountOfVisiblePages(count: number): number {
 }
 
 function clickBtnPaginatorHandler(event: Event, data: PaginatorData[]): void {
-  const target = event.target as HTMLButtonElement;
+  const target: HTMLButtonElement = event.target as HTMLButtonElement;
 
   if (target.classList.contains('btn-number-slider')) {
     const countOfPages: number = getCountOfPages(data.length);

@@ -63,7 +63,7 @@ export class Slider {
   }
 
   private getBtnHTML(direction: string): HTMLButtonElement {
-    const btn = document.createElement('button');
+    const btn: HTMLButtonElement = document.createElement('button');
 
     btn.classList.add('btn-slider');
     btn.classList.add(`btn-slider-${direction}`);
@@ -84,7 +84,7 @@ export class Slider {
       this.divSlider.querySelectorAll('.preference__item');
 
     elementsOfSlider.forEach((element, index) => {
-      const title = data[index].title.split(' ');
+      const title: string[] = data[index].title.split(' ');
 
       element.innerHTML = title[0] + ' ' + title[1];
       element.style.backgroundImage = `url("${data[index].url}")`;
@@ -116,7 +116,7 @@ export class Slider {
   }
 
   private clickBtnSliderHandler(event: Event): void {
-    const target = event.target as HTMLButtonElement;
+    const target: HTMLButtonElement = event.target as HTMLButtonElement;
 
     if (target.classList.contains('btn-slider-left')) {
       this.curSlide--;

@@ -13,10 +13,10 @@ export class SlickSlider {
   }
 
   createSlickSliderItemMarkup(data: SlickSliderData[]): void {
-    const ul = document.querySelector(this.selector);
+    const ul: HTMLUListElement = document.querySelector(this.selector);
 
     for (let i = 0; i < data.length; i++) {
-      const li = document.createElement('li');
+      const li: HTMLLIElement = document.createElement('li');
 
       li.innerHTML = this.getCardTemplate(data[i]);
       ul.appendChild(li);
