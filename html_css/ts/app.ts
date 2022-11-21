@@ -22,6 +22,8 @@ export class App {
 
     paginator('paginator', this.storage.getDatafromLocalStorage('paginator'));
 
+    this.form.init();
+
     this.slickSlider.init(this.storage.getDatafromLocalStorage('slickSlider'));
 
     const dataForSlider = await this.getSliderData();
