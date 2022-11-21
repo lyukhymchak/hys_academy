@@ -1,13 +1,19 @@
-import { SlickSliderData } from './types/SlickSliderData';
+import { SlickSliderData } from './interfaces/SlickSliderData';
 
 export class SlickSlider {
-  constructor(selector: string, data: SlickSliderData[]) {
-    this.createSlickSliderItemMarkup(selector, data);
-    this.initSlickSlider(selector);
+  private selector: string;
+
+  constructor(selector: string) {
+    this.selector = selector;
   }
 
-  createSlickSliderItemMarkup(selector: string, data: SlickSliderData[]): void {
-    const ul = document.querySelector(selector);
+  init(data: SlickSliderData[]): void {
+    this.createSlickSliderItemMarkup(data);
+    this.initSlickSlider();
+  }
+
+  createSlickSliderItemMarkup(data: SlickSliderData[]): void {
+    const ul = document.querySelector(this.selector);
 
     for (let i = 0; i < data.length; i++) {
       const li = document.createElement('li');
@@ -40,8 +46,8 @@ export class SlickSlider {
             </button>`;
   }
 
-  initSlickSlider(selector: string) {
-    $(selector).slick({
+  initSlickSlider(): void {
+    $(this.selector).slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,

@@ -1,4 +1,4 @@
-export type SlickSliderData = {
+export interface SlickSliderData {
   albumId: number;
   id: number;
   title: string;
@@ -7,4 +7,4 @@ export type SlickSliderData = {
   url: string;
   oldPrice: string;
   newPrice: string;
-};
+}

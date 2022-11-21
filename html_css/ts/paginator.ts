@@ -1,10 +1,10 @@
-import { PaginatorData } from './types/PaginatorData';
+import { PaginatorData } from './interfaces/PaginatorData';
 
 export function paginator(selector: string, data: PaginatorData[]) {
   const paginatorDiv = document.getElementById(selector);
 
-  paginatorDiv.appendChild(getBlogHTML(data as PaginatorData[]));
-  paginatorDiv.addEventListener('click', event =>
+  paginatorDiv.appendChild(getBlogHTML(data));
+  paginatorDiv.addEventListener('click', (event: Event) =>
     clickBtnPaginatorHandler(event, data)
   );
 }
@@ -26,7 +26,7 @@ function getBlogHTML(data: PaginatorData[]): HTMLDivElement {
   }
 
   if (countOfVisiblePages > 1) {
-    const divPaginator = document.createElement('div');
+    const divPaginator: HTMLDivElement = document.createElement('div');
 
     divPaginator.classList.add('blog__paginator');
     divPaginator.appendChild(getPaginatorHTML(0, countOfVisiblePages));
@@ -119,13 +119,17 @@ function clickBtnPaginatorHandler(event: Event, data: PaginatorData[]): void {
   const target = event.target as HTMLButtonElement;
 
   if (target.classList.contains('btn-number-slider')) {
-    const countOfPages = getCountOfPages(data.length);
-    const numberOfCurrentPage = Number(target.innerHTML);
-    const indexOfCard1 = 2 * (numberOfCurrentPage - 1);
-    const indexOfCard2 = 2 * numberOfCurrentPage - 1;
+    const countOfPages: number = getCountOfPages(data.length);
+    const numberOfCurrentPage: number = Number(target.innerHTML);
+    const indexOfCard1: number = 2 * (numberOfCurrentPage - 1);
+    const indexOfCard2: number = 2 * numberOfCurrentPage - 1;
 
-    const divOfCard1 = document.querySelector(`div[data-card="card-1"]`);
-    const divOfCard2 = document.querySelector(`div[data-card="card-2"]`);
+    const divOfCard1: HTMLDivElement = document.querySelector(
+      `div[data-card="card-1"]`
+    );
+    const divOfCard2: HTMLDivElement = document.querySelector(
+      `div[data-card="card-2"]`
+    );
 
     divOfCard1.innerHTML = getCardTemplate(data[indexOfCard1]);
 
@@ -160,7 +164,7 @@ function refreshPaginatorHTML(
     return;
   }
 
-  const numSlider = document.querySelector('.blog__paginator');
+  const numSlider: HTMLDivElement = document.querySelector('.blog__paginator');
   numSlider.innerHTML = '';
 
   switch (numberOfCurrentPage) {
@@ -180,7 +184,9 @@ function refreshPaginatorHTML(
 }
 
 function сhangeActiveBtn(btn: HTMLButtonElement): void {
-  const activeBtn = document.querySelector('.btn-number-slider-active');
+  const activeBtn: HTMLButtonElement = document.querySelector(
+    '.btn-number-slider-active'
+  );
 
   activeBtn.classList.remove('btn-number-slider-active');
   btn.classList.add('btn-number-slider-active');

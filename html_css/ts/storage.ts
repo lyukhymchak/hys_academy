@@ -11,13 +11,16 @@ export class Storage {
     this.setDataToLocalStorage('slickSlider', dataForSlickSlider());
   }
 
-  getDatafromLocalStorage(key: string): object {
+  public getDatafromLocalStorage<DataType>(key: string): Array<DataType> {
     if (localStorage.getItem(key)) {
       return JSON.parse(localStorage.getItem(key));
     }
   }
 
-  setDataToLocalStorage(key: string, data: object): void {
+  public setDataToLocalStorage<DataType>(
+    key: string,
+    data: Array<DataType>
+  ): void {
     localStorage.setItem(key, JSON.stringify(data));
   }
 }

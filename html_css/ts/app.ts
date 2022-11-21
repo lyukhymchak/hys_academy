@@ -7,49 +7,42 @@ import { Storage } from './storage';
 import { Form } from './form';
 import { Select } from './select';
 
-import { PaginatorData } from './types/PaginatorData';
-import { SliderData } from './types/SliderData';
-import { SlickSliderData } from './types/SlickSliderData';
-
 export class App {
+  private readonly slider = new Slider('preference-slider');
+  private readonly slickSlider = new SlickSlider('.slick-slider');
+  private readonly select = new Select('#select');
+  private readonly storage = new Storage();
+  private readonly form = new Form('form');
+
   constructor() {}
 
-  async init() {
+  public async init() {
     initFixedHeader();
     initMobileMenu();
 
-    const storage = new Storage();
+    paginator('paginator', this.storage.getDatafromLocalStorage('paginator'));
 
-    initPaginator(
-      storage.getDatafromLocalStorage('paginator') as PaginatorData[]
-    );
+    this.slickSlider.init(this.storage.getDatafromLocalStorage('slickSlider'));
 
-    initSlickSlider(
-      storage.getDatafromLocalStorage('slickSlider') as SlickSliderData[]
-    );
+    const dataForSlider = await this.getSliderData();
+    this.slider.init(dataForSlider);
 
-    initForm();
-
-    const dataForSlider = await this.makeRequestForSliderData();
-    const slider = initSlider(dataForSlider);
-
-    const select = new Select('#select');
-
-    select.el.addEventListener('change', event =>
-      this.onAlbumChange(event, slider)
+    this.select.init();
+    this.select.el.addEventListener('change', (event: Event) =>
+      this.onAlbumChange(event, this.slider)
     );
   }
 
-  async onAlbumChange(event: Event, s: Slider) {
-    let data = await this.makeRequestForSliderData(
+  private async onAlbumChange(event: Event, slider: Slider) {
+    let data = await this.getSliderData(
       (event.target as HTMLSelectElement).value
     );
 
-    s.emptySlider();
-    s.initSlider(data);
+    slider.empty();
+    slider.init(data);
   }
 
-  async makeRequestForSliderData(albumID: string = '1') {
+  private async getSliderData(albumID: string = '1') {
     try {
       const response = await fetch(
         `https://jsonplaceholder.typicode.com/albums/${albumID}/photos`
@@ -57,32 +50,13 @@ export class App {
 
       const result = await response.json();
 
-      return result.slice(0, getRandomNumber(4, 20));
+      return result.slice(0, this.getRandomNumber(4, 20));
     } catch (e) {
       console.error(e);
-
-      return [];
     }
   }
-}
 
-function getRandomNumber(min: number, max: number) {
-  return Math.random() * (max - min) + min;
-}
-
-function initSlider(data: SliderData[]) {
-  const slider = new Slider('preference-slider', data);
-  return slider;
-}
-
-function initSlickSlider(data: SlickSliderData[]) {
-  const slickSlider = new SlickSlider('.slick-slider', data);
-}
-
-function initPaginator(data: PaginatorData[]) {
-  paginator('paginator', data);
-}
-
-function initForm() {
-  const form = new Form('form');
+  private getRandomNumber(min: number, max: number) {
+    return Math.random() * (max - min) + min;
+  }
 }

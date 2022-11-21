@@ -1,6 +1,6 @@
-import { SliderData } from '../types/SliderData';
-import { SlickSliderData } from '../types/SlickSliderData';
-import { PaginatorData } from '../types/PaginatorData';
+import { SliderData } from '../interfaces/SliderData';
+import { SlickSliderData } from '../interfaces/SlickSliderData';
+import { PaginatorData } from '../interfaces/PaginatorData';
 
 const dataPaginator = require('./dataPaginator.json');
 const dataSlider = require('./dataSlider.json');
