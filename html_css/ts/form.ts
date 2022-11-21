@@ -1,13 +1,14 @@
 export class Form {
+  private readonly id: string;
+
   private form: HTMLFormElement;
   private inputs: HTMLInputElement[];
-  private id: string;
 
   constructor(id: string) {
     this.id = id;
   }
 
-  public init() {
+  public init(): void {
     const FORM_DATA_KEY: string = this.id + 'Data';
 
     this.form = document.getElementById(this.id) as HTMLFormElement;

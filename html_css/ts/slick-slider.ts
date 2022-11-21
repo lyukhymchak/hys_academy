@@ -1,7 +1,7 @@
-import { SlickSliderData } from './interfaces/SlickSliderData';
+import SlickSliderData from './interfaces/SlickSliderData';
 
 export class SlickSlider {
-  private selector: string;
+  private readonly selector: string;
 
   constructor(selector: string) {
     this.selector = selector;

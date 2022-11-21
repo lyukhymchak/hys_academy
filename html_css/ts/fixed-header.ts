@@ -1,4 +1,4 @@
-export function initFixedHeader(): void {
+export default function initFixedHeader(): void {
   window.addEventListener('scroll', scrollHandler);
 }
 

@@ -1,7 +1,8 @@
 import { AlbumEnum } from './enums/AlbumEnum';
 
 export class Select {
-  private id: string;
+  private readonly id: string;
+
   private _el: Element;
 
   constructor(id: string) {

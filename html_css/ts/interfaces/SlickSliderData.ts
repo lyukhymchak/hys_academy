@@ -1,4 +1,4 @@
-export interface SlickSliderData {
+export default interface SlickSliderData {
   albumId: number;
   id: number;
   title: string;

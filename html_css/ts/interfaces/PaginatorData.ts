@@ -1,4 +1,4 @@
-export interface PaginatorData {
+export default interface PaginatorData {
   id: number;
   title: string;
   url: string;

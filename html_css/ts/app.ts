@@ -1,11 +1,13 @@
-import { initFixedHeader } from './fixed-header';
-import { initMobileMenu } from './mobile-menu';
-import { paginator } from './paginator';
+import initFixedHeader from './fixed-header';
+import initMobileMenu from './mobile-menu';
+import paginator from './paginator';
 import { Slider } from './slider';
 import { SlickSlider } from './slick-slider';
 import { Storage } from './storage';
 import { Form } from './form';
 import { Select } from './select';
+
+import SliderData from './interfaces/SliderData';
 
 export class App {
   private readonly slider = new Slider('preference-slider');
@@ -16,7 +18,7 @@ export class App {
 
   constructor() {}
 
-  public async init() {
+  public async init(): Promise<void> {
     initFixedHeader();
     initMobileMenu();
 
@@ -35,8 +37,8 @@ export class App {
     );
   }
 
-  private async onAlbumChange(event: Event, slider: Slider) {
-    let data = await this.getSliderData(
+  private async onAlbumChange(event: Event, slider: Slider): Promise<void> {
+    const data: SliderData[] = await this.getSliderData(
       (event.target as HTMLSelectElement).value
     );
 
@@ -44,13 +46,13 @@ export class App {
     slider.init(data);
   }
 
-  private async getSliderData(albumID: string = '1') {
+  private async getSliderData(albumID: string = '1'): Promise<SliderData[]> {
     try {
-      const response = await fetch(
+      const response: Response = await fetch(
         `https://jsonplaceholder.typicode.com/albums/${albumID}/photos`
       );
 
-      const result = await response.json();
+      const result: SliderData[] = await response.json();
 
       return result.slice(0, this.getRandomNumber(4, 20));
     } catch (e) {

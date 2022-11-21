@@ -1,6 +1,9 @@
-import { PaginatorData } from './interfaces/PaginatorData';
+import PaginatorData from './interfaces/PaginatorData';
 
-export function paginator(selector: string, data: PaginatorData[]): void {
+export default function paginator(
+  selector: string,
+  data: PaginatorData[]
+): void {
   const paginatorDiv: HTMLElement = document.getElementById(selector);
 
   paginatorDiv.appendChild(getBlogHTML(data));

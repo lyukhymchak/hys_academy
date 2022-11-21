@@ -1,9 +1,9 @@
-import { HtmlTagObject } from 'html-webpack-plugin';
-import { SliderData } from './interfaces/SliderData';
+import SliderData from './interfaces/SliderData';
 
 export class Slider {
+  private readonly id: string;
+
   private divSlider: HTMLDivElement;
-  private id: string;
   private numberOfSlidesPerPage: number;
   private curSlide: number;
   private maxSlide: number;
