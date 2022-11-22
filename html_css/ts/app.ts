@@ -1,6 +1,7 @@
 import initFixedHeader from './fixed-header';
 import initMobileMenu from './mobile-menu';
 import paginator from './paginator';
+
 import { Slider } from './slider';
 import { SlickSlider } from './slick-slider';
 import { Storage } from './storage';
@@ -13,7 +14,7 @@ import { dataForPaginator, dataForSlickSlider } from './data/data';
 abstract class AppAbstract {
   protected baseUrl = 'https://jsonplaceholder.typicode.com/albums/';
 
-  abstract getSliderData(albumID: string): Promise<SliderData[]>;
+  protected abstract getSliderData(albumID: string): Promise<SliderData[]>;
 }
 export class App extends AppAbstract {
   private readonly slider = new Slider('preference-slider');
@@ -58,7 +59,7 @@ export class App extends AppAbstract {
     slider.init(data);
   }
 
-  public async getSliderData(albumID: string = '1'): Promise<SliderData[]> {
+  protected async getSliderData(albumID: string = '1'): Promise<SliderData[]> {
     try {
       const url: string = this.baseUrl + `${albumID}/photos`;
       const response: Response = await fetch(url);

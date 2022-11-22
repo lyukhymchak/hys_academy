@@ -1,4 +1,7 @@
-export class Form {
+interface Init {
+  init(): void;
+}
+export class Form implements Init {
   private readonly id: string;
 
   private form: HTMLFormElement;

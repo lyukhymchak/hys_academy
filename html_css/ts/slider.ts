@@ -1,6 +1,9 @@
 import SliderData from './models/SliderData.model';
 
-export class Slider {
+interface Init<T> {
+  init(data: T[]): void;
+}
+export class Slider implements Init<SliderData> {
   private readonly id: string;
 
   private divSlider: HTMLDivElement;
@@ -12,7 +15,7 @@ export class Slider {
     this.id = id;
   }
 
-  public init(data: SliderData[]): void {
+  public init(data: Array<SliderData>): void {
     this.divSlider = document
       .getElementById(this.id)
       .appendChild(this.getSliderItemMarkup(data.length));
@@ -84,8 +87,7 @@ export class Slider {
       this.divSlider.querySelectorAll('.preference__item');
 
     elementsOfSlider.forEach((element, index) => {
-      const title: string[] = data[index].title.split(' ');
-
+      const title: string[] = data[index]['title'].split(' ');
       element.innerHTML = title[0] + ' ' + title[1];
       element.style.backgroundImage = `url("${data[index].url}")`;
     });

@@ -2,10 +2,13 @@ import SlickSliderData from './models/SlickSliderData.model';
 import PaginatorData from './models/PaginatorData.model';
 import SliderData from './models/SliderData.model';
 
-interface LocalStorage<T> {
+interface Init<T> {
+  init(data: T[]): void;
+}
+
+interface LocalStorage<T> extends Init<T> {
   getDatafromLocalStorage<T>(): Array<T>;
   setDataToLocalStorage(data: Array<T>): void;
-  init(data: Array<T>): void;
 }
 
 export class Storage<DataType> implements LocalStorage<DataType> {
