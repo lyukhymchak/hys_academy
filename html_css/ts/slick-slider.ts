@@ -1,16 +1,22 @@
-import { SlickSliderData } from './models/SlickSliderData.model';
+import SlickSliderData from './models/SlickSliderData.model';
 
 export class SlickSlider {
-  constructor(selector: string, data: SlickSliderData[]) {
-    this.createSlickSliderItemMarkup(selector, data);
-    this.initSlickSlider(selector);
+  private readonly selector: string;
+
+  constructor(selector: string) {
+    this.selector = selector;
   }
 
-  createSlickSliderItemMarkup(selector: string, data: SlickSliderData[]): void {
-    const ul = document.querySelector(selector);
+  init(data: SlickSliderData[]): void {
+    this.createSlickSliderItemMarkup(data);
+    this.initSlickSlider();
+  }
+
+  createSlickSliderItemMarkup(data: SlickSliderData[]): void {
+    const ul: HTMLUListElement = document.querySelector(this.selector);
 
     for (let i = 0; i < data.length; i++) {
-      const li = document.createElement('li');
+      const li: HTMLLIElement = document.createElement('li');
 
       li.innerHTML = this.getCardTemplate(data[i]);
       ul.appendChild(li);
@@ -40,8 +46,8 @@ export class SlickSlider {
             </button>`;
   }
 
-  initSlickSlider(selector: string) {
-    $(selector).slick({
+  initSlickSlider(): void {
+    $(this.selector).slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,

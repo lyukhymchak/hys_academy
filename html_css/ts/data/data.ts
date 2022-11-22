@@ -1,10 +1,10 @@
-import { SliderData } from '../models/SliderData.model';
-import { SlickSliderData } from '../models/SlickSliderData.model';
-import { PaginatorData } from '../models/PaginatorData.model';
+import SliderData from '../models/SliderData.model';
+import SlickSliderData from '../models/SlickSliderData.model';
+import PaginatorData from '../models/PaginatorData.model';
 
-const dataPaginator = require('./dataPaginator.json');
-const dataSlider = require('./dataSlider.json');
-const dataSlickSlider = require('./dataSlickSlider.json');
+const dataPaginator: PaginatorData[] = require('./dataPaginator.json');
+const dataSlider: SliderData[] = require('./dataSlider.json');
+const dataSlickSlider: SlickSliderData[] = require('./dataSlickSlider.json');
 
 export function dataForPaginator(): PaginatorData[] {
   return dataPaginator;

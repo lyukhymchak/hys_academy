@@ -4,12 +4,12 @@ interface Init {
   init(): void;
 }
 export class Select implements Init {
+  private readonly id: string;
+
   private el: HTMLSelectElement;
-  private id: string;
 
   constructor(id: string) {
     this.id = id;
-    this.init();
   }
 
   public get element(): HTMLSelectElement {

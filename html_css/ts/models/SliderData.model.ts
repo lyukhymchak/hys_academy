@@ -1,4 +1,4 @@
-export interface SliderData {
+export default interface SliderData {
   albumId: number;
   id: number;
   title: string;

@@ -1,4 +1,4 @@
-export function initMobileMenu(): void {
+export default function initMobileMenu(): void {
   let isMenuOpen: boolean = false;
   const nav: HTMLElement = document.querySelector('.navbar');
   const btnExplore: HTMLButtonElement = document.querySelector('.btn-explore');
@@ -7,7 +7,8 @@ export function initMobileMenu(): void {
   window.addEventListener('resize', autoCloseMenu);
 
   function clickHandler(event: Event): void {
-    const target = event.target as HTMLButtonElement;
+    const target: HTMLButtonElement = event.target as HTMLButtonElement;
+
     if (target.classList.contains('hamburger-menu-svg')) {
       if (!isMenuOpen) {
         openMenu();

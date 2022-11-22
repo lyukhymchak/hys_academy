@@ -1,6 +1,6 @@
-import { SlickSliderData } from './models/SlickSliderData.model';
-import { PaginatorData } from './models/PaginatorData.model';
-import { SliderData } from './models/SliderData.model';
+import SlickSliderData from './models/SlickSliderData.model';
+import PaginatorData from './models/PaginatorData.model';
+import SliderData from './models/SliderData.model';
 
 interface LocalStorage<T> {
   getDatafromLocalStorage<T>(): Array<T>;
@@ -8,7 +8,7 @@ interface LocalStorage<T> {
   init(data: Array<T>): void;
 }
 
-export default class Storage<DataType> implements LocalStorage<DataType> {
+export class Storage<DataType> implements LocalStorage<DataType> {
   private readonly key: string;
 
   constructor(key: string) {
