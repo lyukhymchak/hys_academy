@@ -9,6 +9,9 @@ import { Form } from './form';
 import { Select } from './select';
 
 import SliderData from './models/SliderData.model';
+import SlickSliderData from './models/SlickSliderData.model';
+import PaginatorData from './models/PaginatorData.model';
+
 import { dataForPaginator, dataForSlickSlider } from './data/data';
 
 abstract class AppAbstract {
@@ -20,9 +23,12 @@ export class App extends AppAbstract {
   private readonly slider = new Slider('preference-slider');
   private readonly slickSlider = new SlickSlider('.slick-slider');
   private readonly select = new Select('#select');
-  private readonly storagePaginator = new Storage("'paginator'");
-  private readonly storageSlickSlider = new Storage("'slickSlider'");
   private readonly form = new Form('form');
+
+  private readonly storagePaginator = new Storage<PaginatorData>('paginator');
+  private readonly storageSlickSlider = new Storage<SlickSliderData>(
+    'slickSlider'
+  );
 
   constructor() {
     super();
@@ -32,17 +38,15 @@ export class App extends AppAbstract {
     initFixedHeader();
     initMobileMenu();
 
-    this.storagePaginator.setDataToLocalStorage(dataForPaginator());
-    this.storageSlickSlider.setDataToLocalStorage(dataForSlickSlider());
-
-    paginator('paginator', this.storagePaginator.getDatafromLocalStorage());
-
     this.form.init();
 
-    this.slickSlider.init(this.storageSlickSlider.getDatafromLocalStorage());
+    this.storagePaginator.init(dataForPaginator());
+    this.storageSlickSlider.init(dataForSlickSlider());
 
-    const dataForSlider = await this.getSliderData();
-    this.slider.init(dataForSlider);
+    paginator('paginator', this.storagePaginator.localData);
+    this.slickSlider.init(this.storageSlickSlider.localData);
+
+    this.slider.init(await this.getSliderData());
 
     this.select.init();
     this.select.element.addEventListener('change', (event: Event) =>
