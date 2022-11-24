@@ -14,6 +14,8 @@ import PaginatorData from './models/PaginatorData.model';
 
 import { dataForPaginator, dataForSlickSlider } from './data/data';
 
+import ReadOnly from './decorators/readOnly.decorator';
+
 abstract class AppAbstract {
   protected baseUrl = 'https://jsonplaceholder.typicode.com/albums/';
 
@@ -34,6 +36,7 @@ export class App extends AppAbstract {
     super();
   }
 
+  @ReadOnly(false)
   public async init(): Promise<void> {
     initFixedHeader();
     initMobileMenu();
