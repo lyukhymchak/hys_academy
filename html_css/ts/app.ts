@@ -16,12 +16,13 @@ import { dataForPaginator, dataForSlickSlider } from './data/data';
 
 import ReadOnly from './decorators/readOnly.decorator';
 
+import Init from './models/Init.model';
 abstract class AppAbstract {
   protected baseUrl = 'https://jsonplaceholder.typicode.com/albums/';
 
   protected abstract getSliderData(albumID: string): Promise<SliderData[]>;
 }
-export class App extends AppAbstract {
+export class App extends AppAbstract implements Init {
   private readonly slider = new Slider('preference-slider');
   private readonly slickSlider = new SlickSlider('.slick-slider');
   private readonly select = new Select('#select');
@@ -36,7 +37,7 @@ export class App extends AppAbstract {
     super();
   }
 
-  @ReadOnly(false)
+  @ReadOnly(true)
   public async init(): Promise<void> {
     initFixedHeader();
     initMobileMenu();

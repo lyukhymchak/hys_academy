@@ -1,7 +1,5 @@
 import LocalStorage from './decorators/localStorage.decorator';
-interface Init<T> {
-  init(data: T[]): void;
-}
+import Init from './models/InitT.model';
 export class Storage<DataType> implements Init<DataType> {
   private readonly key: string;
 

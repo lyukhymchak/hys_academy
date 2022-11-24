@@ -1,8 +1,5 @@
 import SliderData from './models/SliderData.model';
-
-interface Init<T> {
-  init(data: T[]): void;
-}
+import Init from './models/InitT.model';
 export class Slider implements Init<SliderData> {
   private readonly id: string;
 

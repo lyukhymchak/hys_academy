@@ -1,8 +1,5 @@
 import SlickSliderData from './models/SlickSliderData.model';
-
-interface Init<T> {
-  init(data: T[]): void;
-}
+import Init from './models/InitT.model';
 export class SlickSlider implements Init<SlickSliderData> {
   private readonly selector: string;
 

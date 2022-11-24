@@ -1,8 +1,5 @@
 import { AlbumEnum } from './models/AlbumEnum.model';
-
-interface Init {
-  init(): void;
-}
+import Init from './models/Init.model';
 export class Select implements Init {
   private readonly id: string;
 

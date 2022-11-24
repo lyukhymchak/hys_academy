@@ -1,6 +1,4 @@
-interface Init {
-  init(): void;
-}
+import Init from './models/Init.model';
 export class Form implements Init {
   private readonly id: string;
 
