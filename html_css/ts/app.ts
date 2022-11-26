@@ -1,7 +1,6 @@
 import initFixedHeader from './fixed-header';
 import initMobileMenu from './mobile-menu';
 import paginator from './paginator';
-
 import { Slider } from './slider';
 import { SlickSlider } from './slick-slider';
 import { Storage } from './storage';

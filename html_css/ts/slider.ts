@@ -87,7 +87,8 @@ export class Slider implements Init<SliderData> {
       this.divSlider.querySelectorAll('.preference__item');
 
     elementsOfSlider.forEach((element, index) => {
-      const title: string[] = data[index]['title'].split(' ');
+      const title: string[] = data[index].title.split(' ');
+
       element.innerHTML = title[0] + ' ' + title[1];
       element.style.backgroundImage = `url("${data[index].url}")`;
     });
