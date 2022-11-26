@@ -1,11 +1,19 @@
+import SliderData from './interfaces/SliderData';
+
 export class Slider {
-  constructor(id, data) {
+  private readonly id: string;
+
+  private divSlider: HTMLDivElement;
+  private numberOfSlidesPerPage: number;
+  private curSlide: number;
+  private maxSlide: number;
+
+  constructor(id: string) {
     this.id = id;
-    this.initSlider(data);
   }
 
-  initSlider(data) {
-    this.slider = document
+  public init(data: SliderData[]): void {
+    this.divSlider = document
       .getElementById(this.id)
       .appendChild(this.getSliderItemMarkup(data.length));
 
@@ -15,7 +23,7 @@ export class Slider {
     this.curSlide = 0;
     this.maxSlide = data.length - this.numberOfSlidesPerPage;
 
-    this.slider.addEventListener('click', event =>
+    this.divSlider.addEventListener('click', (event: Event) =>
       this.clickBtnSliderHandler(event)
     );
 
@@ -24,24 +32,28 @@ export class Slider {
     });
   }
 
-  getSliderItemMarkup(numberOfSlides) {
-    const divPreference = document.createElement('div');
-    const ulPreference = document.createElement('ul');
+  public empty(): void {
+    this.divSlider.innerHTML = '';
+  }
+
+  private getSliderItemMarkup(numberOfSlides: number): HTMLDivElement {
+    const divPreference: HTMLDivElement = document.createElement('div');
+    const ulPreference: HTMLUListElement = document.createElement('ul');
 
     divPreference.classList.add('preference-carousel');
     ulPreference.classList.add('preference__list');
 
     for (let i = 0; i < numberOfSlides; i++) {
-      const li = document.createElement('li');
+      const li: HTMLLIElement = document.createElement('li');
 
       li.classList.add('preference__item');
       ulPreference.appendChild(li);
     }
 
-    const btnLeft = this.getBtnHTML('left');
+    const btnLeft: HTMLButtonElement = this.getBtnHTML('left');
     btnLeft.setAttribute('disabled', '');
 
-    const btnRight = this.getBtnHTML('right');
+    const btnRight: HTMLButtonElement = this.getBtnHTML('right');
 
     divPreference.appendChild(btnLeft);
     divPreference.appendChild(ulPreference);
@@ -50,8 +62,8 @@ export class Slider {
     return divPreference;
   }
 
-  getBtnHTML(direction) {
-    const btn = document.createElement('button');
+  private getBtnHTML(direction: string): HTMLButtonElement {
+    const btn: HTMLButtonElement = document.createElement('button');
 
     btn.classList.add('btn-slider');
     btn.classList.add(`btn-slider-${direction}`);
@@ -61,26 +73,28 @@ export class Slider {
     return btn;
   }
 
-  getSvgHTML(direction) {
+  private getSvgHTML(direction: string): string {
     return `<svg class="arrow arrow-${direction}" width="24" height="24">
               <use href="images/sprite-plus.svg#icon-chevron-${direction}"></use>
             </svg>`;
   }
 
-  setData(data) {
-    const elementsOfSlider = this.slider.querySelectorAll('.preference__item');
+  private setData(data: SliderData[]): void {
+    const elementsOfSlider: NodeListOf<HTMLLIElement> =
+      this.divSlider.querySelectorAll('.preference__item');
 
     elementsOfSlider.forEach((element, index) => {
-      const title = data[index].title.split(' ');
+      const title: string[] = data[index].title.split(' ');
 
       element.innerHTML = title[0] + ' ' + title[1];
-      element.style.backgroundImage = `url(${data[index].url})`;
+      element.style.backgroundImage = `url("${data[index].url}")`;
     });
   }
 
-  getNumberOfSlidesPerPage() {
-    const width = window.innerWidth;
-    const sliderList = this.slider.querySelector('.preference__list');
+  private getNumberOfSlidesPerPage(): number {
+    const width: number = window.innerWidth;
+    const sliderList: HTMLElement =
+      this.divSlider.querySelector('.preference__list');
 
     if (width <= 600) {
       sliderList.style.minWidth = '207px';
@@ -101,31 +115,36 @@ export class Slider {
     return 4;
   }
 
-  clickBtnSliderHandler(event) {
-    if (event.target.classList.contains('btn-slider-left')) {
+  private clickBtnSliderHandler(event: Event): void {
+    const target: HTMLButtonElement = event.target as HTMLButtonElement;
+
+    if (target.classList.contains('btn-slider-left')) {
       this.curSlide--;
       this.changePosition();
     }
 
-    if (event.target.classList.contains('btn-slider-right')) {
+    if (target.classList.contains('btn-slider-right')) {
       this.curSlide++;
       this.changePosition();
     }
   }
 
-  changePosition() {
-    const elementsOfSlider = this.slider.querySelectorAll('.preference__item');
+  private changePosition(): void {
+    const elementsOfSlider: NodeListOf<HTMLLIElement> =
+      this.divSlider.querySelectorAll('.preference__item');
 
     elementsOfSlider.forEach(element => {
-      element.style.transform = `translateX(-${this.curSlide * 227}px)`;
+      element.style.transform = `translateX(-${this.curSlide * 227}px`;
     });
 
     this.checkButtons();
   }
 
-  checkButtons() {
-    const btnRight = this.slider.querySelector('.btn-slider-right');
-    const btnLeft = this.slider.querySelector('.btn-slider-left');
+  private checkButtons(): void {
+    const btnRight: HTMLButtonElement =
+      this.divSlider.querySelector('.btn-slider-right');
+    const btnLeft: HTMLButtonElement =
+      this.divSlider.querySelector('.btn-slider-left');
 
     if (this.curSlide === 0) {
       btnLeft.setAttribute('disabled', '');
@@ -140,7 +159,7 @@ export class Slider {
     }
   }
 
-  resizeWindowHandler() {
+  private resizeWindowHandler(): void {
     this.maxSlide += this.numberOfSlidesPerPage;
     this.numberOfSlidesPerPage = this.getNumberOfSlidesPerPage();
     this.maxSlide -= this.numberOfSlidesPerPage;
@@ -150,9 +169,5 @@ export class Slider {
     }
 
     this.changePosition();
-  }
-
-  emptySlider() {
-    this.slider.innerHTML = '';
   }
 }

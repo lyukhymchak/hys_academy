@@ -1,21 +1,26 @@
-export function paginator(selector, data) {
-  const paginatorDiv = document.getElementById(selector);
+import PaginatorData from './interfaces/PaginatorData';
+
+export default function paginator(
+  selector: string,
+  data: PaginatorData[]
+): void {
+  const paginatorDiv: HTMLElement = document.getElementById(selector);
 
   paginatorDiv.appendChild(getBlogHTML(data));
-  paginatorDiv.addEventListener('click', event =>
+  paginatorDiv.addEventListener('click', (event: Event) =>
     clickBtnPaginatorHandler(event, data)
   );
 }
 
-function getBlogHTML(data) {
-  const cardsPerPage = data.length > 2 ? 2 : data.length;
-  const countOfVisiblePages = getCountOfVisiblePages(data.length);
+function getBlogHTML(data: PaginatorData[]): HTMLDivElement {
+  const cardsPerPage: number = data.length > 2 ? 2 : data.length;
+  const countOfVisiblePages: number = getCountOfVisiblePages(data.length);
 
-  const divBlog = document.createElement('div');
-  const divCards = [];
+  const divBlog: HTMLDivElement = document.createElement('div');
+  const divCards: HTMLDivElement[] = [];
 
   for (let i = 0; i < cardsPerPage; i++) {
-    const dataAtr = `card-${i + 1}`;
+    const dataAtr: any = `card-${i + 1}`;
 
     divCards[dataAtr] = document.createElement('div');
     divCards[dataAtr].setAttribute('data-card', dataAtr);
@@ -24,7 +29,7 @@ function getBlogHTML(data) {
   }
 
   if (countOfVisiblePages > 1) {
-    const divPaginator = document.createElement('div');
+    const divPaginator: HTMLDivElement = document.createElement('div');
 
     divPaginator.classList.add('blog__paginator');
     divPaginator.appendChild(getPaginatorHTML(0, countOfVisiblePages));
@@ -36,29 +41,35 @@ function getBlogHTML(data) {
   return divBlog;
 }
 
-function getPaginatorHTML(indexOfActiveBtn, endIndex, startIndex = 0) {
-  const div = document.createElement('div');
+function getPaginatorHTML(
+  indexOfActiveBtn: number,
+  endIndex: number,
+  startIndex: number = 0
+): HTMLDivElement {
+  const div: HTMLDivElement = document.createElement('div');
 
   for (let i = startIndex; i < endIndex; i++) {
     div.appendChild(getBtnHTML(i + 1));
   }
 
-  div.childNodes[indexOfActiveBtn].classList.add('btn-number-slider-active');
+  (div.childNodes[indexOfActiveBtn] as HTMLButtonElement).classList.add(
+    'btn-number-slider-active'
+  );
   div.classList.add('number-slider');
 
   return div;
 }
 
-function getBtnHTML(numberOfPage) {
-  const button = document.createElement('button');
+function getBtnHTML(numberOfPage: number): HTMLButtonElement {
+  const button: HTMLButtonElement = document.createElement('button');
 
   button.classList.add('btn-number-slider');
-  button.innerHTML = numberOfPage;
+  button.innerHTML = String(numberOfPage);
 
   return button;
 }
 
-function getCardTemplate(card) {
+function getCardTemplate(card: PaginatorData): string {
   return `<div class="blog__block" ">
                   <h4 class="blog__header">${card.category}</h4>
                   <img
@@ -86,8 +97,8 @@ function getCardTemplate(card) {
             `;
 }
 
-function getCountOfPages(count) {
-  const cardsPerPage = 2;
+function getCountOfPages(count: number): number {
+  const cardsPerPage: number = 2;
 
   if (count % cardsPerPage === 0) {
     return count / cardsPerPage;
@@ -96,9 +107,9 @@ function getCountOfPages(count) {
   return Math.trunc(count / cardsPerPage) + 1;
 }
 
-function getCountOfVisiblePages(count) {
-  const cardsPerPage = 2;
-  const countOfVisiblePages = 5;
+function getCountOfVisiblePages(count: number): number {
+  const cardsPerPage: number = 2;
+  const countOfVisiblePages: number = 5;
 
   if (count / cardsPerPage <= countOfVisiblePages) {
     return getCountOfPages(count);
@@ -107,15 +118,21 @@ function getCountOfVisiblePages(count) {
   return countOfVisiblePages;
 }
 
-function clickBtnPaginatorHandler(event, data) {
-  if (event.target.classList.contains('btn-number-slider')) {
-    const countOfPages = getCountOfPages(data.length);
-    const numberOfCurrentPage = Number(event.target.innerHTML);
-    const indexOfCard1 = 2 * (numberOfCurrentPage - 1);
-    const indexOfCard2 = 2 * numberOfCurrentPage - 1;
+function clickBtnPaginatorHandler(event: Event, data: PaginatorData[]): void {
+  const target: HTMLButtonElement = event.target as HTMLButtonElement;
 
-    const divOfCard1 = document.querySelector(`div[data-card="card-1"]`);
-    const divOfCard2 = document.querySelector(`div[data-card="card-2"]`);
+  if (target.classList.contains('btn-number-slider')) {
+    const countOfPages: number = getCountOfPages(data.length);
+    const numberOfCurrentPage: number = Number(target.innerHTML);
+    const indexOfCard1: number = 2 * (numberOfCurrentPage - 1);
+    const indexOfCard2: number = 2 * numberOfCurrentPage - 1;
+
+    const divOfCard1: HTMLDivElement = document.querySelector(
+      `div[data-card="card-1"]`
+    );
+    const divOfCard2: HTMLDivElement = document.querySelector(
+      `div[data-card="card-2"]`
+    );
 
     divOfCard1.innerHTML = getCardTemplate(data[indexOfCard1]);
 
@@ -125,15 +142,22 @@ function clickBtnPaginatorHandler(event, data) {
       divOfCard2.innerHTML = getCardTemplate(data[indexOfCard2]);
     }
 
-    refreshPaginatorHTML(event.target, numberOfCurrentPage, countOfPages);
+    refreshPaginatorHTML(target, numberOfCurrentPage, countOfPages);
   }
 }
 
-function isLastCardSingle(indexOfCard, indexOfLastElement) {
+function isLastCardSingle(
+  indexOfCard: number,
+  indexOfLastElement: number
+): boolean {
   return indexOfCard === indexOfLastElement && indexOfLastElement % 2 != 0;
 }
 
-function refreshPaginatorHTML(btn, numberOfCurrentPage, countOfPages) {
+function refreshPaginatorHTML(
+  btn: HTMLButtonElement,
+  numberOfCurrentPage: number,
+  countOfPages: number
+): void {
   if (
     countOfPages < 5 ||
     numberOfCurrentPage === 1 ||
@@ -143,7 +167,7 @@ function refreshPaginatorHTML(btn, numberOfCurrentPage, countOfPages) {
     return;
   }
 
-  const numSlider = document.querySelector('.blog__paginator');
+  const numSlider: HTMLDivElement = document.querySelector('.blog__paginator');
   numSlider.innerHTML = '';
 
   switch (numberOfCurrentPage) {
@@ -162,8 +186,10 @@ function refreshPaginatorHTML(btn, numberOfCurrentPage, countOfPages) {
   }
 }
 
-function сhangeActiveBtn(btn) {
-  const activeBtn = document.querySelector('.btn-number-slider-active');
+function сhangeActiveBtn(btn: HTMLButtonElement): void {
+  const activeBtn: HTMLButtonElement = document.querySelector(
+    '.btn-number-slider-active'
+  );
 
   activeBtn.classList.remove('btn-number-slider-active');
   btn.classList.add('btn-number-slider-active');

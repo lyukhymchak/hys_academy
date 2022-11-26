@@ -1,21 +1,29 @@
+import SlickSliderData from './interfaces/SlickSliderData';
+
 export class SlickSlider {
-  constructor(selector, data) {
-    this.createSlickSliderItemMarkup(selector, data);
-    this.initSlickSlider(selector);
+  private readonly selector: string;
+
+  constructor(selector: string) {
+    this.selector = selector;
   }
 
-  createSlickSliderItemMarkup(selector, data) {
-    const ul = document.querySelector(selector);
+  init(data: SlickSliderData[]): void {
+    this.createSlickSliderItemMarkup(data);
+    this.initSlickSlider();
+  }
+
+  createSlickSliderItemMarkup(data: SlickSliderData[]): void {
+    const ul: HTMLUListElement = document.querySelector(this.selector);
 
     for (let i = 0; i < data.length; i++) {
-      const li = document.createElement('li');
+      const li: HTMLLIElement = document.createElement('li');
 
       li.innerHTML = this.getCardTemplate(data[i]);
       ul.appendChild(li);
     }
   }
 
-  getCardTemplate(card) {
+  getCardTemplate(card: SlickSliderData): string {
     return `<div class="courses__list-item" style="background-image: url(${card.url});"><img class="courses__mentor" src="${card.mentor}" width="48" alt="mentor">
               <h4 class="courses__header">${card.header}</h4>
               <h3 class="courses__title">${card.title}</h3>
@@ -30,16 +38,16 @@ export class SlickSlider {
             </div>`;
   }
 
-  getBtnHTML(direction) {
+  getBtnHTML(direction: string): string {
     return `<button class="btn-slider btn-slider-${direction} btn-slick-${direction}">
-                        <svg class="arrow arrow-${direction}" width="24" height="24">
-                            <use href="images/sprite-plus.svg#icon-chevron-${direction}"></use>
-                        </svg>
-                  </button>`;
+              <svg class="arrow arrow-${direction}" width="24" height="24">
+                <use href="images/sprite-plus.svg#icon-chevron-${direction}"></use>
+              </svg>
+            </button>`;
   }
 
-  initSlickSlider(selector) {
-    $(selector).slick({
+  initSlickSlider(): void {
+    $(this.selector).slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,

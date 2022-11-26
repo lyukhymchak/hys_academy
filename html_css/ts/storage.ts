@@ -2,7 +2,7 @@ import {
   dataForPaginator,
   dataForSlider,
   dataForSlickSlider,
-} from './data/data.js';
+} from './data/data';
 
 export class Storage {
   constructor() {
@@ -11,13 +11,16 @@ export class Storage {
     this.setDataToLocalStorage('slickSlider', dataForSlickSlider());
   }
 
-  getDatafromLocalStorage(key) {
+  public getDatafromLocalStorage<DataType>(key: string): Array<DataType> {
     if (localStorage.getItem(key)) {
       return JSON.parse(localStorage.getItem(key));
     }
   }
 
-  setDataToLocalStorage(key, data) {
+  public setDataToLocalStorage<DataType>(
+    key: string,
+    data: Array<DataType>
+  ): void {
     localStorage.setItem(key, JSON.stringify(data));
   }
 }
