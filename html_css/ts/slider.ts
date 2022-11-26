@@ -1,6 +1,9 @@
-import SliderData from './interfaces/SliderData';
+import SliderData from './models/SliderData.model';
 
-export class Slider {
+interface Init<T> {
+  init(data: T[]): void;
+}
+export class Slider implements Init<SliderData> {
   private readonly id: string;
 
   private divSlider: HTMLDivElement;
@@ -12,7 +15,7 @@ export class Slider {
     this.id = id;
   }
 
-  public init(data: SliderData[]): void {
+  public init(data: Array<SliderData>): void {
     this.divSlider = document
       .getElementById(this.id)
       .appendChild(this.getSliderItemMarkup(data.length));

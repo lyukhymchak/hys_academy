@@ -1,4 +1,4 @@
-import PaginatorData from './interfaces/PaginatorData';
+import PaginatorData from './models/PaginatorData.model';
 
 export default function paginator(
   selector: string,

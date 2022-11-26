@@ -7,32 +7,44 @@ import { Storage } from './storage';
 import { Form } from './form';
 import { Select } from './select';
 
-import SliderData from './interfaces/SliderData';
+import SliderData from './models/SliderData.model';
+import { dataForPaginator, dataForSlickSlider } from './data/data';
 
-export class App {
+abstract class AppAbstract {
+  protected baseUrl = 'https://jsonplaceholder.typicode.com/albums/';
+
+  protected abstract getSliderData(albumID: string): Promise<SliderData[]>;
+}
+export class App extends AppAbstract {
   private readonly slider = new Slider('preference-slider');
   private readonly slickSlider = new SlickSlider('.slick-slider');
   private readonly select = new Select('#select');
-  private readonly storage = new Storage();
+  private readonly storagePaginator = new Storage("'paginator'");
+  private readonly storageSlickSlider = new Storage("'slickSlider'");
   private readonly form = new Form('form');
 
-  constructor() {}
+  constructor() {
+    super();
+  }
 
   public async init(): Promise<void> {
     initFixedHeader();
     initMobileMenu();
 
-    paginator('paginator', this.storage.getDatafromLocalStorage('paginator'));
+    this.storagePaginator.setDataToLocalStorage(dataForPaginator());
+    this.storageSlickSlider.setDataToLocalStorage(dataForSlickSlider());
+
+    paginator('paginator', this.storagePaginator.getDatafromLocalStorage());
 
     this.form.init();
 
-    this.slickSlider.init(this.storage.getDatafromLocalStorage('slickSlider'));
+    this.slickSlider.init(this.storageSlickSlider.getDatafromLocalStorage());
 
     const dataForSlider = await this.getSliderData();
     this.slider.init(dataForSlider);
 
     this.select.init();
-    this.select.el.addEventListener('change', (event: Event) =>
+    this.select.element.addEventListener('change', (event: Event) =>
       this.onAlbumChange(event, this.slider)
     );
   }
@@ -46,11 +58,10 @@ export class App {
     slider.init(data);
   }
 
-  private async getSliderData(albumID: string = '1'): Promise<SliderData[]> {
+  protected async getSliderData(albumID: string = '1'): Promise<SliderData[]> {
     try {
-      const response: Response = await fetch(
-        `https://jsonplaceholder.typicode.com/albums/${albumID}/photos`
-      );
+      const url: string = this.baseUrl + `${albumID}/photos`;
+      const response: Response = await fetch(url);
 
       const result: SliderData[] = await response.json();
 
