@@ -1,6 +1,7 @@
-import SliderData from './models/SliderData.model';
-import Init from './models/InitT.model';
-export class Slider implements Init<Array<SliderData>> {
+import SliderData from './models/slider-data.model';
+import Init from './models/init.generic.model';
+
+export default class Slider implements Init<Array<SliderData>> {
   private readonly id: string;
 
   private divSlider: HTMLDivElement;

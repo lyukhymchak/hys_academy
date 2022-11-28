@@ -1,20 +1,20 @@
-import { AlbumEnum } from './models/AlbumEnum.model';
-import Init from './models/Init.model';
-export class Select implements Init {
-  private readonly id: string;
+import Albums from './models/albums.enum.model';
+import Init from './models/init.model';
 
+export default class Select implements Init {
+  private readonly id: string;
   private el: HTMLSelectElement;
 
-  constructor(id: string) {
-    this.id = id;
+  private set element(element: HTMLSelectElement) {
+    this.el = element;
   }
 
   public get element(): HTMLSelectElement {
     return this.el;
   }
 
-  private set element(element: HTMLSelectElement) {
-    this.el = element;
+  constructor(id: string) {
+    this.id = id;
   }
 
   public init(): void {
@@ -27,7 +27,9 @@ export class Select implements Init {
 
     selectList.classList.add('preference__select');
 
-    const albums: string[] = Object.values(AlbumEnum);
+    const albums: string[] = Object.keys(Albums).filter(item => {
+      return isNaN(Number(item));
+    });
 
     for (let i = 0; i < albums.length; i++) {
       const option: HTMLOptionElement = document.createElement('option');

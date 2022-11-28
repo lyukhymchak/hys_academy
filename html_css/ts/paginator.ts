@@ -1,4 +1,4 @@
-import PaginatorData from './models/PaginatorData.model';
+import PaginatorData from './models/paginator-data.model';
 
 export default function paginator(
   selector: string,
@@ -20,12 +20,12 @@ function getBlogHTML(data: PaginatorData[]): HTMLDivElement {
   const divCards: HTMLDivElement[] = [];
 
   for (let i = 0; i < cardsPerPage; i++) {
-    const dataAtr: any = `card-${i + 1}`;
+    const dataAtr: string = `card-${i + 1}`;
 
-    divCards[dataAtr] = document.createElement('div');
-    divCards[dataAtr].setAttribute('data-card', dataAtr);
-    divCards[dataAtr].innerHTML = getCardTemplate(data[i]);
-    divBlog.appendChild(divCards[dataAtr]);
+    divCards[i] = document.createElement('div');
+    divCards[i].setAttribute('data-card', dataAtr);
+    divCards[i].innerHTML = getCardTemplate(data[i]);
+    divBlog.appendChild(divCards[i]);
   }
 
   if (countOfVisiblePages > 1) {
@@ -150,7 +150,7 @@ function isLastCardSingle(
   indexOfCard: number,
   indexOfLastElement: number
 ): boolean {
-  return indexOfCard === indexOfLastElement && indexOfLastElement % 2 != 0;
+  return indexOfCard === indexOfLastElement && indexOfLastElement % 2 !== 0;
 }
 
 function refreshPaginatorHTML(
@@ -163,7 +163,7 @@ function refreshPaginatorHTML(
     numberOfCurrentPage === 1 ||
     numberOfCurrentPage === countOfPages
   ) {
-    сhangeActiveBtn(btn);
+    changeActiveBtn(btn);
     return;
   }
 
@@ -186,7 +186,7 @@ function refreshPaginatorHTML(
   }
 }
 
-function сhangeActiveBtn(btn: HTMLButtonElement): void {
+function changeActiveBtn(btn: HTMLButtonElement): void {
   const activeBtn: HTMLButtonElement = document.querySelector(
     '.btn-number-slider-active'
   );

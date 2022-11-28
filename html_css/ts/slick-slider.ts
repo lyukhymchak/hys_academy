@@ -1,6 +1,7 @@
-import SlickSliderData from './models/SlickSliderData.model';
-import Init from './models/InitT.model';
-export class SlickSlider implements Init<Array<SlickSliderData>> {
+import SlickSliderData from './models/slick-slider-data.model';
+import Init from './models/init.generic.model';
+
+export default class SlickSlider implements Init<Array<SlickSliderData>> {
   private readonly selector: string;
 
   constructor(selector: string) {

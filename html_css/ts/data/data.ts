@@ -1,20 +1,17 @@
-import SliderData from '../models/SliderData.model';
-import SlickSliderData from '../models/SlickSliderData.model';
-import PaginatorData from '../models/PaginatorData.model';
+import SliderData from '../models/slider-data.model';
+import SlickSliderData from '../models/slick-slider-data.model';
+import PaginatorData from '../models/paginator-data.model';
 
-const dataPaginator: PaginatorData[] = require('./dataPaginator.json');
-const dataSlider: SliderData[] = require('./dataSlider.json');
-const dataSlickSlider: SlickSliderData[] = require('./dataSlickSlider.json');
+import dataPaginator from './dataPaginator.json';
+import dataSlider from './dataSlider.json';
+import dataSlickSlider from './dataSlickSlider.json';
 
 export function dataForPaginator(): PaginatorData[] {
   return dataPaginator;
 }
 
 export function dataForSlider(numberOfSlides: number = 10): SliderData[] {
-  return dataSlider.filter(
-    (element: SliderData, index: number) =>
-      element['albumId'] === 1 && index < numberOfSlides
-  );
+  return dataSlider.slice(0, numberOfSlides);
 }
 
 export function dataForSlickSlider(): SlickSliderData[] {
