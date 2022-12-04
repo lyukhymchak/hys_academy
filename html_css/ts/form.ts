@@ -1,9 +1,7 @@
-interface Init {
-  init(): void;
-}
-export class Form implements Init {
-  private readonly id: string;
+import Init from './models/init.model';
 
+export default class Form implements Init {
+  private readonly id: string;
   private form: HTMLFormElement;
   private inputs: HTMLInputElement[];
 
@@ -15,26 +13,13 @@ export class Form implements Init {
     const FORM_DATA_KEY: string = this.id + 'Data';
 
     this.form = document.getElementById(this.id) as HTMLFormElement;
-
+    this.form.setAttribute('novalidate', 'true');
     this.inputs = Array.from(this.form.elements).filter(
       (el: HTMLInputElement) => el.nodeName === 'INPUT'
     ) as HTMLInputElement[];
 
     this.retrieveRecords(FORM_DATA_KEY);
-
-    this.form.setAttribute('novalidate', 'true');
-
     this.addEventListeners(FORM_DATA_KEY);
-  }
-
-  private addEventListeners(key: string): void {
-    this.form.addEventListener('submit', (event: Event) =>
-      this.validateForm(event, key)
-    );
-
-    this.form.addEventListener('input', (event: Event) =>
-      this.inputFormHandler(event, key)
-    );
   }
 
   private retrieveRecords(key: string): void {
@@ -47,18 +32,14 @@ export class Form implements Init {
     }
   }
 
-  private clearStorage(event: Event, key: string): void {
-    localStorage.removeItem(key);
-  }
+  private addEventListeners(key: string): void {
+    this.form.addEventListener('submit', (event: Event) =>
+      this.validateForm(event, key)
+    );
 
-  private storeRecords(key: string): void {
-    const data: string[][] = [];
-
-    this.inputs.forEach((element: HTMLInputElement) => {
-      data.push([element.name, element.value]);
-    });
-
-    localStorage.setItem(key, JSON.stringify(data));
+    this.form.addEventListener('input', (event: Event) =>
+      this.inputFormHandler(event, key)
+    );
   }
 
   private validateForm(event: Event, key: string): void {
@@ -87,6 +68,10 @@ export class Form implements Init {
     }
   }
 
+  private clearStorage(event: Event, key: string): void {
+    localStorage.removeItem(key);
+  }
+
   private toggleErrorField(field: HTMLInputElement, show: boolean): void {
     const errorText: HTMLDivElement =
       field.previousElementSibling as HTMLDivElement;
@@ -113,5 +98,15 @@ export class Form implements Init {
     if (target.classList.contains('form__input')) {
       this.markFieldAsError(target, !target.checkValidity());
     }
+  }
+
+  private storeRecords(key: string): void {
+    const data: string[][] = [];
+
+    this.inputs.forEach((element: HTMLInputElement) => {
+      data.push([element.name, element.value]);
+    });
+
+    localStorage.setItem(key, JSON.stringify(data));
   }
 }

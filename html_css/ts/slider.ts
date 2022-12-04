@@ -1,9 +1,7 @@
-import SliderData from './models/SliderData.model';
+import SliderData from './models/slider-data.model';
+import Init from './models/init.generic.model';
 
-interface Init<T> {
-  init(data: T[]): void;
-}
-export class Slider implements Init<SliderData> {
+export default class Slider implements Init<Array<SliderData>> {
   private readonly id: string;
 
   private divSlider: HTMLDivElement;
@@ -82,7 +80,7 @@ export class Slider implements Init<SliderData> {
             </svg>`;
   }
 
-  private setData(data: SliderData[]): void {
+  private setData(data: Array<SliderData>): void {
     const elementsOfSlider: NodeListOf<HTMLLIElement> =
       this.divSlider.querySelectorAll('.preference__item');
 

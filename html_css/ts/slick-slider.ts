@@ -1,16 +1,14 @@
-import SlickSliderData from './models/SlickSliderData.model';
+import SlickSliderData from './models/slick-slider-data.model';
+import Init from './models/init.generic.model';
 
-interface Init<T> {
-  init(data: T[]): void;
-}
-export class SlickSlider implements Init<SlickSliderData> {
+export default class SlickSlider implements Init<Array<SlickSliderData>> {
   private readonly selector: string;
 
   constructor(selector: string) {
     this.selector = selector;
   }
 
-  public init(data: SlickSliderData[]): void {
+  public init(data: Array<SlickSliderData>): void {
     this.createSlickSliderItemMarkup(data);
     this.initSlickSlider();
   }
